@@ -1,0 +1,4920 @@
+- model: backlog.Biome
+  pk: 1
+  fields:
+    biome_id: 0
+    biome_name: root
+    lft: 1
+    rgt: 984
+    depth: 1
+    lineage: root
+
+- model: backlog.Biome
+  pk: 2
+  fields:
+    biome_id: 1
+    biome_name: Engineered
+    lft: 2
+    rgt: 161
+    depth: 2
+    lineage: root:Engineered
+
+- model: backlog.Biome
+  pk: 3
+  fields:
+    biome_id: 2
+    biome_name: "Biogas plant"
+    lft: 3
+    rgt: 6
+    depth: 3
+    lineage: "root:Engineered:Biogas plant"
+
+- model: backlog.Biome
+  pk: 4
+  fields:
+    biome_id: 3
+    biome_name: "Wet fermentation"
+    lft: 4
+    rgt: 5
+    depth: 4
+    lineage: "root:Engineered:Biogas plant:Wet fermentation"
+
+- model: backlog.Biome
+  pk: 5
+  fields:
+    biome_id: 4
+    biome_name: Bioreactor
+    lft: 7
+    rgt: 18
+    depth: 3
+    lineage: root:Engineered:Bioreactor
+
+- model: backlog.Biome
+  pk: 6
+  fields:
+    biome_id: 5
+    biome_name: "Continuous culture"
+    lft: 8
+    rgt: 17
+    depth: 4
+    lineage: "root:Engineered:Bioreactor:Continuous culture"
+
+- model: backlog.Biome
+  pk: 7
+  fields:
+    biome_id: 6
+    biome_name: "Marine intertidal flat sediment inoculum"
+    lft: 9
+    rgt: 12
+    depth: 5
+    lineage: "root:Engineered:Bioreactor:Continuous culture:Marine intertidal flat sediment inoculum"
+
+- model: backlog.Biome
+  pk: 8
+  fields:
+    biome_id: 7
+    biome_name: "Wadden Sea-Germany"
+    lft: 10
+    rgt: 11
+    depth: 6
+    lineage: "root:Engineered:Bioreactor:Continuous culture:Marine intertidal flat sediment inoculum:Wadden Sea-Germany"
+
+- model: backlog.Biome
+  pk: 9
+  fields:
+    biome_id: 8
+    biome_name: "Marine sediment inoculum"
+    lft: 13
+    rgt: 16
+    depth: 5
+    lineage: "root:Engineered:Bioreactor:Continuous culture:Marine sediment inoculum"
+
+- model: backlog.Biome
+  pk: 10
+  fields:
+    biome_id: 9
+    biome_name: "Wadden Sea-Germany"
+    lft: 14
+    rgt: 15
+    depth: 6
+    lineage: "root:Engineered:Bioreactor:Continuous culture:Marine sediment inoculum:Wadden Sea-Germany"
+
+- model: backlog.Biome
+  pk: 11
+  fields:
+    biome_id: 10
+    biome_name: Bioremediation
+    lft: 19
+    rgt: 50
+    depth: 3
+    lineage: root:Engineered:Bioremediation
+
+- model: backlog.Biome
+  pk: 12
+  fields:
+    biome_id: 11
+    biome_name: Hydrocarbon
+    lft: 20
+    rgt: 25
+    depth: 4
+    lineage: root:Engineered:Bioremediation:Hydrocarbon
+
+- model: backlog.Biome
+  pk: 13
+  fields:
+    biome_id: 12
+    biome_name: Benzene
+    lft: 21
+    rgt: 24
+    depth: 5
+    lineage: root:Engineered:Bioremediation:Hydrocarbon:Benzene
+
+- model: backlog.Biome
+  pk: 14
+  fields:
+    biome_id: 13
+    biome_name: Bioreactor
+    lft: 22
+    rgt: 23
+    depth: 6
+    lineage: root:Engineered:Bioremediation:Hydrocarbon:Benzene:Bioreactor
+
+- model: backlog.Biome
+  pk: 15
+  fields:
+    biome_id: 14
+    biome_name: Metal
+    lft: 26
+    rgt: 27
+    depth: 4
+    lineage: root:Engineered:Bioremediation:Metal
+
+- model: backlog.Biome
+  pk: 16
+  fields:
+    biome_id: 15
+    biome_name: "Persistent organic pollutants (POP)"
+    lft: 28
+    rgt: 31
+    depth: 4
+    lineage: "root:Engineered:Bioremediation:Persistent organic pollutants (POP)"
+
+- model: backlog.Biome
+  pk: 17
+  fields:
+    biome_id: 16
+    biome_name: "Polycyclic aromatic hydrocarbons"
+    lft: 29
+    rgt: 30
+    depth: 5
+    lineage: "root:Engineered:Bioremediation:Persistent organic pollutants (POP):Polycyclic aromatic hydrocarbons"
+
+- model: backlog.Biome
+  pk: 18
+  fields:
+    biome_id: 17
+    biome_name: Terephthalate
+    lft: 32
+    rgt: 39
+    depth: 4
+    lineage: root:Engineered:Bioremediation:Terephthalate
+
+- model: backlog.Biome
+  pk: 19
+  fields:
+    biome_id: 18
+    biome_name: Wastewater
+    lft: 33
+    rgt: 38
+    depth: 5
+    lineage: root:Engineered:Bioremediation:Terephthalate:Wastewater
+
+- model: backlog.Biome
+  pk: 20
+  fields:
+    biome_id: 19
+    biome_name: "Activated sludge"
+    lft: 34
+    rgt: 35
+    depth: 6
+    lineage: "root:Engineered:Bioremediation:Terephthalate:Wastewater:Activated sludge"
+
+- model: backlog.Biome
+  pk: 21
+  fields:
+    biome_id: 20
+    biome_name: Bioreactor
+    lft: 36
+    rgt: 37
+    depth: 6
+    lineage: root:Engineered:Bioremediation:Terephthalate:Wastewater:Bioreactor
+
+- model: backlog.Biome
+  pk: 22
+  fields:
+    biome_id: 21
+    biome_name: "Tetrachloroethylene and derivatives"
+    lft: 40
+    rgt: 49
+    depth: 4
+    lineage: "root:Engineered:Bioremediation:Tetrachloroethylene and derivatives"
+
+- model: backlog.Biome
+  pk: 23
+  fields:
+    biome_id: 22
+    biome_name: Chloroethene
+    lft: 41
+    rgt: 44
+    depth: 5
+    lineage: "root:Engineered:Bioremediation:Tetrachloroethylene and derivatives:Chloroethene"
+
+- model: backlog.Biome
+  pk: 24
+  fields:
+    biome_id: 23
+    biome_name: Bioreactor
+    lft: 42
+    rgt: 43
+    depth: 6
+    lineage: "root:Engineered:Bioremediation:Tetrachloroethylene and derivatives:Chloroethene:Bioreactor"
+
+- model: backlog.Biome
+  pk: 25
+  fields:
+    biome_id: 24
+    biome_name: Tetrachloroethylene
+    lft: 45
+    rgt: 48
+    depth: 5
+    lineage: "root:Engineered:Bioremediation:Tetrachloroethylene and derivatives:Tetrachloroethylene"
+
+- model: backlog.Biome
+  pk: 26
+  fields:
+    biome_id: 25
+    biome_name: Bioreactor
+    lft: 46
+    rgt: 47
+    depth: 6
+    lineage: "root:Engineered:Bioremediation:Tetrachloroethylene and derivatives:Tetrachloroethylene:Bioreactor"
+
+- model: backlog.Biome
+  pk: 27
+  fields:
+    biome_id: 26
+    biome_name: Biotransformation
+    lft: 51
+    rgt: 58
+    depth: 3
+    lineage: root:Engineered:Biotransformation
+
+- model: backlog.Biome
+  pk: 28
+  fields:
+    biome_id: 27
+    biome_name: "Microbial enhanced oil recovery"
+    lft: 52
+    rgt: 53
+    depth: 4
+    lineage: "root:Engineered:Biotransformation:Microbial enhanced oil recovery"
+
+- model: backlog.Biome
+  pk: 29
+  fields:
+    biome_id: 28
+    biome_name: "Microbial solubilization of coal"
+    lft: 54
+    rgt: 55
+    depth: 4
+    lineage: "root:Engineered:Biotransformation:Microbial solubilization of coal"
+
+- model: backlog.Biome
+  pk: 30
+  fields:
+    biome_id: 29
+    biome_name: "Mixed alcohol bioreactor"
+    lft: 56
+    rgt: 57
+    depth: 4
+    lineage: "root:Engineered:Biotransformation:Mixed alcohol bioreactor"
+
+- model: backlog.Biome
+  pk: 31
+  fields:
+    biome_id: 30
+    biome_name: "Built environment"
+    lft: 59
+    rgt: 60
+    depth: 3
+    lineage: "root:Engineered:Built environment"
+
+- model: backlog.Biome
+  pk: 32
+  fields:
+    biome_id: 31
+    biome_name: "Food production"
+    lft: 61
+    rgt: 72
+    depth: 3
+    lineage: "root:Engineered:Food production"
+
+- model: backlog.Biome
+  pk: 33
+  fields:
+    biome_id: 32
+    biome_name: "Dairy products"
+    lft: 62
+    rgt: 63
+    depth: 4
+    lineage: "root:Engineered:Food production:Dairy products"
+
+- model: backlog.Biome
+  pk: 34
+  fields:
+    biome_id: 33
+    biome_name: "Fermented beverages"
+    lft: 64
+    rgt: 65
+    depth: 4
+    lineage: "root:Engineered:Food production:Fermented beverages"
+
+- model: backlog.Biome
+  pk: 35
+  fields:
+    biome_id: 34
+    biome_name: "Fermented seafood"
+    lft: 66
+    rgt: 67
+    depth: 4
+    lineage: "root:Engineered:Food production:Fermented seafood"
+
+- model: backlog.Biome
+  pk: 36
+  fields:
+    biome_id: 35
+    biome_name: "Fermented vegetables"
+    lft: 68
+    rgt: 69
+    depth: 4
+    lineage: "root:Engineered:Food production:Fermented vegetables"
+
+- model: backlog.Biome
+  pk: 37
+  fields:
+    biome_id: 36
+    biome_name: "Silage fermentation"
+    lft: 70
+    rgt: 71
+    depth: 4
+    lineage: "root:Engineered:Food production:Silage fermentation"
+
+- model: backlog.Biome
+  pk: 38
+  fields:
+    biome_id: 37
+    biome_name: "Industrial production"
+    lft: 73
+    rgt: 76
+    depth: 3
+    lineage: "root:Engineered:Industrial production"
+
+- model: backlog.Biome
+  pk: 39
+  fields:
+    biome_id: 38
+    biome_name: "Engineered product"
+    lft: 74
+    rgt: 75
+    depth: 4
+    lineage: "root:Engineered:Industrial production:Engineered product"
+
+- model: backlog.Biome
+  pk: 40
+  fields:
+    biome_id: 39
+    biome_name: "Lab enrichment"
+    lft: 77
+    rgt: 90
+    depth: 3
+    lineage: "root:Engineered:Lab enrichment"
+
+- model: backlog.Biome
+  pk: 41
+  fields:
+    biome_id: 40
+    biome_name: "Defined media"
+    lft: 78
+    rgt: 87
+    depth: 4
+    lineage: "root:Engineered:Lab enrichment:Defined media"
+
+- model: backlog.Biome
+  pk: 42
+  fields:
+    biome_id: 41
+    biome_name: "Aerobic media"
+    lft: 79
+    rgt: 80
+    depth: 5
+    lineage: "root:Engineered:Lab enrichment:Defined media:Aerobic media"
+
+- model: backlog.Biome
+  pk: 43
+  fields:
+    biome_id: 42
+    biome_name: "Anaerobic media"
+    lft: 81
+    rgt: 82
+    depth: 5
+    lineage: "root:Engineered:Lab enrichment:Defined media:Anaerobic media"
+
+- model: backlog.Biome
+  pk: 44
+  fields:
+    biome_id: 43
+    biome_name: "Marine media"
+    lft: 83
+    rgt: 86
+    depth: 5
+    lineage: "root:Engineered:Lab enrichment:Defined media:Marine media"
+
+- model: backlog.Biome
+  pk: 45
+  fields:
+    biome_id: 44
+    biome_name: Algoconsortia
+    lft: 84
+    rgt: 85
+    depth: 6
+    lineage: "root:Engineered:Lab enrichment:Defined media:Marine media:Algoconsortia"
+
+- model: backlog.Biome
+  pk: 46
+  fields:
+    biome_id: 45
+    biome_name: "Undefined media"
+    lft: 88
+    rgt: 89
+    depth: 4
+    lineage: "root:Engineered:Lab enrichment:Undefined media"
+
+- model: backlog.Biome
+  pk: 47
+  fields:
+    biome_id: 46
+    biome_name: "Lab Synthesis"
+    lft: 91
+    rgt: 94
+    depth: 3
+    lineage: "root:Engineered:Lab Synthesis"
+
+- model: backlog.Biome
+  pk: 48
+  fields:
+    biome_id: 47
+    biome_name: "Genetic cross"
+    lft: 92
+    rgt: 93
+    depth: 4
+    lineage: "root:Engineered:Lab Synthesis:Genetic cross"
+
+- model: backlog.Biome
+  pk: 49
+  fields:
+    biome_id: 48
+    biome_name: Modeled
+    lft: 95
+    rgt: 104
+    depth: 3
+    lineage: root:Engineered:Modeled
+
+- model: backlog.Biome
+  pk: 50
+  fields:
+    biome_id: 49
+    biome_name: "Simulated communities (DNA mixture)"
+    lft: 96
+    rgt: 97
+    depth: 4
+    lineage: "root:Engineered:Modeled:Simulated communities (DNA mixture)"
+
+- model: backlog.Biome
+  pk: 51
+  fields:
+    biome_id: 50
+    biome_name: "Simulated communities (microbial mixture)"
+    lft: 98
+    rgt: 99
+    depth: 4
+    lineage: "root:Engineered:Modeled:Simulated communities (microbial mixture)"
+
+- model: backlog.Biome
+  pk: 52
+  fields:
+    biome_id: 51
+    biome_name: "Simulated communities (sequence read mixture)"
+    lft: 100
+    rgt: 103
+    depth: 4
+    lineage: "root:Engineered:Modeled:Simulated communities (sequence read mixture)"
+
+- model: backlog.Biome
+  pk: 53
+  fields:
+    biome_id: 52
+    biome_name: Sanger
+    lft: 101
+    rgt: 102
+    depth: 5
+    lineage: "root:Engineered:Modeled:Simulated communities (sequence read mixture):Sanger"
+
+- model: backlog.Biome
+  pk: 54
+  fields:
+    biome_id: 53
+    biome_name: "Solid waste"
+    lft: 105
+    rgt: 122
+    depth: 3
+    lineage: "root:Engineered:Solid waste"
+
+- model: backlog.Biome
+  pk: 55
+  fields:
+    biome_id: 54
+    biome_name: Composting
+    lft: 106
+    rgt: 117
+    depth: 4
+    lineage: "root:Engineered:Solid waste:Composting"
+
+- model: backlog.Biome
+  pk: 56
+  fields:
+    biome_id: 55
+    biome_name: Grass
+    lft: 107
+    rgt: 110
+    depth: 5
+    lineage: "root:Engineered:Solid waste:Composting:Grass"
+
+- model: backlog.Biome
+  pk: 57
+  fields:
+    biome_id: 56
+    biome_name: Bioreactor
+    lft: 108
+    rgt: 109
+    depth: 6
+    lineage: "root:Engineered:Solid waste:Composting:Grass:Bioreactor"
+
+- model: backlog.Biome
+  pk: 58
+  fields:
+    biome_id: 57
+    biome_name: Bioreactor
+    lft: 111
+    rgt: 112
+    depth: 5
+    lineage: "root:Engineered:Solid waste:Composting:Bioreactor"
+
+- model: backlog.Biome
+  pk: 59
+  fields:
+    biome_id: 58
+    biome_name: Wood
+    lft: 113
+    rgt: 116
+    depth: 5
+    lineage: "root:Engineered:Solid waste:Composting:Wood"
+
+- model: backlog.Biome
+  pk: 60
+  fields:
+    biome_id: 59
+    biome_name: Bioreactor
+    lft: 114
+    rgt: 115
+    depth: 6
+    lineage: "root:Engineered:Solid waste:Composting:Wood:Bioreactor"
+
+- model: backlog.Biome
+  pk: 61
+  fields:
+    biome_id: 60
+    biome_name: Landfill
+    lft: 118
+    rgt: 119
+    depth: 4
+    lineage: "root:Engineered:Solid waste:Landfill"
+
+- model: backlog.Biome
+  pk: 62
+  fields:
+    biome_id: 61
+    biome_name: "Solid animal waste"
+    lft: 120
+    rgt: 121
+    depth: 4
+    lineage: "root:Engineered:Solid waste:Solid animal waste"
+
+- model: backlog.Biome
+  pk: 63
+  fields:
+    biome_id: 62
+    biome_name: Wastewater
+    lft: 123
+    rgt: 160
+    depth: 3
+    lineage: root:Engineered:Wastewater
+
+- model: backlog.Biome
+  pk: 64
+  fields:
+    biome_id: 63
+    biome_name: "Activated Sludge"
+    lft: 124
+    rgt: 125
+    depth: 4
+    lineage: "root:Engineered:Wastewater:Activated Sludge"
+
+- model: backlog.Biome
+  pk: 65
+  fields:
+    biome_id: 64
+    biome_name: "Industrial wastewater"
+    lft: 126
+    rgt: 137
+    depth: 4
+    lineage: "root:Engineered:Wastewater:Industrial wastewater"
+
+- model: backlog.Biome
+  pk: 66
+  fields:
+    biome_id: 65
+    biome_name: "Agricultural wastewater"
+    lft: 127
+    rgt: 128
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Industrial wastewater:Agricultural wastewater"
+
+- model: backlog.Biome
+  pk: 67
+  fields:
+    biome_id: 66
+    biome_name: "Landfill leachate"
+    lft: 129
+    rgt: 130
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Industrial wastewater:Landfill leachate"
+
+- model: backlog.Biome
+  pk: 68
+  fields:
+    biome_id: 67
+    biome_name: "Mine water"
+    lft: 131
+    rgt: 132
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Industrial wastewater:Mine water"
+
+- model: backlog.Biome
+  pk: 69
+  fields:
+    biome_id: 68
+    biome_name: Petrochemical
+    lft: 133
+    rgt: 134
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Industrial wastewater:Petrochemical"
+
+- model: backlog.Biome
+  pk: 70
+  fields:
+    biome_id: 69
+    biome_name: "Pulp and paper wastewater"
+    lft: 135
+    rgt: 136
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Industrial wastewater:Pulp and paper wastewater"
+
+- model: backlog.Biome
+  pk: 71
+  fields:
+    biome_id: 70
+    biome_name: "Nutrient removal"
+    lft: 138
+    rgt: 157
+    depth: 4
+    lineage: "root:Engineered:Wastewater:Nutrient removal"
+
+- model: backlog.Biome
+  pk: 72
+  fields:
+    biome_id: 71
+    biome_name: "Biological phosphorus removal"
+    lft: 139
+    rgt: 144
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Biological phosphorus removal"
+
+- model: backlog.Biome
+  pk: 73
+  fields:
+    biome_id: 72
+    biome_name: "Activated sludge"
+    lft: 140
+    rgt: 141
+    depth: 6
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Biological phosphorus removal:Activated sludge"
+
+- model: backlog.Biome
+  pk: 74
+  fields:
+    biome_id: 73
+    biome_name: Bioreactor
+    lft: 142
+    rgt: 143
+    depth: 6
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Biological phosphorus removal:Bioreactor"
+
+- model: backlog.Biome
+  pk: 75
+  fields:
+    biome_id: 74
+    biome_name: "Dissolved organics (aerobic)"
+    lft: 145
+    rgt: 148
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Dissolved organics (aerobic)"
+
+- model: backlog.Biome
+  pk: 76
+  fields:
+    biome_id: 75
+    biome_name: "Activated sludge"
+    lft: 146
+    rgt: 147
+    depth: 6
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Dissolved organics (aerobic):Activated sludge"
+
+- model: backlog.Biome
+  pk: 77
+  fields:
+    biome_id: 76
+    biome_name: "Dissolved organics (anaerobic)"
+    lft: 149
+    rgt: 152
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Dissolved organics (anaerobic)"
+
+- model: backlog.Biome
+  pk: 78
+  fields:
+    biome_id: 77
+    biome_name: "Activated sludge"
+    lft: 150
+    rgt: 151
+    depth: 6
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Dissolved organics (anaerobic):Activated sludge"
+
+- model: backlog.Biome
+  pk: 79
+  fields:
+    biome_id: 78
+    biome_name: "Nitrogen removal"
+    lft: 153
+    rgt: 156
+    depth: 5
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Nitrogen removal"
+
+- model: backlog.Biome
+  pk: 80
+  fields:
+    biome_id: 79
+    biome_name: Anammox
+    lft: 154
+    rgt: 155
+    depth: 6
+    lineage: "root:Engineered:Wastewater:Nutrient removal:Nitrogen removal:Anammox"
+
+- model: backlog.Biome
+  pk: 81
+  fields:
+    biome_id: 80
+    biome_name: "Water and sludge"
+    lft: 158
+    rgt: 159
+    depth: 4
+    lineage: "root:Engineered:Wastewater:Water and sludge"
+
+- model: backlog.Biome
+  pk: 82
+  fields:
+    biome_id: 81
+    biome_name: Environmental
+    lft: 162
+    rgt: 513
+    depth: 2
+    lineage: root:Environmental
+
+- model: backlog.Biome
+  pk: 83
+  fields:
+    biome_id: 82
+    biome_name: Air
+    lft: 163
+    rgt: 168
+    depth: 3
+    lineage: root:Environmental:Air
+
+- model: backlog.Biome
+  pk: 84
+  fields:
+    biome_id: 83
+    biome_name: "Indoor Air"
+    lft: 164
+    rgt: 165
+    depth: 4
+    lineage: "root:Environmental:Air:Indoor Air"
+
+- model: backlog.Biome
+  pk: 85
+  fields:
+    biome_id: 84
+    biome_name: "Outdoor Air"
+    lft: 166
+    rgt: 167
+    depth: 4
+    lineage: "root:Environmental:Air:Outdoor Air"
+
+- model: backlog.Biome
+  pk: 86
+  fields:
+    biome_id: 85
+    biome_name: Aquatic
+    lft: 169
+    rgt: 418
+    depth: 3
+    lineage: root:Environmental:Aquatic
+
+- model: backlog.Biome
+  pk: 87
+  fields:
+    biome_id: 86
+    biome_name: Aquaculture
+    lft: 170
+    rgt: 171
+    depth: 4
+    lineage: root:Environmental:Aquatic:Aquaculture
+
+- model: backlog.Biome
+  pk: 88
+  fields:
+    biome_id: 87
+    biome_name: Estuary
+    lft: 172
+    rgt: 175
+    depth: 4
+    lineage: root:Environmental:Aquatic:Estuary
+
+- model: backlog.Biome
+  pk: 89
+  fields:
+    biome_id: 88
+    biome_name: Sediment
+    lft: 173
+    rgt: 174
+    depth: 5
+    lineage: root:Environmental:Aquatic:Estuary:Sediment
+
+- model: backlog.Biome
+  pk: 90
+  fields:
+    biome_id: 89
+    biome_name: Freshwater
+    lft: 176
+    rgt: 257
+    depth: 4
+    lineage: root:Environmental:Aquatic:Freshwater
+
+- model: backlog.Biome
+  pk: 91
+  fields:
+    biome_id: 90
+    biome_name: "Drinking water"
+    lft: 177
+    rgt: 182
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Freshwater:Drinking water"
+
+- model: backlog.Biome
+  pk: 92
+  fields:
+    biome_id: 91
+    biome_name: Chlorinated
+    lft: 178
+    rgt: 179
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Drinking water:Chlorinated"
+
+- model: backlog.Biome
+  pk: 93
+  fields:
+    biome_id: 92
+    biome_name: "Delivery networks"
+    lft: 180
+    rgt: 181
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Drinking water:Delivery networks"
+
+- model: backlog.Biome
+  pk: 94
+  fields:
+    biome_id: 93
+    biome_name: Groundwater
+    lft: 183
+    rgt: 198
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Groundwater
+
+- model: backlog.Biome
+  pk: 95
+  fields:
+    biome_id: 94
+    biome_name: "Acid Mine Drainage"
+    lft: 184
+    rgt: 185
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Groundwater:Acid Mine Drainage"
+
+- model: backlog.Biome
+  pk: 96
+  fields:
+    biome_id: 95
+    biome_name: Biofilm
+    lft: 186
+    rgt: 187
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Groundwater:Biofilm
+
+- model: backlog.Biome
+  pk: 97
+  fields:
+    biome_id: 96
+    biome_name: "Cave water"
+    lft: 188
+    rgt: 189
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Groundwater:Cave water"
+
+- model: backlog.Biome
+  pk: 98
+  fields:
+    biome_id: 97
+    biome_name: "Coalbed water"
+    lft: 190
+    rgt: 191
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Groundwater:Coalbed water"
+
+- model: backlog.Biome
+  pk: 99
+  fields:
+    biome_id: 98
+    biome_name: Contaminated
+    lft: 192
+    rgt: 193
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Groundwater:Contaminated
+
+- model: backlog.Biome
+  pk: 100
+  fields:
+    biome_id: 99
+    biome_name: Mine
+    lft: 194
+    rgt: 195
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Groundwater:Mine
+
+- model: backlog.Biome
+  pk: 101
+  fields:
+    biome_id: 100
+    biome_name: "Mine drainage"
+    lft: 196
+    rgt: 197
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Groundwater:Mine drainage"
+
+- model: backlog.Biome
+  pk: 102
+  fields:
+    biome_id: 101
+    biome_name: Ice
+    lft: 199
+    rgt: 206
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Ice
+
+- model: backlog.Biome
+  pk: 103
+  fields:
+    biome_id: 102
+    biome_name: "Glacial lake"
+    lft: 200
+    rgt: 201
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Ice:Glacial lake"
+
+- model: backlog.Biome
+  pk: 104
+  fields:
+    biome_id: 103
+    biome_name: Glacier
+    lft: 202
+    rgt: 203
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Ice:Glacier
+
+- model: backlog.Biome
+  pk: 105
+  fields:
+    biome_id: 104
+    biome_name: "Ice accretions"
+    lft: 204
+    rgt: 205
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Ice:Ice accretions"
+
+- model: backlog.Biome
+  pk: 106
+  fields:
+    biome_id: 105
+    biome_name: Lake
+    lft: 207
+    rgt: 208
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Lake
+
+- model: backlog.Biome
+  pk: 107
+  fields:
+    biome_id: 106
+    biome_name: Lentic
+    lft: 209
+    rgt: 220
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Lentic
+
+- model: backlog.Biome
+  pk: 108
+  fields:
+    biome_id: 107
+    biome_name: Epilimnion
+    lft: 210
+    rgt: 211
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Lentic:Epilimnion
+
+- model: backlog.Biome
+  pk: 109
+  fields:
+    biome_id: 108
+    biome_name: Hypolimnion
+    lft: 212
+    rgt: 213
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Lentic:Hypolimnion
+
+- model: backlog.Biome
+  pk: 110
+  fields:
+    biome_id: 109
+    biome_name: "Limnetic zone"
+    lft: 214
+    rgt: 215
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Lentic:Limnetic zone"
+
+- model: backlog.Biome
+  pk: 111
+  fields:
+    biome_id: 110
+    biome_name: "Littoral zone"
+    lft: 216
+    rgt: 217
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Lentic:Littoral zone"
+
+- model: backlog.Biome
+  pk: 112
+  fields:
+    biome_id: 111
+    biome_name: Sediment
+    lft: 218
+    rgt: 219
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Lentic:Sediment
+
+- model: backlog.Biome
+  pk: 113
+  fields:
+    biome_id: 112
+    biome_name: Lotic
+    lft: 221
+    rgt: 232
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Lotic
+
+- model: backlog.Biome
+  pk: 114
+  fields:
+    biome_id: 113
+    biome_name: Acidic
+    lft: 222
+    rgt: 223
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Lotic:Acidic
+
+- model: backlog.Biome
+  pk: 115
+  fields:
+    biome_id: 114
+    biome_name: "Low land river systems"
+    lft: 224
+    rgt: 225
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Lotic:Low land river systems"
+
+- model: backlog.Biome
+  pk: 116
+  fields:
+    biome_id: 115
+    biome_name: "Microbial mats"
+    lft: 226
+    rgt: 227
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Lotic:Microbial mats"
+
+- model: backlog.Biome
+  pk: 117
+  fields:
+    biome_id: 116
+    biome_name: "Mid stream"
+    lft: 228
+    rgt: 229
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Lotic:Mid stream"
+
+- model: backlog.Biome
+  pk: 118
+  fields:
+    biome_id: 117
+    biome_name: Sediment
+    lft: 230
+    rgt: 231
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Lotic:Sediment
+
+- model: backlog.Biome
+  pk: 119
+  fields:
+    biome_id: 118
+    biome_name: Microbialites
+    lft: 233
+    rgt: 234
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Microbialites
+
+- model: backlog.Biome
+  pk: 120
+  fields:
+    biome_id: 119
+    biome_name: Pond
+    lft: 235
+    rgt: 238
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Pond
+
+- model: backlog.Biome
+  pk: 121
+  fields:
+    biome_id: 120
+    biome_name: Sediment
+    lft: 236
+    rgt: 237
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Pond:Sediment
+
+- model: backlog.Biome
+  pk: 122
+  fields:
+    biome_id: 121
+    biome_name: Sediment
+    lft: 239
+    rgt: 240
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Sediment
+
+- model: backlog.Biome
+  pk: 123
+  fields:
+    biome_id: 122
+    biome_name: "Storm water"
+    lft: 241
+    rgt: 244
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Freshwater:Storm water"
+
+- model: backlog.Biome
+  pk: 124
+  fields:
+    biome_id: 123
+    biome_name: "Drainage pipe biofilm"
+    lft: 242
+    rgt: 243
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Freshwater:Storm water:Drainage pipe biofilm"
+
+- model: backlog.Biome
+  pk: 125
+  fields:
+    biome_id: 124
+    biome_name: "Subglacial lake"
+    lft: 245
+    rgt: 246
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Freshwater:Subglacial lake"
+
+- model: backlog.Biome
+  pk: 126
+  fields:
+    biome_id: 125
+    biome_name: Wetlands
+    lft: 247
+    rgt: 256
+    depth: 5
+    lineage: root:Environmental:Aquatic:Freshwater:Wetlands
+
+- model: backlog.Biome
+  pk: 127
+  fields:
+    biome_id: 126
+    biome_name: Bog
+    lft: 248
+    rgt: 249
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Wetlands:Bog
+
+- model: backlog.Biome
+  pk: 128
+  fields:
+    biome_id: 127
+    biome_name: Marsh
+    lft: 250
+    rgt: 251
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Wetlands:Marsh
+
+- model: backlog.Biome
+  pk: 129
+  fields:
+    biome_id: 128
+    biome_name: Sediment
+    lft: 252
+    rgt: 253
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Wetlands:Sediment
+
+- model: backlog.Biome
+  pk: 130
+  fields:
+    biome_id: 129
+    biome_name: Swamp
+    lft: 254
+    rgt: 255
+    depth: 6
+    lineage: root:Environmental:Aquatic:Freshwater:Wetlands:Swamp
+
+- model: backlog.Biome
+  pk: 131
+  fields:
+    biome_id: 130
+    biome_name: Lentic
+    lft: 258
+    rgt: 261
+    depth: 4
+    lineage: root:Environmental:Aquatic:Lentic
+
+- model: backlog.Biome
+  pk: 132
+  fields:
+    biome_id: 131
+    biome_name: Brackish
+    lft: 259
+    rgt: 260
+    depth: 5
+    lineage: root:Environmental:Aquatic:Lentic:Brackish
+
+- model: backlog.Biome
+  pk: 133
+  fields:
+    biome_id: 132
+    biome_name: Marine
+    lft: 262
+    rgt: 347
+    depth: 4
+    lineage: root:Environmental:Aquatic:Marine
+
+- model: backlog.Biome
+  pk: 134
+  fields:
+    biome_id: 133
+    biome_name: Brackish
+    lft: 263
+    rgt: 264
+    depth: 5
+    lineage: root:Environmental:Aquatic:Marine:Brackish
+
+- model: backlog.Biome
+  pk: 135
+  fields:
+    biome_id: 134
+    biome_name: Coastal
+    lft: 265
+    rgt: 268
+    depth: 5
+    lineage: root:Environmental:Aquatic:Marine:Coastal
+
+- model: backlog.Biome
+  pk: 136
+  fields:
+    biome_id: 135
+    biome_name: Sediment
+    lft: 266
+    rgt: 267
+    depth: 6
+    lineage: root:Environmental:Aquatic:Marine:Coastal:Sediment
+
+- model: backlog.Biome
+  pk: 137
+  fields:
+    biome_id: 136
+    biome_name: "Cold seeps"
+    lft: 269
+    rgt: 272
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Marine:Cold seeps"
+
+- model: backlog.Biome
+  pk: 138
+  fields:
+    biome_id: 137
+    biome_name: Sediment
+    lft: 270
+    rgt: 271
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Cold seeps:Sediment"
+
+- model: backlog.Biome
+  pk: 139
+  fields:
+    biome_id: 138
+    biome_name: Fossil
+    lft: 273
+    rgt: 276
+    depth: 5
+    lineage: root:Environmental:Aquatic:Marine:Fossil
+
+- model: backlog.Biome
+  pk: 140
+  fields:
+    biome_id: 139
+    biome_name: "Whale fall"
+    lft: 274
+    rgt: 275
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Fossil:Whale fall"
+
+- model: backlog.Biome
+  pk: 141
+  fields:
+    biome_id: 140
+    biome_name: "Hydrothermal vents"
+    lft: 277
+    rgt: 286
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Marine:Hydrothermal vents"
+
+- model: backlog.Biome
+  pk: 142
+  fields:
+    biome_id: 141
+    biome_name: "Black smokers"
+    lft: 278
+    rgt: 279
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Hydrothermal vents:Black smokers"
+
+- model: backlog.Biome
+  pk: 143
+  fields:
+    biome_id: 142
+    biome_name: "Diffuse flow"
+    lft: 280
+    rgt: 281
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Hydrothermal vents:Diffuse flow"
+
+- model: backlog.Biome
+  pk: 144
+  fields:
+    biome_id: 143
+    biome_name: "Microbial mats"
+    lft: 282
+    rgt: 283
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Hydrothermal vents:Microbial mats"
+
+- model: backlog.Biome
+  pk: 145
+  fields:
+    biome_id: 144
+    biome_name: Sediment
+    lft: 284
+    rgt: 285
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Hydrothermal vents:Sediment"
+
+- model: backlog.Biome
+  pk: 146
+  fields:
+    biome_id: 145
+    biome_name: "Intertidal zone"
+    lft: 287
+    rgt: 304
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone"
+
+- model: backlog.Biome
+  pk: 147
+  fields:
+    biome_id: 146
+    biome_name: Beach
+    lft: 288
+    rgt: 289
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone:Beach"
+
+- model: backlog.Biome
+  pk: 148
+  fields:
+    biome_id: 147
+    biome_name: "Coral reef"
+    lft: 290
+    rgt: 291
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone:Coral reef"
+
+- model: backlog.Biome
+  pk: 149
+  fields:
+    biome_id: 148
+    biome_name: Estuary
+    lft: 292
+    rgt: 293
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone:Estuary"
+
+- model: backlog.Biome
+  pk: 150
+  fields:
+    biome_id: 149
+    biome_name: "Mangrove swamp"
+    lft: 294
+    rgt: 295
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone:Mangrove swamp"
+
+- model: backlog.Biome
+  pk: 151
+  fields:
+    biome_id: 150
+    biome_name: Microbialites
+    lft: 296
+    rgt: 297
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone:Microbialites"
+
+- model: backlog.Biome
+  pk: 152
+  fields:
+    biome_id: 151
+    biome_name: Oil-contaminated
+    lft: 298
+    rgt: 299
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone:Oil-contaminated"
+
+- model: backlog.Biome
+  pk: 153
+  fields:
+    biome_id: 152
+    biome_name: "Salt marsh"
+    lft: 300
+    rgt: 301
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone:Salt marsh"
+
+- model: backlog.Biome
+  pk: 154
+  fields:
+    biome_id: 153
+    biome_name: Sediment
+    lft: 302
+    rgt: 303
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Intertidal zone:Sediment"
+
+- model: backlog.Biome
+  pk: 155
+  fields:
+    biome_id: 154
+    biome_name: "Marginal Sea"
+    lft: 305
+    rgt: 306
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Marine:Marginal Sea"
+
+- model: backlog.Biome
+  pk: 156
+  fields:
+    biome_id: 155
+    biome_name: "Neritic zone"
+    lft: 307
+    rgt: 312
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Marine:Neritic zone"
+
+- model: backlog.Biome
+  pk: 157
+  fields:
+    biome_id: 156
+    biome_name: "Oil-contaminated sediment"
+    lft: 308
+    rgt: 309
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Neritic zone:Oil-contaminated sediment"
+
+- model: backlog.Biome
+  pk: 158
+  fields:
+    biome_id: 157
+    biome_name: Sediment
+    lft: 310
+    rgt: 311
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Neritic zone:Sediment"
+
+- model: backlog.Biome
+  pk: 159
+  fields:
+    biome_id: 158
+    biome_name: Oceanic
+    lft: 313
+    rgt: 328
+    depth: 5
+    lineage: root:Environmental:Aquatic:Marine:Oceanic
+
+- model: backlog.Biome
+  pk: 160
+  fields:
+    biome_id: 159
+    biome_name: "Abyssal plane"
+    lft: 314
+    rgt: 315
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Oceanic:Abyssal plane"
+
+- model: backlog.Biome
+  pk: 161
+  fields:
+    biome_id: 160
+    biome_name: "Aphotic zone"
+    lft: 316
+    rgt: 317
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Oceanic:Aphotic zone"
+
+- model: backlog.Biome
+  pk: 162
+  fields:
+    biome_id: 161
+    biome_name: Benthic
+    lft: 318
+    rgt: 319
+    depth: 6
+    lineage: root:Environmental:Aquatic:Marine:Oceanic:Benthic
+
+- model: backlog.Biome
+  pk: 163
+  fields:
+    biome_id: 162
+    biome_name: Oil-contaminated
+    lft: 320
+    rgt: 321
+    depth: 6
+    lineage: root:Environmental:Aquatic:Marine:Oceanic:Oil-contaminated
+
+- model: backlog.Biome
+  pk: 164
+  fields:
+    biome_id: 163
+    biome_name: "Oil-contaminated sediments"
+    lft: 322
+    rgt: 323
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Oceanic:Oil-contaminated sediments"
+
+- model: backlog.Biome
+  pk: 165
+  fields:
+    biome_id: 164
+    biome_name: "Photic zone"
+    lft: 324
+    rgt: 325
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Oceanic:Photic zone"
+
+- model: backlog.Biome
+  pk: 166
+  fields:
+    biome_id: 165
+    biome_name: Sediment
+    lft: 326
+    rgt: 327
+    depth: 6
+    lineage: root:Environmental:Aquatic:Marine:Oceanic:Sediment
+
+- model: backlog.Biome
+  pk: 167
+  fields:
+    biome_id: 166
+    biome_name: "Oil field"
+    lft: 329
+    rgt: 332
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Marine:Oil field"
+
+- model: backlog.Biome
+  pk: 168
+  fields:
+    biome_id: 167
+    biome_name: "bore hole"
+    lft: 330
+    rgt: 331
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Marine:Oil field:bore hole"
+
+- model: backlog.Biome
+  pk: 169
+  fields:
+    biome_id: 168
+    biome_name: "Oil seeps"
+    lft: 333
+    rgt: 334
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Marine:Oil seeps"
+
+- model: backlog.Biome
+  pk: 170
+  fields:
+    biome_id: 169
+    biome_name: Pelagic
+    lft: 335
+    rgt: 336
+    depth: 5
+    lineage: root:Environmental:Aquatic:Marine:Pelagic
+
+- model: backlog.Biome
+  pk: 171
+  fields:
+    biome_id: 170
+    biome_name: "Oil-contaminated sediment"
+    lft: 337
+    rgt: 338
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Marine:Oil-contaminated sediment"
+
+- model: backlog.Biome
+  pk: 172
+  fields:
+    biome_id: 171
+    biome_name: Sediment
+    lft: 339
+    rgt: 340
+    depth: 5
+    lineage: root:Environmental:Aquatic:Marine:Sediment
+
+- model: backlog.Biome
+  pk: 173
+  fields:
+    biome_id: 172
+    biome_name: Volcanic
+    lft: 341
+    rgt: 342
+    depth: 5
+    lineage: root:Environmental:Aquatic:Marine:Volcanic
+
+- model: backlog.Biome
+  pk: 174
+  fields:
+    biome_id: 173
+    biome_name: Wetlands
+    lft: 343
+    rgt: 346
+    depth: 5
+    lineage: root:Environmental:Aquatic:Marine:Wetlands
+
+- model: backlog.Biome
+  pk: 175
+  fields:
+    biome_id: 174
+    biome_name: Sediment
+    lft: 344
+    rgt: 345
+    depth: 6
+    lineage: root:Environmental:Aquatic:Marine:Wetlands:Sediment
+
+- model: backlog.Biome
+  pk: 176
+  fields:
+    biome_id: 175
+    biome_name: "Meromictic lake"
+    lft: 348
+    rgt: 349
+    depth: 4
+    lineage: "root:Environmental:Aquatic:Meromictic lake"
+
+- model: backlog.Biome
+  pk: 177
+  fields:
+    biome_id: 176
+    biome_name: "Non-marine Saline and Alkaline"
+    lft: 350
+    rgt: 387
+    depth: 4
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline"
+
+- model: backlog.Biome
+  pk: 178
+  fields:
+    biome_id: 177
+    biome_name: Alkaline
+    lft: 351
+    rgt: 358
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Alkaline"
+
+- model: backlog.Biome
+  pk: 179
+  fields:
+    biome_id: 178
+    biome_name: Carbonate
+    lft: 352
+    rgt: 353
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Alkaline:Carbonate"
+
+- model: backlog.Biome
+  pk: 180
+  fields:
+    biome_id: 179
+    biome_name: "Microbial mats"
+    lft: 354
+    rgt: 355
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Alkaline:Microbial mats"
+
+- model: backlog.Biome
+  pk: 181
+  fields:
+    biome_id: 180
+    biome_name: Sediment
+    lft: 356
+    rgt: 357
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Alkaline:Sediment"
+
+- model: backlog.Biome
+  pk: 182
+  fields:
+    biome_id: 181
+    biome_name: Hypersaline
+    lft: 359
+    rgt: 364
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Hypersaline"
+
+- model: backlog.Biome
+  pk: 183
+  fields:
+    biome_id: 182
+    biome_name: "Microbial mats"
+    lft: 360
+    rgt: 361
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Hypersaline:Microbial mats"
+
+- model: backlog.Biome
+  pk: 184
+  fields:
+    biome_id: 183
+    biome_name: Sediment
+    lft: 362
+    rgt: 363
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Hypersaline:Sediment"
+
+- model: backlog.Biome
+  pk: 185
+  fields:
+    biome_id: 184
+    biome_name: "Near-boiling (>90C)"
+    lft: 365
+    rgt: 368
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Near-boiling (>90C)"
+
+- model: backlog.Biome
+  pk: 186
+  fields:
+    biome_id: 185
+    biome_name: Alkaline
+    lft: 366
+    rgt: 367
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Near-boiling (>90C):Alkaline"
+
+- model: backlog.Biome
+  pk: 187
+  fields:
+    biome_id: 186
+    biome_name: Saline
+    lft: 369
+    rgt: 382
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Saline"
+
+- model: backlog.Biome
+  pk: 188
+  fields:
+    biome_id: 187
+    biome_name: Athalassic
+    lft: 370
+    rgt: 371
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Saline:Athalassic"
+
+- model: backlog.Biome
+  pk: 189
+  fields:
+    biome_id: 188
+    biome_name: Epilimnion
+    lft: 372
+    rgt: 373
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Saline:Epilimnion"
+
+- model: backlog.Biome
+  pk: 190
+  fields:
+    biome_id: 189
+    biome_name: Hypolimnion
+    lft: 374
+    rgt: 375
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Saline:Hypolimnion"
+
+- model: backlog.Biome
+  pk: 191
+  fields:
+    biome_id: 190
+    biome_name: "Microbial mats"
+    lft: 376
+    rgt: 377
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Saline:Microbial mats"
+
+- model: backlog.Biome
+  pk: 192
+  fields:
+    biome_id: 191
+    biome_name: Sediment
+    lft: 378
+    rgt: 379
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Saline:Sediment"
+
+- model: backlog.Biome
+  pk: 193
+  fields:
+    biome_id: 192
+    biome_name: Thalassic
+    lft: 380
+    rgt: 381
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Saline:Thalassic"
+
+- model: backlog.Biome
+  pk: 194
+  fields:
+    biome_id: 193
+    biome_name: "Salt crystallizer pond"
+    lft: 383
+    rgt: 386
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Salt crystallizer pond"
+
+- model: backlog.Biome
+  pk: 195
+  fields:
+    biome_id: 194
+    biome_name: "Microbial mats"
+    lft: 384
+    rgt: 385
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Non-marine Saline and Alkaline:Salt crystallizer pond:Microbial mats"
+
+- model: backlog.Biome
+  pk: 196
+  fields:
+    biome_id: 195
+    biome_name: Sediment
+    lft: 388
+    rgt: 389
+    depth: 4
+    lineage: root:Environmental:Aquatic:Sediment
+
+- model: backlog.Biome
+  pk: 197
+  fields:
+    biome_id: 196
+    biome_name: "Thermal springs"
+    lft: 390
+    rgt: 417
+    depth: 4
+    lineage: "root:Environmental:Aquatic:Thermal springs"
+
+- model: backlog.Biome
+  pk: 198
+  fields:
+    biome_id: 197
+    biome_name: "Hot (42-90C)"
+    lft: 391
+    rgt: 400
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Thermal springs:Hot (42-90C)"
+
+- model: backlog.Biome
+  pk: 199
+  fields:
+    biome_id: 198
+    biome_name: Acidic
+    lft: 392
+    rgt: 393
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Thermal springs:Hot (42-90C):Acidic"
+
+- model: backlog.Biome
+  pk: 200
+  fields:
+    biome_id: 199
+    biome_name: Alkaline
+    lft: 394
+    rgt: 395
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Thermal springs:Hot (42-90C):Alkaline"
+
+- model: backlog.Biome
+  pk: 201
+  fields:
+    biome_id: 200
+    biome_name: Neutral
+    lft: 396
+    rgt: 397
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Thermal springs:Hot (42-90C):Neutral"
+
+- model: backlog.Biome
+  pk: 202
+  fields:
+    biome_id: 201
+    biome_name: Sediment
+    lft: 398
+    rgt: 399
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Thermal springs:Hot (42-90C):Sediment"
+
+- model: backlog.Biome
+  pk: 203
+  fields:
+    biome_id: 202
+    biome_name: "Near-boiling (>90C)"
+    lft: 401
+    rgt: 404
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Thermal springs:Near-boiling (>90C)"
+
+- model: backlog.Biome
+  pk: 204
+  fields:
+    biome_id: 203
+    biome_name: Alkaline
+    lft: 402
+    rgt: 403
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Thermal springs:Near-boiling (>90C):Alkaline"
+
+- model: backlog.Biome
+  pk: 205
+  fields:
+    biome_id: 204
+    biome_name: Sediment
+    lft: 405
+    rgt: 406
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Thermal springs:Sediment"
+
+- model: backlog.Biome
+  pk: 206
+  fields:
+    biome_id: 205
+    biome_name: "Tepid (25-34C)"
+    lft: 407
+    rgt: 410
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Thermal springs:Tepid (25-34C)"
+
+- model: backlog.Biome
+  pk: 207
+  fields:
+    biome_id: 206
+    biome_name: Sediment
+    lft: 408
+    rgt: 409
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Thermal springs:Tepid (25-34C):Sediment"
+
+- model: backlog.Biome
+  pk: 208
+  fields:
+    biome_id: 207
+    biome_name: "Warm (34-42C)"
+    lft: 411
+    rgt: 416
+    depth: 5
+    lineage: "root:Environmental:Aquatic:Thermal springs:Warm (34-42C)"
+
+- model: backlog.Biome
+  pk: 209
+  fields:
+    biome_id: 208
+    biome_name: Neutral
+    lft: 412
+    rgt: 413
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Thermal springs:Warm (34-42C):Neutral"
+
+- model: backlog.Biome
+  pk: 210
+  fields:
+    biome_id: 209
+    biome_name: Sediment
+    lft: 414
+    rgt: 415
+    depth: 6
+    lineage: "root:Environmental:Aquatic:Thermal springs:Warm (34-42C):Sediment"
+
+- model: backlog.Biome
+  pk: 211
+  fields:
+    biome_id: 210
+    biome_name: Terrestrial
+    lft: 419
+    rgt: 512
+    depth: 3
+    lineage: root:Environmental:Terrestrial
+
+- model: backlog.Biome
+  pk: 212
+  fields:
+    biome_id: 211
+    biome_name: "Agricultural field"
+    lft: 420
+    rgt: 421
+    depth: 4
+    lineage: "root:Environmental:Terrestrial:Agricultural field"
+
+- model: backlog.Biome
+  pk: 213
+  fields:
+    biome_id: 212
+    biome_name: "Asphalt lakes"
+    lft: 422
+    rgt: 425
+    depth: 4
+    lineage: "root:Environmental:Terrestrial:Asphalt lakes"
+
+- model: backlog.Biome
+  pk: 214
+  fields:
+    biome_id: 213
+    biome_name: Tar
+    lft: 423
+    rgt: 424
+    depth: 5
+    lineage: "root:Environmental:Terrestrial:Asphalt lakes:Tar"
+
+- model: backlog.Biome
+  pk: 215
+  fields:
+    biome_id: 214
+    biome_name: "Deep subsurface"
+    lft: 426
+    rgt: 429
+    depth: 4
+    lineage: "root:Environmental:Terrestrial:Deep subsurface"
+
+- model: backlog.Biome
+  pk: 216
+  fields:
+    biome_id: 215
+    biome_name: Clay
+    lft: 427
+    rgt: 428
+    depth: 5
+    lineage: "root:Environmental:Terrestrial:Deep subsurface:Clay"
+
+- model: backlog.Biome
+  pk: 217
+  fields:
+    biome_id: 216
+    biome_name: Geologic
+    lft: 430
+    rgt: 433
+    depth: 4
+    lineage: root:Environmental:Terrestrial:Geologic
+
+- model: backlog.Biome
+  pk: 218
+  fields:
+    biome_id: 217
+    biome_name: Mine
+    lft: 431
+    rgt: 432
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Geologic:Mine
+
+- model: backlog.Biome
+  pk: 219
+  fields:
+    biome_id: 218
+    biome_name: "Oil reservoir"
+    lft: 434
+    rgt: 435
+    depth: 4
+    lineage: "root:Environmental:Terrestrial:Oil reservoir"
+
+- model: backlog.Biome
+  pk: 220
+  fields:
+    biome_id: 219
+    biome_name: "Rock-dwelling (subaerial biofilm)"
+    lft: 436
+    rgt: 437
+    depth: 4
+    lineage: "root:Environmental:Terrestrial:Rock-dwelling (subaerial biofilm)"
+
+- model: backlog.Biome
+  pk: 221
+  fields:
+    biome_id: 220
+    biome_name: Soil
+    lft: 438
+    rgt: 507
+    depth: 4
+    lineage: root:Environmental:Terrestrial:Soil
+
+- model: backlog.Biome
+  pk: 222
+  fields:
+    biome_id: 221
+    biome_name: Clay
+    lft: 439
+    rgt: 448
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Clay
+
+- model: backlog.Biome
+  pk: 223
+  fields:
+    biome_id: 222
+    biome_name: "Agricultural land"
+    lft: 440
+    rgt: 441
+    depth: 6
+    lineage: "root:Environmental:Terrestrial:Soil:Clay:Agricultural land"
+
+- model: backlog.Biome
+  pk: 224
+  fields:
+    biome_id: 223
+    biome_name: Contaminated
+    lft: 442
+    rgt: 443
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Clay:Contaminated
+
+- model: backlog.Biome
+  pk: 225
+  fields:
+    biome_id: 224
+    biome_name: Grasslands
+    lft: 444
+    rgt: 445
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Clay:Grasslands
+
+- model: backlog.Biome
+  pk: 226
+  fields:
+    biome_id: 225
+    biome_name: Oil-contaminated
+    lft: 446
+    rgt: 447
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Clay:Oil-contaminated
+
+- model: backlog.Biome
+  pk: 227
+  fields:
+    biome_id: 226
+    biome_name: Crop
+    lft: 449
+    rgt: 452
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Crop
+
+- model: backlog.Biome
+  pk: 228
+  fields:
+    biome_id: 227
+    biome_name: "Agricultural land"
+    lft: 450
+    rgt: 451
+    depth: 6
+    lineage: "root:Environmental:Terrestrial:Soil:Crop:Agricultural land"
+
+- model: backlog.Biome
+  pk: 229
+  fields:
+    biome_id: 228
+    biome_name: Loam
+    lft: 453
+    rgt: 462
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Loam
+
+- model: backlog.Biome
+  pk: 230
+  fields:
+    biome_id: 229
+    biome_name: Agricultural
+    lft: 454
+    rgt: 455
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Loam:Agricultural
+
+- model: backlog.Biome
+  pk: 231
+  fields:
+    biome_id: 230
+    biome_name: Contaminated
+    lft: 456
+    rgt: 457
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Loam:Contaminated
+
+- model: backlog.Biome
+  pk: 232
+  fields:
+    biome_id: 231
+    biome_name: "Forest soil"
+    lft: 458
+    rgt: 459
+    depth: 6
+    lineage: "root:Environmental:Terrestrial:Soil:Loam:Forest soil"
+
+- model: backlog.Biome
+  pk: 233
+  fields:
+    biome_id: 232
+    biome_name: Grasslands
+    lft: 460
+    rgt: 461
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Loam:Grasslands
+
+- model: backlog.Biome
+  pk: 234
+  fields:
+    biome_id: 233
+    biome_name: Sand
+    lft: 463
+    rgt: 472
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Sand
+
+- model: backlog.Biome
+  pk: 235
+  fields:
+    biome_id: 234
+    biome_name: Desert
+    lft: 464
+    rgt: 465
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Sand:Desert
+
+- model: backlog.Biome
+  pk: 236
+  fields:
+    biome_id: 235
+    biome_name: "Forest soil"
+    lft: 466
+    rgt: 467
+    depth: 6
+    lineage: "root:Environmental:Terrestrial:Soil:Sand:Forest soil"
+
+- model: backlog.Biome
+  pk: 237
+  fields:
+    biome_id: 236
+    biome_name: Grasslands
+    lft: 468
+    rgt: 469
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Sand:Grasslands
+
+- model: backlog.Biome
+  pk: 238
+  fields:
+    biome_id: 237
+    biome_name: Oil-contaminated
+    lft: 470
+    rgt: 471
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Sand:Oil-contaminated
+
+- model: backlog.Biome
+  pk: 239
+  fields:
+    biome_id: 238
+    biome_name: Silt
+    lft: 473
+    rgt: 474
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Silt
+
+- model: backlog.Biome
+  pk: 240
+  fields:
+    biome_id: 239
+    biome_name: Agricultural
+    lft: 475
+    rgt: 476
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Agricultural
+
+- model: backlog.Biome
+  pk: 241
+  fields:
+    biome_id: 240
+    biome_name: "Boreal forest"
+    lft: 477
+    rgt: 478
+    depth: 5
+    lineage: "root:Environmental:Terrestrial:Soil:Boreal forest"
+
+- model: backlog.Biome
+  pk: 242
+  fields:
+    biome_id: 241
+    biome_name: Contaminated
+    lft: 479
+    rgt: 480
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Contaminated
+
+- model: backlog.Biome
+  pk: 243
+  fields:
+    biome_id: 242
+    biome_name: Desert
+    lft: 481
+    rgt: 482
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Desert
+
+- model: backlog.Biome
+  pk: 244
+  fields:
+    biome_id: 243
+    biome_name: "Forest soil"
+    lft: 483
+    rgt: 484
+    depth: 5
+    lineage: "root:Environmental:Terrestrial:Soil:Forest soil"
+
+- model: backlog.Biome
+  pk: 245
+  fields:
+    biome_id: 244
+    biome_name: Grasslands
+    lft: 485
+    rgt: 486
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Grasslands
+
+- model: backlog.Biome
+  pk: 246
+  fields:
+    biome_id: 245
+    biome_name: Mine
+    lft: 487
+    rgt: 488
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Mine
+
+- model: backlog.Biome
+  pk: 247
+  fields:
+    biome_id: 246
+    biome_name: "Mine drainage"
+    lft: 489
+    rgt: 490
+    depth: 5
+    lineage: "root:Environmental:Terrestrial:Soil:Mine drainage"
+
+- model: backlog.Biome
+  pk: 248
+  fields:
+    biome_id: 247
+    biome_name: Oil-contaminated
+    lft: 491
+    rgt: 492
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Oil-contaminated
+
+- model: backlog.Biome
+  pk: 249
+  fields:
+    biome_id: 248
+    biome_name: Permafrost
+    lft: 493
+    rgt: 494
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Permafrost
+
+- model: backlog.Biome
+  pk: 250
+  fields:
+    biome_id: 249
+    biome_name: Shrubland
+    lft: 495
+    rgt: 496
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Shrubland
+
+- model: backlog.Biome
+  pk: 251
+  fields:
+    biome_id: 250
+    biome_name: "Tropical rainforest"
+    lft: 497
+    rgt: 498
+    depth: 5
+    lineage: "root:Environmental:Terrestrial:Soil:Tropical rainforest"
+
+- model: backlog.Biome
+  pk: 252
+  fields:
+    biome_id: 251
+    biome_name: "Uranium contaminated"
+    lft: 499
+    rgt: 500
+    depth: 5
+    lineage: "root:Environmental:Terrestrial:Soil:Uranium contaminated"
+
+- model: backlog.Biome
+  pk: 253
+  fields:
+    biome_id: 252
+    biome_name: Viriome
+    lft: 501
+    rgt: 502
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Viriome
+
+- model: backlog.Biome
+  pk: 254
+  fields:
+    biome_id: 253
+    biome_name: Wetlands
+    lft: 503
+    rgt: 506
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Soil:Wetlands
+
+- model: backlog.Biome
+  pk: 255
+  fields:
+    biome_id: 254
+    biome_name: Permafrost
+    lft: 504
+    rgt: 505
+    depth: 6
+    lineage: root:Environmental:Terrestrial:Soil:Wetlands:Permafrost
+
+- model: backlog.Biome
+  pk: 256
+  fields:
+    biome_id: 255
+    biome_name: Volcanic
+    lft: 508
+    rgt: 511
+    depth: 4
+    lineage: root:Environmental:Terrestrial:Volcanic
+
+- model: backlog.Biome
+  pk: 257
+  fields:
+    biome_id: 256
+    biome_name: Fumaroles
+    lft: 509
+    rgt: 510
+    depth: 5
+    lineage: root:Environmental:Terrestrial:Volcanic:Fumaroles
+
+- model: backlog.Biome
+  pk: 258
+  fields:
+    biome_id: 257
+    biome_name: Host-associated
+    lft: 514
+    rgt: 981
+    depth: 2
+    lineage: root:Host-associated
+
+- model: backlog.Biome
+  pk: 259
+  fields:
+    biome_id: 258
+    biome_name: Algae
+    lft: 515
+    rgt: 526
+    depth: 3
+    lineage: root:Host-associated:Algae
+
+- model: backlog.Biome
+  pk: 260
+  fields:
+    biome_id: 259
+    biome_name: "Brown Algae"
+    lft: 516
+    rgt: 517
+    depth: 4
+    lineage: "root:Host-associated:Algae:Brown Algae"
+
+- model: backlog.Biome
+  pk: 261
+  fields:
+    biome_id: 260
+    biome_name: "Green algae"
+    lft: 518
+    rgt: 521
+    depth: 4
+    lineage: "root:Host-associated:Algae:Green algae"
+
+- model: backlog.Biome
+  pk: 262
+  fields:
+    biome_id: 261
+    biome_name: Ectosymbionts
+    lft: 519
+    rgt: 520
+    depth: 5
+    lineage: "root:Host-associated:Algae:Green algae:Ectosymbionts"
+
+- model: backlog.Biome
+  pk: 263
+  fields:
+    biome_id: 262
+    biome_name: "Red algae"
+    lft: 522
+    rgt: 525
+    depth: 4
+    lineage: "root:Host-associated:Algae:Red algae"
+
+- model: backlog.Biome
+  pk: 264
+  fields:
+    biome_id: 263
+    biome_name: "Ectosymbionts "
+    lft: 523
+    rgt: 524
+    depth: 5
+    lineage: "root:Host-associated:Algae:Red algae:Ectosymbionts "
+
+- model: backlog.Biome
+  pk: 265
+  fields:
+    biome_id: 264
+    biome_name: Amphibia
+    lft: 527
+    rgt: 532
+    depth: 3
+    lineage: root:Host-associated:Amphibia
+
+- model: backlog.Biome
+  pk: 266
+  fields:
+    biome_id: 265
+    biome_name: "Digestive system"
+    lft: 528
+    rgt: 529
+    depth: 4
+    lineage: "root:Host-associated:Amphibia:Digestive system"
+
+- model: backlog.Biome
+  pk: 267
+  fields:
+    biome_id: 266
+    biome_name: "Excretory system"
+    lft: 530
+    rgt: 531
+    depth: 4
+    lineage: "root:Host-associated:Amphibia:Excretory system"
+
+- model: backlog.Biome
+  pk: 268
+  fields:
+    biome_id: 267
+    biome_name: Animal
+    lft: 533
+    rgt: 552
+    depth: 3
+    lineage: root:Host-associated:Animal
+
+- model: backlog.Biome
+  pk: 269
+  fields:
+    biome_id: 268
+    biome_name: "Circulatory system"
+    lft: 534
+    rgt: 535
+    depth: 4
+    lineage: "root:Host-associated:Animal:Circulatory system"
+
+- model: backlog.Biome
+  pk: 270
+  fields:
+    biome_id: 269
+    biome_name: "Digestive system"
+    lft: 536
+    rgt: 539
+    depth: 4
+    lineage: "root:Host-associated:Animal:Digestive system"
+
+- model: backlog.Biome
+  pk: 271
+  fields:
+    biome_id: 270
+    biome_name: Fecal
+    lft: 537
+    rgt: 538
+    depth: 5
+    lineage: "root:Host-associated:Animal:Digestive system:Fecal"
+
+- model: backlog.Biome
+  pk: 272
+  fields:
+    biome_id: 271
+    biome_name: Fossil
+    lft: 540
+    rgt: 545
+    depth: 4
+    lineage: root:Host-associated:Animal:Fossil
+
+- model: backlog.Biome
+  pk: 273
+  fields:
+    biome_id: 272
+    biome_name: Bone
+    lft: 541
+    rgt: 542
+    depth: 5
+    lineage: root:Host-associated:Animal:Fossil:Bone
+
+- model: backlog.Biome
+  pk: 274
+  fields:
+    biome_id: 273
+    biome_name: Feces
+    lft: 543
+    rgt: 544
+    depth: 5
+    lineage: root:Host-associated:Animal:Fossil:Feces
+
+- model: backlog.Biome
+  pk: 275
+  fields:
+    biome_id: 274
+    biome_name: "Reproductive system"
+    lft: 546
+    rgt: 547
+    depth: 4
+    lineage: "root:Host-associated:Animal:Reproductive system"
+
+- model: backlog.Biome
+  pk: 276
+  fields:
+    biome_id: 275
+    biome_name: "Respiratory system"
+    lft: 548
+    rgt: 549
+    depth: 4
+    lineage: "root:Host-associated:Animal:Respiratory system"
+
+- model: backlog.Biome
+  pk: 277
+  fields:
+    biome_id: 276
+    biome_name: Skin
+    lft: 550
+    rgt: 551
+    depth: 4
+    lineage: root:Host-associated:Animal:Skin
+
+- model: backlog.Biome
+  pk: 278
+  fields:
+    biome_id: 277
+    biome_name: Annelida
+    lft: 553
+    rgt: 580
+    depth: 3
+    lineage: root:Host-associated:Annelida
+
+- model: backlog.Biome
+  pk: 279
+  fields:
+    biome_id: 278
+    biome_name: "Digestive system"
+    lft: 554
+    rgt: 559
+    depth: 4
+    lineage: "root:Host-associated:Annelida:Digestive system"
+
+- model: backlog.Biome
+  pk: 280
+  fields:
+    biome_id: 279
+    biome_name: "Digestive tube"
+    lft: 555
+    rgt: 558
+    depth: 5
+    lineage: "root:Host-associated:Annelida:Digestive system:Digestive tube"
+
+- model: backlog.Biome
+  pk: 281
+  fields:
+    biome_id: 280
+    biome_name: "Extracellular symbionts"
+    lft: 556
+    rgt: 557
+    depth: 6
+    lineage: "root:Host-associated:Annelida:Digestive system:Digestive tube:Extracellular symbionts"
+
+- model: backlog.Biome
+  pk: 282
+  fields:
+    biome_id: 281
+    biome_name: Integument
+    lft: 560
+    rgt: 569
+    depth: 4
+    lineage: root:Host-associated:Annelida:Integument
+
+- model: backlog.Biome
+  pk: 283
+  fields:
+    biome_id: 282
+    biome_name: Cuticle
+    lft: 561
+    rgt: 564
+    depth: 5
+    lineage: root:Host-associated:Annelida:Integument:Cuticle
+
+- model: backlog.Biome
+  pk: 284
+  fields:
+    biome_id: 283
+    biome_name: Epibionts
+    lft: 562
+    rgt: 563
+    depth: 6
+    lineage: root:Host-associated:Annelida:Integument:Cuticle:Epibionts
+
+- model: backlog.Biome
+  pk: 285
+  fields:
+    biome_id: 284
+    biome_name: "Subcuticular space"
+    lft: 565
+    rgt: 568
+    depth: 5
+    lineage: "root:Host-associated:Annelida:Integument:Subcuticular space"
+
+- model: backlog.Biome
+  pk: 286
+  fields:
+    biome_id: 285
+    biome_name: "Extracellular symbionts"
+    lft: 566
+    rgt: 567
+    depth: 6
+    lineage: "root:Host-associated:Annelida:Integument:Subcuticular space:Extracellular symbionts"
+
+- model: backlog.Biome
+  pk: 287
+  fields:
+    biome_id: 286
+    biome_name: "Intracellular endosymbionts"
+    lft: 570
+    rgt: 573
+    depth: 4
+    lineage: "root:Host-associated:Annelida:Intracellular endosymbionts"
+
+- model: backlog.Biome
+  pk: 288
+  fields:
+    biome_id: 287
+    biome_name: Trophosome
+    lft: 571
+    rgt: 572
+    depth: 5
+    lineage: "root:Host-associated:Annelida:Intracellular endosymbionts:Trophosome"
+
+- model: backlog.Biome
+  pk: 289
+  fields:
+    biome_id: 288
+    biome_name: "Reproductive system"
+    lft: 574
+    rgt: 579
+    depth: 4
+    lineage: "root:Host-associated:Annelida:Reproductive system"
+
+- model: backlog.Biome
+  pk: 290
+  fields:
+    biome_id: 289
+    biome_name: "Egg capsule"
+    lft: 575
+    rgt: 578
+    depth: 5
+    lineage: "root:Host-associated:Annelida:Reproductive system:Egg capsule"
+
+- model: backlog.Biome
+  pk: 291
+  fields:
+    biome_id: 290
+    biome_name: Extracellular
+    lft: 576
+    rgt: 577
+    depth: 6
+    lineage: "root:Host-associated:Annelida:Reproductive system:Egg capsule:Extracellular"
+
+- model: backlog.Biome
+  pk: 292
+  fields:
+    biome_id: 291
+    biome_name: Arthropoda
+    lft: 581
+    rgt: 636
+    depth: 3
+    lineage: root:Host-associated:Arthropoda
+
+- model: backlog.Biome
+  pk: 293
+  fields:
+    biome_id: 292
+    biome_name: "Digestive system"
+    lft: 582
+    rgt: 603
+    depth: 4
+    lineage: "root:Host-associated:Arthropoda:Digestive system"
+
+- model: backlog.Biome
+  pk: 294
+  fields:
+    biome_id: 293
+    biome_name: Foregut
+    lft: 583
+    rgt: 584
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Foregut"
+
+- model: backlog.Biome
+  pk: 295
+  fields:
+    biome_id: 294
+    biome_name: Gut
+    lft: 585
+    rgt: 590
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Gut"
+
+- model: backlog.Biome
+  pk: 296
+  fields:
+    biome_id: 295
+    biome_name: "P3 segment"
+    lft: 586
+    rgt: 587
+    depth: 6
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Gut:P3 segment"
+
+- model: backlog.Biome
+  pk: 297
+  fields:
+    biome_id: 296
+    biome_name: "Proctodeal segment"
+    lft: 588
+    rgt: 589
+    depth: 6
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Gut:Proctodeal segment"
+
+- model: backlog.Biome
+  pk: 298
+  fields:
+    biome_id: 297
+    biome_name: Hindgut
+    lft: 591
+    rgt: 596
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Hindgut"
+
+- model: backlog.Biome
+  pk: 299
+  fields:
+    biome_id: 298
+    biome_name: "P1 segment"
+    lft: 592
+    rgt: 593
+    depth: 6
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Hindgut:P1 segment"
+
+- model: backlog.Biome
+  pk: 300
+  fields:
+    biome_id: 299
+    biome_name: "P3 segment"
+    lft: 594
+    rgt: 595
+    depth: 6
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Hindgut:P3 segment"
+
+- model: backlog.Biome
+  pk: 301
+  fields:
+    biome_id: 300
+    biome_name: Midgut
+    lft: 597
+    rgt: 598
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Midgut"
+
+- model: backlog.Biome
+  pk: 302
+  fields:
+    biome_id: 301
+    biome_name: Oral
+    lft: 599
+    rgt: 602
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Oral"
+
+- model: backlog.Biome
+  pk: 303
+  fields:
+    biome_id: 302
+    biome_name: Saliva
+    lft: 600
+    rgt: 601
+    depth: 6
+    lineage: "root:Host-associated:Arthropoda:Digestive system:Oral:Saliva"
+
+- model: backlog.Biome
+  pk: 304
+  fields:
+    biome_id: 303
+    biome_name: Integument
+    lft: 604
+    rgt: 609
+    depth: 4
+    lineage: root:Host-associated:Arthropoda:Integument
+
+- model: backlog.Biome
+  pk: 305
+  fields:
+    biome_id: 304
+    biome_name: Cuticle
+    lft: 605
+    rgt: 608
+    depth: 5
+    lineage: root:Host-associated:Arthropoda:Integument:Cuticle
+
+- model: backlog.Biome
+  pk: 306
+  fields:
+    biome_id: 305
+    biome_name: "Thoracic segments"
+    lft: 606
+    rgt: 607
+    depth: 6
+    lineage: "root:Host-associated:Arthropoda:Integument:Cuticle:Thoracic segments"
+
+- model: backlog.Biome
+  pk: 307
+  fields:
+    biome_id: 306
+    biome_name: "Intracellular endosymbionts"
+    lft: 610
+    rgt: 617
+    depth: 4
+    lineage: "root:Host-associated:Arthropoda:Intracellular endosymbionts"
+
+- model: backlog.Biome
+  pk: 308
+  fields:
+    biome_id: 307
+    biome_name: Primary
+    lft: 611
+    rgt: 614
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Intracellular endosymbionts:Primary"
+
+- model: backlog.Biome
+  pk: 309
+  fields:
+    biome_id: 308
+    biome_name: Bacteriomes
+    lft: 612
+    rgt: 613
+    depth: 6
+    lineage: "root:Host-associated:Arthropoda:Intracellular endosymbionts:Primary:Bacteriomes"
+
+- model: backlog.Biome
+  pk: 310
+  fields:
+    biome_id: 309
+    biome_name: Secondary
+    lft: 615
+    rgt: 616
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Intracellular endosymbionts:Secondary"
+
+- model: backlog.Biome
+  pk: 311
+  fields:
+    biome_id: 310
+    biome_name: "Oral cavity"
+    lft: 618
+    rgt: 619
+    depth: 4
+    lineage: "root:Host-associated:Arthropoda:Oral cavity"
+
+- model: backlog.Biome
+  pk: 312
+  fields:
+    biome_id: 311
+    biome_name: "Respiratory system"
+    lft: 620
+    rgt: 623
+    depth: 4
+    lineage: "root:Host-associated:Arthropoda:Respiratory system"
+
+- model: backlog.Biome
+  pk: 313
+  fields:
+    biome_id: 312
+    biome_name: Gills
+    lft: 621
+    rgt: 622
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Respiratory system:Gills"
+
+- model: backlog.Biome
+  pk: 314
+  fields:
+    biome_id: 313
+    biome_name: "Symbiotic fungal gardens and galleries"
+    lft: 624
+    rgt: 631
+    depth: 4
+    lineage: "root:Host-associated:Arthropoda:Symbiotic fungal gardens and galleries"
+
+- model: backlog.Biome
+  pk: 315
+  fields:
+    biome_id: 314
+    biome_name: "Fungus gallery"
+    lft: 625
+    rgt: 626
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Symbiotic fungal gardens and galleries:Fungus gallery"
+
+- model: backlog.Biome
+  pk: 316
+  fields:
+    biome_id: 315
+    biome_name: "Fungus garden"
+    lft: 627
+    rgt: 630
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Symbiotic fungal gardens and galleries:Fungus garden"
+
+- model: backlog.Biome
+  pk: 317
+  fields:
+    biome_id: 316
+    biome_name: "Garden dump"
+    lft: 628
+    rgt: 629
+    depth: 6
+    lineage: "root:Host-associated:Arthropoda:Symbiotic fungal gardens and galleries:Fungus garden:Garden dump"
+
+- model: backlog.Biome
+  pk: 318
+  fields:
+    biome_id: 317
+    biome_name: "Venom gland"
+    lft: 632
+    rgt: 635
+    depth: 4
+    lineage: "root:Host-associated:Arthropoda:Venom gland"
+
+- model: backlog.Biome
+  pk: 319
+  fields:
+    biome_id: 318
+    biome_name: Venom
+    lft: 633
+    rgt: 634
+    depth: 5
+    lineage: "root:Host-associated:Arthropoda:Venom gland:Venom"
+
+- model: backlog.Biome
+  pk: 320
+  fields:
+    biome_id: 319
+    biome_name: Birds
+    lft: 637
+    rgt: 668
+    depth: 3
+    lineage: root:Host-associated:Birds
+
+- model: backlog.Biome
+  pk: 321
+  fields:
+    biome_id: 320
+    biome_name: "Circulatory system"
+    lft: 638
+    rgt: 641
+    depth: 4
+    lineage: "root:Host-associated:Birds:Circulatory system"
+
+- model: backlog.Biome
+  pk: 322
+  fields:
+    biome_id: 321
+    biome_name: Blood
+    lft: 639
+    rgt: 640
+    depth: 5
+    lineage: "root:Host-associated:Birds:Circulatory system:Blood"
+
+- model: backlog.Biome
+  pk: 323
+  fields:
+    biome_id: 322
+    biome_name: "Digestive system"
+    lft: 642
+    rgt: 661
+    depth: 4
+    lineage: "root:Host-associated:Birds:Digestive system"
+
+- model: backlog.Biome
+  pk: 324
+  fields:
+    biome_id: 323
+    biome_name: Ceca
+    lft: 643
+    rgt: 646
+    depth: 5
+    lineage: "root:Host-associated:Birds:Digestive system:Ceca"
+
+- model: backlog.Biome
+  pk: 325
+  fields:
+    biome_id: 324
+    biome_name: Lumen
+    lft: 644
+    rgt: 645
+    depth: 6
+    lineage: "root:Host-associated:Birds:Digestive system:Ceca:Lumen"
+
+- model: backlog.Biome
+  pk: 326
+  fields:
+    biome_id: 325
+    biome_name: Crop
+    lft: 647
+    rgt: 650
+    depth: 5
+    lineage: "root:Host-associated:Birds:Digestive system:Crop"
+
+- model: backlog.Biome
+  pk: 327
+  fields:
+    biome_id: 326
+    biome_name: Lumen
+    lft: 648
+    rgt: 649
+    depth: 6
+    lineage: "root:Host-associated:Birds:Digestive system:Crop:Lumen"
+
+- model: backlog.Biome
+  pk: 328
+  fields:
+    biome_id: 327
+    biome_name: "Digestive tube"
+    lft: 651
+    rgt: 654
+    depth: 5
+    lineage: "root:Host-associated:Birds:Digestive system:Digestive tube"
+
+- model: backlog.Biome
+  pk: 329
+  fields:
+    biome_id: 328
+    biome_name: Cecum
+    lft: 652
+    rgt: 653
+    depth: 6
+    lineage: "root:Host-associated:Birds:Digestive system:Digestive tube:Cecum"
+
+- model: backlog.Biome
+  pk: 330
+  fields:
+    biome_id: 329
+    biome_name: Fecal
+    lft: 655
+    rgt: 656
+    depth: 5
+    lineage: "root:Host-associated:Birds:Digestive system:Fecal"
+
+- model: backlog.Biome
+  pk: 331
+  fields:
+    biome_id: 330
+    biome_name: "Small intestine"
+    lft: 657
+    rgt: 660
+    depth: 5
+    lineage: "root:Host-associated:Birds:Digestive system:Small intestine"
+
+- model: backlog.Biome
+  pk: 332
+  fields:
+    biome_id: 331
+    biome_name: Duodenal
+    lft: 658
+    rgt: 659
+    depth: 6
+    lineage: "root:Host-associated:Birds:Digestive system:Small intestine:Duodenal"
+
+- model: backlog.Biome
+  pk: 333
+  fields:
+    biome_id: 332
+    biome_name: "Reproductive system"
+    lft: 662
+    rgt: 663
+    depth: 4
+    lineage: "root:Host-associated:Birds:Reproductive system"
+
+- model: backlog.Biome
+  pk: 334
+  fields:
+    biome_id: 333
+    biome_name: "Respiratory system"
+    lft: 664
+    rgt: 667
+    depth: 4
+    lineage: "root:Host-associated:Birds:Respiratory system"
+
+- model: backlog.Biome
+  pk: 335
+  fields:
+    biome_id: 334
+    biome_name: Lungs
+    lft: 665
+    rgt: 666
+    depth: 5
+    lineage: "root:Host-associated:Birds:Respiratory system:Lungs"
+
+- model: backlog.Biome
+  pk: 336
+  fields:
+    biome_id: 335
+    biome_name: Cnidaria
+    lft: 669
+    rgt: 670
+    depth: 3
+    lineage: root:Host-associated:Cnidaria
+
+- model: backlog.Biome
+  pk: 337
+  fields:
+    biome_id: 336
+    biome_name: Echinodermata
+    lft: 671
+    rgt: 672
+    depth: 3
+    lineage: root:Host-associated:Echinodermata
+
+- model: backlog.Biome
+  pk: 338
+  fields:
+    biome_id: 337
+    biome_name: Endosymbionts
+    lft: 673
+    rgt: 678
+    depth: 3
+    lineage: root:Host-associated:Endosymbionts
+
+- model: backlog.Biome
+  pk: 339
+  fields:
+    biome_id: 338
+    biome_name: Fungi
+    lft: 674
+    rgt: 677
+    depth: 4
+    lineage: root:Host-associated:Endosymbionts:Fungi
+
+- model: backlog.Biome
+  pk: 340
+  fields:
+    biome_id: 339
+    biome_name: Endosymbionts
+    lft: 675
+    rgt: 676
+    depth: 5
+    lineage: root:Host-associated:Endosymbionts:Fungi:Endosymbionts
+
+- model: backlog.Biome
+  pk: 341
+  fields:
+    biome_id: 340
+    biome_name: Fish
+    lft: 679
+    rgt: 702
+    depth: 3
+    lineage: root:Host-associated:Fish
+
+- model: backlog.Biome
+  pk: 342
+  fields:
+    biome_id: 341
+    biome_name: "Circulatory system"
+    lft: 680
+    rgt: 683
+    depth: 4
+    lineage: "root:Host-associated:Fish:Circulatory system"
+
+- model: backlog.Biome
+  pk: 343
+  fields:
+    biome_id: 342
+    biome_name: Blood
+    lft: 681
+    rgt: 682
+    depth: 5
+    lineage: "root:Host-associated:Fish:Circulatory system:Blood"
+
+- model: backlog.Biome
+  pk: 344
+  fields:
+    biome_id: 343
+    biome_name: "Digestive system"
+    lft: 684
+    rgt: 691
+    depth: 4
+    lineage: "root:Host-associated:Fish:Digestive system"
+
+- model: backlog.Biome
+  pk: 345
+  fields:
+    biome_id: 344
+    biome_name: Foregut
+    lft: 685
+    rgt: 688
+    depth: 5
+    lineage: "root:Host-associated:Fish:Digestive system:Foregut"
+
+- model: backlog.Biome
+  pk: 346
+  fields:
+    biome_id: 345
+    biome_name: Uncharacterized
+    lft: 686
+    rgt: 687
+    depth: 6
+    lineage: "root:Host-associated:Fish:Digestive system:Foregut:Uncharacterized"
+
+- model: backlog.Biome
+  pk: 347
+  fields:
+    biome_id: 346
+    biome_name: Intestine
+    lft: 689
+    rgt: 690
+    depth: 5
+    lineage: "root:Host-associated:Fish:Digestive system:Intestine"
+
+- model: backlog.Biome
+  pk: 348
+  fields:
+    biome_id: 347
+    biome_name: "Excretory system"
+    lft: 692
+    rgt: 695
+    depth: 4
+    lineage: "root:Host-associated:Fish:Excretory system"
+
+- model: backlog.Biome
+  pk: 349
+  fields:
+    biome_id: 348
+    biome_name: Kidneys
+    lft: 693
+    rgt: 694
+    depth: 5
+    lineage: "root:Host-associated:Fish:Excretory system:Kidneys"
+
+- model: backlog.Biome
+  pk: 350
+  fields:
+    biome_id: 349
+    biome_name: "Reproductive system"
+    lft: 696
+    rgt: 697
+    depth: 4
+    lineage: "root:Host-associated:Fish:Reproductive system"
+
+- model: backlog.Biome
+  pk: 351
+  fields:
+    biome_id: 350
+    biome_name: Skin
+    lft: 698
+    rgt: 701
+    depth: 4
+    lineage: root:Host-associated:Fish:Skin
+
+- model: backlog.Biome
+  pk: 352
+  fields:
+    biome_id: 351
+    biome_name: Slime
+    lft: 699
+    rgt: 700
+    depth: 5
+    lineage: root:Host-associated:Fish:Skin:Slime
+
+- model: backlog.Biome
+  pk: 353
+  fields:
+    biome_id: 352
+    biome_name: Fungi
+    lft: 703
+    rgt: 704
+    depth: 3
+    lineage: root:Host-associated:Fungi
+
+- model: backlog.Biome
+  pk: 354
+  fields:
+    biome_id: 353
+    biome_name: Human
+    lft: 705
+    rgt: 816
+    depth: 3
+    lineage: root:Host-associated:Human
+
+- model: backlog.Biome
+  pk: 355
+  fields:
+    biome_id: 354
+    biome_name: "Circulatory system"
+    lft: 706
+    rgt: 709
+    depth: 4
+    lineage: "root:Host-associated:Human:Circulatory system"
+
+- model: backlog.Biome
+  pk: 356
+  fields:
+    biome_id: 355
+    biome_name: Blood
+    lft: 707
+    rgt: 708
+    depth: 5
+    lineage: "root:Host-associated:Human:Circulatory system:Blood"
+
+- model: backlog.Biome
+  pk: 357
+  fields:
+    biome_id: 356
+    biome_name: "Digestive system"
+    lft: 710
+    rgt: 747
+    depth: 4
+    lineage: "root:Host-associated:Human:Digestive system"
+
+- model: backlog.Biome
+  pk: 358
+  fields:
+    biome_id: 357
+    biome_name: Hindgut
+    lft: 711
+    rgt: 714
+    depth: 5
+    lineage: "root:Host-associated:Human:Digestive system:Hindgut"
+
+- model: backlog.Biome
+  pk: 359
+  fields:
+    biome_id: 358
+    biome_name: Rectum
+    lft: 712
+    rgt: 713
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Hindgut:Rectum"
+
+- model: backlog.Biome
+  pk: 360
+  fields:
+    biome_id: 359
+    biome_name: Intestine
+    lft: 715
+    rgt: 716
+    depth: 5
+    lineage: "root:Host-associated:Human:Digestive system:Intestine"
+
+- model: backlog.Biome
+  pk: 361
+  fields:
+    biome_id: 360
+    biome_name: "Large intestine"
+    lft: 717
+    rgt: 722
+    depth: 5
+    lineage: "root:Host-associated:Human:Digestive system:Large intestine"
+
+- model: backlog.Biome
+  pk: 362
+  fields:
+    biome_id: 361
+    biome_name: Fecal
+    lft: 718
+    rgt: 719
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Large intestine:Fecal"
+
+- model: backlog.Biome
+  pk: 363
+  fields:
+    biome_id: 362
+    biome_name: "Sigmoid colon"
+    lft: 720
+    rgt: 721
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Large intestine:Sigmoid colon"
+
+- model: backlog.Biome
+  pk: 364
+  fields:
+    biome_id: 363
+    biome_name: Oral
+    lft: 723
+    rgt: 746
+    depth: 5
+    lineage: "root:Host-associated:Human:Digestive system:Oral"
+
+- model: backlog.Biome
+  pk: 365
+  fields:
+    biome_id: 364
+    biome_name: "Attached Keratinized gingiva"
+    lft: 724
+    rgt: 725
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:Attached Keratinized gingiva"
+
+- model: backlog.Biome
+  pk: 366
+  fields:
+    biome_id: 365
+    biome_name: "buccal mucosa"
+    lft: 726
+    rgt: 727
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:buccal mucosa"
+
+- model: backlog.Biome
+  pk: 367
+  fields:
+    biome_id: 366
+    biome_name: "hard palate"
+    lft: 728
+    rgt: 729
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:hard palate"
+
+- model: backlog.Biome
+  pk: 368
+  fields:
+    biome_id: 367
+    biome_name: "Palatine tonsils"
+    lft: 730
+    rgt: 731
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:Palatine tonsils"
+
+- model: backlog.Biome
+  pk: 369
+  fields:
+    biome_id: 368
+    biome_name: "Periodontal pockets"
+    lft: 732
+    rgt: 733
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:Periodontal pockets"
+
+- model: backlog.Biome
+  pk: 370
+  fields:
+    biome_id: 369
+    biome_name: Saliva
+    lft: 734
+    rgt: 735
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:Saliva"
+
+- model: backlog.Biome
+  pk: 371
+  fields:
+    biome_id: 370
+    biome_name: "Subgingival plaque"
+    lft: 736
+    rgt: 737
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:Subgingival plaque"
+
+- model: backlog.Biome
+  pk: 372
+  fields:
+    biome_id: 371
+    biome_name: "Duplicate -subgingival plaque"
+    lft: 738
+    rgt: 739
+    depth: 6
+    lineage: "Duplicate - root:Host-associated:Human:Digestive system:Oral:subgingival plaque"
+
+- model: backlog.Biome
+  pk: 373
+  fields:
+    biome_id: 372
+    biome_name: "Supragingival plaque"
+    lft: 740
+    rgt: 741
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:Supragingival plaque"
+
+- model: backlog.Biome
+  pk: 374
+  fields:
+    biome_id: 373
+    biome_name: Throat
+    lft: 742
+    rgt: 743
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:Throat"
+
+- model: backlog.Biome
+  pk: 375
+  fields:
+    biome_id: 374
+    biome_name: "tongue dorsum"
+    lft: 744
+    rgt: 745
+    depth: 6
+    lineage: "root:Host-associated:Human:Digestive system:Oral:tongue dorsum"
+
+- model: backlog.Biome
+  pk: 376
+  fields:
+    biome_id: 375
+    biome_name: "Excretory system"
+    lft: 748
+    rgt: 753
+    depth: 4
+    lineage: "root:Host-associated:Human:Excretory system"
+
+- model: backlog.Biome
+  pk: 377
+  fields:
+    biome_id: 376
+    biome_name: Urethra
+    lft: 749
+    rgt: 752
+    depth: 5
+    lineage: "root:Host-associated:Human:Excretory system:Urethra"
+
+- model: backlog.Biome
+  pk: 378
+  fields:
+    biome_id: 377
+    biome_name: Urine
+    lft: 750
+    rgt: 751
+    depth: 6
+    lineage: "root:Host-associated:Human:Excretory system:Urethra:Urine"
+
+- model: backlog.Biome
+  pk: 379
+  fields:
+    biome_id: 378
+    biome_name: Fossil
+    lft: 754
+    rgt: 757
+    depth: 4
+    lineage: root:Host-associated:Human:Fossil
+
+- model: backlog.Biome
+  pk: 380
+  fields:
+    biome_id: 379
+    biome_name: Bone
+    lft: 755
+    rgt: 756
+    depth: 5
+    lineage: root:Host-associated:Human:Fossil:Bone
+
+- model: backlog.Biome
+  pk: 381
+  fields:
+    biome_id: 380
+    biome_name: "Lympathic system"
+    lft: 758
+    rgt: 761
+    depth: 4
+    lineage: "root:Host-associated:Human:Lympathic system"
+
+- model: backlog.Biome
+  pk: 382
+  fields:
+    biome_id: 381
+    biome_name: "Lymph nodes"
+    lft: 759
+    rgt: 760
+    depth: 5
+    lineage: "root:Host-associated:Human:Lympathic system:Lymph nodes"
+
+- model: backlog.Biome
+  pk: 383
+  fields:
+    biome_id: 382
+    biome_name: Milk
+    lft: 762
+    rgt: 763
+    depth: 4
+    lineage: root:Host-associated:Human:Milk
+
+- model: backlog.Biome
+  pk: 384
+  fields:
+    biome_id: 383
+    biome_name: "Nervous system"
+    lft: 764
+    rgt: 767
+    depth: 4
+    lineage: "root:Host-associated:Human:Nervous system"
+
+- model: backlog.Biome
+  pk: 385
+  fields:
+    biome_id: 384
+    biome_name: "Cerebrospinal fluid"
+    lft: 765
+    rgt: 766
+    depth: 5
+    lineage: "root:Host-associated:Human:Nervous system:Cerebrospinal fluid"
+
+- model: backlog.Biome
+  pk: 386
+  fields:
+    biome_id: 385
+    biome_name: "Reproductive system"
+    lft: 768
+    rgt: 779
+    depth: 4
+    lineage: "root:Host-associated:Human:Reproductive system"
+
+- model: backlog.Biome
+  pk: 387
+  fields:
+    biome_id: 386
+    biome_name: Female
+    lft: 769
+    rgt: 770
+    depth: 5
+    lineage: "root:Host-associated:Human:Reproductive system:Female"
+
+- model: backlog.Biome
+  pk: 388
+  fields:
+    biome_id: 387
+    biome_name: Vagina
+    lft: 771
+    rgt: 778
+    depth: 5
+    lineage: "root:Host-associated:Human:Reproductive system:Vagina"
+
+- model: backlog.Biome
+  pk: 389
+  fields:
+    biome_id: 388
+    biome_name: Introitus
+    lft: 772
+    rgt: 773
+    depth: 6
+    lineage: "root:Host-associated:Human:Reproductive system:Vagina:Introitus"
+
+- model: backlog.Biome
+  pk: 390
+  fields:
+    biome_id: 389
+    biome_name: "Midpoint vagina"
+    lft: 774
+    rgt: 775
+    depth: 6
+    lineage: "root:Host-associated:Human:Reproductive system:Vagina:Midpoint vagina"
+
+- model: backlog.Biome
+  pk: 391
+  fields:
+    biome_id: 390
+    biome_name: "posterior fornix"
+    lft: 776
+    rgt: 777
+    depth: 6
+    lineage: "root:Host-associated:Human:Reproductive system:Vagina:posterior fornix"
+
+- model: backlog.Biome
+  pk: 392
+  fields:
+    biome_id: 391
+    biome_name: "Respiratory system"
+    lft: 780
+    rgt: 799
+    depth: 4
+    lineage: "root:Host-associated:Human:Respiratory system"
+
+- model: backlog.Biome
+  pk: 393
+  fields:
+    biome_id: 392
+    biome_name: Nasopharyngeal
+    lft: 781
+    rgt: 788
+    depth: 5
+    lineage: "root:Host-associated:Human:Respiratory system:Nasopharyngeal"
+
+- model: backlog.Biome
+  pk: 394
+  fields:
+    biome_id: 393
+    biome_name: "anterior nares"
+    lft: 782
+    rgt: 783
+    depth: 6
+    lineage: "root:Host-associated:Human:Respiratory system:Nasopharyngeal:anterior nares"
+
+- model: backlog.Biome
+  pk: 395
+  fields:
+    biome_id: 394
+    biome_name: "Nasal cavity"
+    lft: 784
+    rgt: 785
+    depth: 6
+    lineage: "root:Host-associated:Human:Respiratory system:Nasopharyngeal:Nasal cavity"
+
+- model: backlog.Biome
+  pk: 396
+  fields:
+    biome_id: 395
+    biome_name: Pharynx
+    lft: 786
+    rgt: 787
+    depth: 6
+    lineage: "root:Host-associated:Human:Respiratory system:Nasopharyngeal:Pharynx"
+
+- model: backlog.Biome
+  pk: 397
+  fields:
+    biome_id: 396
+    biome_name: "Pulmonary system"
+    lft: 789
+    rgt: 798
+    depth: 5
+    lineage: "root:Host-associated:Human:Respiratory system:Pulmonary system"
+
+- model: backlog.Biome
+  pk: 398
+  fields:
+    biome_id: 397
+    biome_name: Lung
+    lft: 790
+    rgt: 791
+    depth: 6
+    lineage: "root:Host-associated:Human:Respiratory system:Pulmonary system:Lung"
+
+- model: backlog.Biome
+  pk: 399
+  fields:
+    biome_id: 398
+    biome_name: Sputum
+    lft: 792
+    rgt: 793
+    depth: 6
+    lineage: "root:Host-associated:Human:Respiratory system:Pulmonary system:Sputum"
+
+- model: backlog.Biome
+  pk: 400
+  fields:
+    biome_id: 399
+    biome_name: Trachea
+    lft: 794
+    rgt: 795
+    depth: 6
+    lineage: "root:Host-associated:Human:Respiratory system:Pulmonary system:Trachea"
+
+- model: backlog.Biome
+  pk: 401
+  fields:
+    biome_id: 400
+    biome_name: Viriome
+    lft: 796
+    rgt: 797
+    depth: 6
+    lineage: "root:Host-associated:Human:Respiratory system:Pulmonary system:Viriome"
+
+- model: backlog.Biome
+  pk: 402
+  fields:
+    biome_id: 401
+    biome_name: Skin
+    lft: 800
+    rgt: 815
+    depth: 4
+    lineage: root:Host-associated:Human:Skin
+
+- model: backlog.Biome
+  pk: 403
+  fields:
+    biome_id: 402
+    biome_name: Axilla
+    lft: 801
+    rgt: 802
+    depth: 5
+    lineage: root:Host-associated:Human:Skin:Axilla
+
+- model: backlog.Biome
+  pk: 404
+  fields:
+    biome_id: 403
+    biome_name: "Medial distal leg"
+    lft: 803
+    rgt: 806
+    depth: 5
+    lineage: "root:Host-associated:Human:Skin:Medial distal leg"
+
+- model: backlog.Biome
+  pk: 405
+  fields:
+    biome_id: 404
+    biome_name: "Venous leg ulcers"
+    lft: 804
+    rgt: 805
+    depth: 6
+    lineage: "root:Host-associated:Human:Skin:Medial distal leg:Venous leg ulcers"
+
+- model: backlog.Biome
+  pk: 406
+  fields:
+    biome_id: 405
+    biome_name: Naris
+    lft: 807
+    rgt: 808
+    depth: 5
+    lineage: root:Host-associated:Human:Skin:Naris
+
+- model: backlog.Biome
+  pk: 407
+  fields:
+    biome_id: 406
+    biome_name: "retroauricular crease"
+    lft: 809
+    rgt: 810
+    depth: 5
+    lineage: "root:Host-associated:Human:Skin:retroauricular crease"
+
+- model: backlog.Biome
+  pk: 408
+  fields:
+    biome_id: 407
+    biome_name: Umbilicus
+    lft: 811
+    rgt: 812
+    depth: 5
+    lineage: root:Host-associated:Human:Skin:Umbilicus
+
+- model: backlog.Biome
+  pk: 409
+  fields:
+    biome_id: 408
+    biome_name: "Volar forearm"
+    lft: 813
+    rgt: 814
+    depth: 5
+    lineage: "root:Host-associated:Human:Skin:Volar forearm"
+
+- model: backlog.Biome
+  pk: 410
+  fields:
+    biome_id: 409
+    biome_name: Insecta
+    lft: 817
+    rgt: 820
+    depth: 3
+    lineage: root:Host-associated:Insecta
+
+- model: backlog.Biome
+  pk: 411
+  fields:
+    biome_id: 410
+    biome_name: "Digestive system"
+    lft: 818
+    rgt: 819
+    depth: 4
+    lineage: "root:Host-associated:Insecta:Digestive system"
+
+- model: backlog.Biome
+  pk: 412
+  fields:
+    biome_id: 411
+    biome_name: Invertebrates
+    lft: 821
+    rgt: 834
+    depth: 3
+    lineage: root:Host-associated:Invertebrates
+
+- model: backlog.Biome
+  pk: 413
+  fields:
+    biome_id: 412
+    biome_name: Bryozoans
+    lft: 822
+    rgt: 825
+    depth: 4
+    lineage: root:Host-associated:Invertebrates:Bryozoans
+
+- model: backlog.Biome
+  pk: 414
+  fields:
+    biome_id: 413
+    biome_name: Gymnolaemates
+    lft: 823
+    rgt: 824
+    depth: 5
+    lineage: root:Host-associated:Invertebrates:Bryozoans:Gymnolaemates
+
+- model: backlog.Biome
+  pk: 415
+  fields:
+    biome_id: 414
+    biome_name: Cnidaria
+    lft: 826
+    rgt: 829
+    depth: 4
+    lineage: root:Host-associated:Invertebrates:Cnidaria
+
+- model: backlog.Biome
+  pk: 416
+  fields:
+    biome_id: 415
+    biome_name: Coral
+    lft: 827
+    rgt: 828
+    depth: 5
+    lineage: root:Host-associated:Invertebrates:Cnidaria:Coral
+
+- model: backlog.Biome
+  pk: 417
+  fields:
+    biome_id: 416
+    biome_name: Echinodermata
+    lft: 830
+    rgt: 833
+    depth: 4
+    lineage: root:Host-associated:Invertebrates:Echinodermata
+
+- model: backlog.Biome
+  pk: 418
+  fields:
+    biome_id: 417
+    biome_name: "Sea Urchin"
+    lft: 831
+    rgt: 832
+    depth: 5
+    lineage: "root:Host-associated:Invertebrates:Echinodermata:Sea Urchin"
+
+- model: backlog.Biome
+  pk: 419
+  fields:
+    biome_id: 418
+    biome_name: Mammals
+    lft: 835
+    rgt: 902
+    depth: 3
+    lineage: root:Host-associated:Mammals
+
+- model: backlog.Biome
+  pk: 420
+  fields:
+    biome_id: 419
+    biome_name: "Circulatory system"
+    lft: 836
+    rgt: 839
+    depth: 4
+    lineage: "root:Host-associated:Mammals:Circulatory system"
+
+- model: backlog.Biome
+  pk: 421
+  fields:
+    biome_id: 420
+    biome_name: Blood
+    lft: 837
+    rgt: 838
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Circulatory system:Blood"
+
+- model: backlog.Biome
+  pk: 422
+  fields:
+    biome_id: 421
+    biome_name: "Digestive system"
+    lft: 840
+    rgt: 867
+    depth: 4
+    lineage: "root:Host-associated:Mammals:Digestive system"
+
+- model: backlog.Biome
+  pk: 423
+  fields:
+    biome_id: 422
+    biome_name: Fecal
+    lft: 841
+    rgt: 844
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Digestive system:Fecal"
+
+- model: backlog.Biome
+  pk: 424
+  fields:
+    biome_id: 423
+    biome_name: Uncharacterized
+    lft: 842
+    rgt: 843
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Digestive system:Fecal:Uncharacterized"
+
+- model: backlog.Biome
+  pk: 425
+  fields:
+    biome_id: 424
+    biome_name: Foregut
+    lft: 845
+    rgt: 848
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Digestive system:Foregut"
+
+- model: backlog.Biome
+  pk: 426
+  fields:
+    biome_id: 425
+    biome_name: Rumen
+    lft: 846
+    rgt: 847
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Digestive system:Foregut:Rumen"
+
+- model: backlog.Biome
+  pk: 427
+  fields:
+    biome_id: 426
+    biome_name: "Large intestine"
+    lft: 849
+    rgt: 854
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Digestive system:Large intestine"
+
+- model: backlog.Biome
+  pk: 428
+  fields:
+    biome_id: 427
+    biome_name: Cecum
+    lft: 850
+    rgt: 851
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Digestive system:Large intestine:Cecum"
+
+- model: backlog.Biome
+  pk: 429
+  fields:
+    biome_id: 428
+    biome_name: Fecal
+    lft: 852
+    rgt: 853
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Digestive system:Large intestine:Fecal"
+
+- model: backlog.Biome
+  pk: 430
+  fields:
+    biome_id: 429
+    biome_name: Midgut
+    lft: 855
+    rgt: 856
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Digestive system:Midgut"
+
+- model: backlog.Biome
+  pk: 431
+  fields:
+    biome_id: 430
+    biome_name: "Oral cavity"
+    lft: 857
+    rgt: 860
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Digestive system:Oral cavity"
+
+- model: backlog.Biome
+  pk: 432
+  fields:
+    biome_id: 431
+    biome_name: "Buccal mucosa"
+    lft: 858
+    rgt: 859
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Digestive system:Oral cavity:Buccal mucosa"
+
+- model: backlog.Biome
+  pk: 433
+  fields:
+    biome_id: 432
+    biome_name: Stomach
+    lft: 861
+    rgt: 866
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Digestive system:Stomach"
+
+- model: backlog.Biome
+  pk: 434
+  fields:
+    biome_id: 433
+    biome_name: "Endoperitrophic space"
+    lft: 862
+    rgt: 863
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Digestive system:Stomach:Endoperitrophic space"
+
+- model: backlog.Biome
+  pk: 435
+  fields:
+    biome_id: 434
+    biome_name: Rumen
+    lft: 864
+    rgt: 865
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Digestive system:Stomach:Rumen"
+
+- model: backlog.Biome
+  pk: 436
+  fields:
+    biome_id: 435
+    biome_name: "Excretory system"
+    lft: 868
+    rgt: 871
+    depth: 4
+    lineage: "root:Host-associated:Mammals:Excretory system"
+
+- model: backlog.Biome
+  pk: 437
+  fields:
+    biome_id: 436
+    biome_name: Urine
+    lft: 869
+    rgt: 870
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Excretory system:Urine"
+
+- model: backlog.Biome
+  pk: 438
+  fields:
+    biome_id: 437
+    biome_name: "Gastrointestinal tract"
+    lft: 872
+    rgt: 877
+    depth: 4
+    lineage: "root:Host-associated:Mammals:Gastrointestinal tract"
+
+- model: backlog.Biome
+  pk: 439
+  fields:
+    biome_id: 438
+    biome_name: Intestine
+    lft: 873
+    rgt: 876
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Gastrointestinal tract:Intestine"
+
+- model: backlog.Biome
+  pk: 440
+  fields:
+    biome_id: 439
+    biome_name: Fecal
+    lft: 874
+    rgt: 875
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Gastrointestinal tract:Intestine:Fecal"
+
+- model: backlog.Biome
+  pk: 441
+  fields:
+    biome_id: 440
+    biome_name: Lymphatic
+    lft: 878
+    rgt: 881
+    depth: 4
+    lineage: root:Host-associated:Mammals:Lymphatic
+
+- model: backlog.Biome
+  pk: 442
+  fields:
+    biome_id: 441
+    biome_name: "Lymph nodes"
+    lft: 879
+    rgt: 880
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Lymphatic:Lymph nodes"
+
+- model: backlog.Biome
+  pk: 443
+  fields:
+    biome_id: 442
+    biome_name: Milk
+    lft: 882
+    rgt: 883
+    depth: 4
+    lineage: root:Host-associated:Mammals:Milk
+
+- model: backlog.Biome
+  pk: 444
+  fields:
+    biome_id: 443
+    biome_name: "Nervous system"
+    lft: 884
+    rgt: 887
+    depth: 4
+    lineage: "root:Host-associated:Mammals:Nervous system"
+
+- model: backlog.Biome
+  pk: 445
+  fields:
+    biome_id: 444
+    biome_name: Brain
+    lft: 885
+    rgt: 886
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Nervous system:Brain"
+
+- model: backlog.Biome
+  pk: 446
+  fields:
+    biome_id: 445
+    biome_name: "Reproductive system"
+    lft: 888
+    rgt: 889
+    depth: 4
+    lineage: "root:Host-associated:Mammals:Reproductive system"
+
+- model: backlog.Biome
+  pk: 447
+  fields:
+    biome_id: 446
+    biome_name: "Respiratory system"
+    lft: 890
+    rgt: 899
+    depth: 4
+    lineage: "root:Host-associated:Mammals:Respiratory system"
+
+- model: backlog.Biome
+  pk: 448
+  fields:
+    biome_id: 447
+    biome_name: Nasopharyngeal
+    lft: 891
+    rgt: 894
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Respiratory system:Nasopharyngeal"
+
+- model: backlog.Biome
+  pk: 449
+  fields:
+    biome_id: 448
+    biome_name: "Nasal cavity"
+    lft: 892
+    rgt: 893
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Respiratory system:Nasopharyngeal:Nasal cavity"
+
+- model: backlog.Biome
+  pk: 450
+  fields:
+    biome_id: 449
+    biome_name: "Pulmonary system"
+    lft: 895
+    rgt: 898
+    depth: 5
+    lineage: "root:Host-associated:Mammals:Respiratory system:Pulmonary system"
+
+- model: backlog.Biome
+  pk: 451
+  fields:
+    biome_id: 450
+    biome_name: Viriome
+    lft: 896
+    rgt: 897
+    depth: 6
+    lineage: "root:Host-associated:Mammals:Respiratory system:Pulmonary system:Viriome"
+
+- model: backlog.Biome
+  pk: 452
+  fields:
+    biome_id: 451
+    biome_name: Skin
+    lft: 900
+    rgt: 901
+    depth: 4
+    lineage: root:Host-associated:Mammals:Skin
+
+- model: backlog.Biome
+  pk: 453
+  fields:
+    biome_id: 452
+    biome_name: Microbial
+    lft: 903
+    rgt: 910
+    depth: 3
+    lineage: root:Host-associated:Microbial
+
+- model: backlog.Biome
+  pk: 454
+  fields:
+    biome_id: 453
+    biome_name: Bacteria
+    lft: 904
+    rgt: 905
+    depth: 4
+    lineage: root:Host-associated:Microbial:Bacteria
+
+- model: backlog.Biome
+  pk: 455
+  fields:
+    biome_id: 454
+    biome_name: Dinoflagellates
+    lft: 906
+    rgt: 909
+    depth: 4
+    lineage: root:Host-associated:Microbial:Dinoflagellates
+
+- model: backlog.Biome
+  pk: 456
+  fields:
+    biome_id: 455
+    biome_name: Endosymbionts
+    lft: 907
+    rgt: 908
+    depth: 5
+    lineage: root:Host-associated:Microbial:Dinoflagellates:Endosymbionts
+
+- model: backlog.Biome
+  pk: 457
+  fields:
+    biome_id: 456
+    biome_name: Mollusca
+    lft: 911
+    rgt: 930
+    depth: 3
+    lineage: root:Host-associated:Mollusca
+
+- model: backlog.Biome
+  pk: 458
+  fields:
+    biome_id: 457
+    biome_name: "Digestive system"
+    lft: 912
+    rgt: 919
+    depth: 4
+    lineage: "root:Host-associated:Mollusca:Digestive system"
+
+- model: backlog.Biome
+  pk: 459
+  fields:
+    biome_id: 458
+    biome_name: Ceca
+    lft: 913
+    rgt: 916
+    depth: 5
+    lineage: "root:Host-associated:Mollusca:Digestive system:Ceca"
+
+- model: backlog.Biome
+  pk: 460
+  fields:
+    biome_id: 459
+    biome_name: Uncharacterized
+    lft: 914
+    rgt: 915
+    depth: 6
+    lineage: "root:Host-associated:Mollusca:Digestive system:Ceca:Uncharacterized"
+
+- model: backlog.Biome
+  pk: 461
+  fields:
+    biome_id: 460
+    biome_name: Glands
+    lft: 917
+    rgt: 918
+    depth: 5
+    lineage: "root:Host-associated:Mollusca:Digestive system:Glands"
+
+- model: backlog.Biome
+  pk: 462
+  fields:
+    biome_id: 461
+    biome_name: "Respiratory system"
+    lft: 920
+    rgt: 927
+    depth: 4
+    lineage: "root:Host-associated:Mollusca:Respiratory system"
+
+- model: backlog.Biome
+  pk: 463
+  fields:
+    biome_id: 462
+    biome_name: Gills
+    lft: 921
+    rgt: 926
+    depth: 5
+    lineage: "root:Host-associated:Mollusca:Respiratory system:Gills"
+
+- model: backlog.Biome
+  pk: 464
+  fields:
+    biome_id: 463
+    biome_name: Extracellular
+    lft: 922
+    rgt: 923
+    depth: 6
+    lineage: "root:Host-associated:Mollusca:Respiratory system:Gills:Extracellular"
+
+- model: backlog.Biome
+  pk: 465
+  fields:
+    biome_id: 464
+    biome_name: Intracellular
+    lft: 924
+    rgt: 925
+    depth: 6
+    lineage: "root:Host-associated:Mollusca:Respiratory system:Gills:Intracellular"
+
+- model: backlog.Biome
+  pk: 466
+  fields:
+    biome_id: 465
+    biome_name: Shell
+    lft: 928
+    rgt: 929
+    depth: 4
+    lineage: root:Host-associated:Mollusca:Shell
+
+- model: backlog.Biome
+  pk: 467
+  fields:
+    biome_id: 466
+    biome_name: Plants
+    lft: 931
+    rgt: 960
+    depth: 3
+    lineage: root:Host-associated:Plants
+
+- model: backlog.Biome
+  pk: 468
+  fields:
+    biome_id: 467
+    biome_name: Phylloplane
+    lft: 932
+    rgt: 937
+    depth: 4
+    lineage: root:Host-associated:Plants:Phylloplane
+
+- model: backlog.Biome
+  pk: 469
+  fields:
+    biome_id: 468
+    biome_name: Endophytes
+    lft: 933
+    rgt: 934
+    depth: 5
+    lineage: root:Host-associated:Plants:Phylloplane:Endophytes
+
+- model: backlog.Biome
+  pk: 470
+  fields:
+    biome_id: 469
+    biome_name: Epiphytes
+    lft: 935
+    rgt: 936
+    depth: 5
+    lineage: root:Host-associated:Plants:Phylloplane:Epiphytes
+
+- model: backlog.Biome
+  pk: 471
+  fields:
+    biome_id: 470
+    biome_name: Rhizome
+    lft: 938
+    rgt: 941
+    depth: 4
+    lineage: root:Host-associated:Plants:Rhizome
+
+- model: backlog.Biome
+  pk: 472
+  fields:
+    biome_id: 471
+    biome_name: Epiphytes
+    lft: 939
+    rgt: 940
+    depth: 5
+    lineage: root:Host-associated:Plants:Rhizome:Epiphytes
+
+- model: backlog.Biome
+  pk: 473
+  fields:
+    biome_id: 472
+    biome_name: Rhizoplane
+    lft: 942
+    rgt: 949
+    depth: 4
+    lineage: root:Host-associated:Plants:Rhizoplane
+
+- model: backlog.Biome
+  pk: 474
+  fields:
+    biome_id: 473
+    biome_name: Endophytes
+    lft: 943
+    rgt: 944
+    depth: 5
+    lineage: root:Host-associated:Plants:Rhizoplane:Endophytes
+
+- model: backlog.Biome
+  pk: 475
+  fields:
+    biome_id: 474
+    biome_name: Epiphytes
+    lft: 945
+    rgt: 946
+    depth: 5
+    lineage: root:Host-associated:Plants:Rhizoplane:Epiphytes
+
+- model: backlog.Biome
+  pk: 476
+  fields:
+    biome_id: 475
+    biome_name: Soil
+    lft: 947
+    rgt: 948
+    depth: 5
+    lineage: root:Host-associated:Plants:Rhizoplane:Soil
+
+- model: backlog.Biome
+  pk: 477
+  fields:
+    biome_id: 476
+    biome_name: Rhizosphere
+    lft: 950
+    rgt: 957
+    depth: 4
+    lineage: root:Host-associated:Plants:Rhizosphere
+
+- model: backlog.Biome
+  pk: 478
+  fields:
+    biome_id: 477
+    biome_name: Epiphytes
+    lft: 951
+    rgt: 952
+    depth: 5
+    lineage: root:Host-associated:Plants:Rhizosphere:Epiphytes
+
+- model: backlog.Biome
+  pk: 479
+  fields:
+    biome_id: 478
+    biome_name: Soil
+    lft: 953
+    rgt: 954
+    depth: 5
+    lineage: root:Host-associated:Plants:Rhizosphere:Soil
+
+- model: backlog.Biome
+  pk: 480
+  fields:
+    biome_id: 479
+    biome_name: "Forest soil"
+    lft: 955
+    rgt: 956
+    depth: 5
+    lineage: "root:Host-associated:Plants:Rhizosphere:Forest soil"
+
+- model: backlog.Biome
+  pk: 481
+  fields:
+    biome_id: 480
+    biome_name: Root
+    lft: 958
+    rgt: 959
+    depth: 4
+    lineage: root:Host-associated:Plants:Root
+
+- model: backlog.Biome
+  pk: 482
+  fields:
+    biome_id: 481
+    biome_name: Porifera
+    lft: 961
+    rgt: 962
+    depth: 3
+    lineage: root:Host-associated:Porifera
+
+- model: backlog.Biome
+  pk: 483
+  fields:
+    biome_id: 482
+    biome_name: Protists
+    lft: 963
+    rgt: 964
+    depth: 3
+    lineage: root:Host-associated:Protists
+
+- model: backlog.Biome
+  pk: 484
+  fields:
+    biome_id: 483
+    biome_name: Protozoa
+    lft: 965
+    rgt: 966
+    depth: 3
+    lineage: root:Host-associated:Protozoa
+
+- model: backlog.Biome
+  pk: 485
+  fields:
+    biome_id: 484
+    biome_name: Reptile
+    lft: 967
+    rgt: 974
+    depth: 3
+    lineage: root:Host-associated:Reptile
+
+- model: backlog.Biome
+  pk: 486
+  fields:
+    biome_id: 485
+    biome_name: "Oral cavity"
+    lft: 968
+    rgt: 973
+    depth: 4
+    lineage: "root:Host-associated:Reptile:Oral cavity"
+
+- model: backlog.Biome
+  pk: 487
+  fields:
+    biome_id: 486
+    biome_name: "Venom gland"
+    lft: 969
+    rgt: 972
+    depth: 5
+    lineage: "root:Host-associated:Reptile:Oral cavity:Venom gland"
+
+- model: backlog.Biome
+  pk: 488
+  fields:
+    biome_id: 487
+    biome_name: Venom
+    lft: 970
+    rgt: 971
+    depth: 6
+    lineage: "root:Host-associated:Reptile:Oral cavity:Venom gland:Venom"
+
+- model: backlog.Biome
+  pk: 489
+  fields:
+    biome_id: 488
+    biome_name: Spiralia
+    lft: 975
+    rgt: 976
+    depth: 3
+    lineage: root:Host-associated:Spiralia
+
+- model: backlog.Biome
+  pk: 490
+  fields:
+    biome_id: 489
+    biome_name: Tunicates
+    lft: 977
+    rgt: 980
+    depth: 3
+    lineage: root:Host-associated:Tunicates
+
+- model: backlog.Biome
+  pk: 491
+  fields:
+    biome_id: 490
+    biome_name: Ascidians
+    lft: 978
+    rgt: 979
+    depth: 4
+    lineage: root:Host-associated:Tunicates:Ascidians
+
+- model: backlog.Biome
+  pk: 492
+  fields:
+    biome_id: 491
+    biome_name: Control
+    lft: 982
+    rgt: 983
+    depth: 2
+    lineage: root:Control
+

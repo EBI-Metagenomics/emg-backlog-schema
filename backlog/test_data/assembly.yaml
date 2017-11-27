@@ -1,0 +1,60 @@
+
+study:
+  primary_accession: "PRJEB1787"
+  secondary_accession: "ERP001736"
+  title: "Shotgun Sequencing of Tara Oceans DNA samples corresponding to size fractions for  prokaryotes."
+  public: true
+  hold_date: 2017-12-31
+  tax_id: "TAXONOMY_ID"
+  scientific_name: "SCIENTIFIC_NAME"
+  library_strategy: "CLONE"
+  mixs_compliant: 0
+  pubmed: "22232244"
+
+run:
+  study_sec_accession: "ERP001736"
+  primary_accession: "ERR1701760"
+  biome_id: 1
+  base_count: 37861886168
+  read_count: 193956529
+  instrument_platform: "ILLUMINA"
+  instrument_model: "Illumina HiSeq 2000"
+  library_layout: "PAIRED"
+
+start_assembly:
+  user: "mdb"
+  run_prim_accession: "ERR1701760" # MUST BE SAME AS IN RUN OBJ
+  priority: 5
+  assembler_name: "metaspades"
+  assembler_version: "3.11.1"
+  input_size: 5000
+
+finish_assembly:
+  run_prim_accession: "ERR1701760" # MUST BE SAME AS IN RUN OBJ
+  assembler_name: "metaspades"
+  assembler_version: "3.11.1"
+  execution_time: 1000
+  peak_mem: 11000
+  n50: 10
+  l50: 300
+  num_contigs: 1400
+  largest_contig: 500000
+  coverage: 0.145
+  assembly_length: 7500000
+
+ena_upload_denied:
+  run_prim_accession: "ERR1701760" # MUST BE SAME AS IN RUN OBJ
+  assembler_name: "metaspades"
+  assembler_version: "3.11.1"
+  uploaded_to_ena: false
+  reason: "Max contig length too low"
+
+ena_upload_accepted:
+  run_prim_accession: "ERR1701760" # MUST BE SAME AS IN RUN OBJ
+  assembler_name: "metaspades"
+  assembler_version: "3.11.1"
+  uploaded_to_ena: true
+
+  new_ena_assembly: "ERZxxxxxx"
+  new_ena_prima_accession: "PRJEB1788"
+  new_ena_secon_accession: "ERP001737"

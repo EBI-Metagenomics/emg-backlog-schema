@@ -1,0 +1,55 @@
+- model: backlog.StudyError
+  pk: 1
+  fields:
+    name: 'RAW_DATA_NO_RECORDS_IN_ENA'
+    description: 'ENA does not hold any records for this project.'
+- model: backlog.StudyError
+  pk: 2
+  fields:
+    name: 'Unable to download the raw data from ENA.'
+    description: 'Unable to download the raw data from ENA.'
+- model: backlog.StudyError
+  pk: 3
+  fields:
+    name: 'RAW_DATA_FILE_CORRUPT'
+    description: 'The downloaded raw sequence files are corrupt.'
+- model: backlog.StudyError
+  pk: 4
+  fields:
+    name: 'DATA_PREPARATION_ERROR'
+    description: 'Merging the pair-end sequences failed.'
+- model: backlog.StudyError
+  pk: 5
+  fields:
+    name: 'ANALYSIS_QC_NOT_PASSED'
+    description: 'None of the raw sequences passed QC.'
+- model: backlog.StudyError
+  pk: 6
+  fields:
+    name: 'ANALYSIS_QC_NOT_PASSED_LENGTH'
+    description: 'None of the raw sequences passed QC due to length.'
+- model: backlog.StudyError
+  pk: 7
+  fields:
+    name: 'ANALYSIS_QC_NOT_PASSED_QUALITY'
+    description: 'None of the raw sequences passed QC due to quality.'
+- model: backlog.StudyError
+  pk: 8
+  fields:
+    name: 'DATABASE_UPLOAD_FAILED'
+    description: 'The database upload of study and sample meta data failed.'
+- model: backlog.StudyError
+  pk: 9
+  fields:
+    name: 'DATABASE_SCHEMA_ISSUE'
+    description: 'Same sample shared between 2 studies.'
+- model: backlog.StudyError
+  pk: 10
+  fields:
+    name: 'SUBMISSION_TEST'
+    description: 'Test submission to ENA.'
+- model: backlog.StudyError
+  pk: 11
+  fields:
+    name: 'WRONG ANNOTATION'
+    description: 'Study was wrongly classified as metagenome in ENA'

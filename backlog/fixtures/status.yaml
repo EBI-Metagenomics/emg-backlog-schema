@@ -1,0 +1,12 @@
+- model: backlog.AssemblyJobStatus
+  pk: 1
+  fields:
+    description: pending
+- model: backlog.AssemblyJobStatus
+  pk: 2
+  fields:
+    description: running
+- model: backlog.AssemblyJobStatus
+  pk: 3
+  fields:
+    description: finished
