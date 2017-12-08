@@ -48,11 +48,11 @@ class Study(models.Model):
     title = models.CharField(max_length=255, null=True)
     public = models.NullBooleanField()
     hold_date = models.DateField(null=True)
-    first_created = models.DateTimeField(auto_now_add=True)
-    last_updated = models.DateTimeField(auto_now=True)
+    first_created = models.DateTimeField(auto_now_add=True, null=True)
+    last_updated = models.DateTimeField(auto_now=True, null=True)
+    ena_last_update = models.DateField(null=True)
     tax_id = models.CharField(max_length=4000, null=True)
     scientific_name = models.CharField(max_length=4000, null=True)
-    library_strategy = models.CharField(max_length=150, null=True)
     mixs_compliant = models.NullBooleanField()
     pubmed = models.TextField(null=True)
     webin = models.CharField(max_length=100, null=True)
@@ -66,12 +66,15 @@ class Run(models.Model):
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20)
     compressed_data_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)')
-    biome = models.ForeignKey(Biome, on_delete=models.DO_NOTHING, null=True)  # TODO change to foreign key
+    biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True)
     base_count = models.BigIntegerField()
     read_count = models.BigIntegerField()
     instrument_platform = models.CharField(max_length=4000)
     instrument_model = models.CharField(max_length=4000)
+    library_strategy = models.CharField(max_length=150, null=True)
     library_layout = models.CharField(max_length=20)
+    library_source = models.CharField(max_length=20, null=True)
+    ena_last_update = models.DateField(null=True)
 
 
 # Assemblies received from ENA
