@@ -1,4 +1,15 @@
 from django.db import models
+from django.utils import timezone
+
+
+class Submission(models.Model):
+    class Meta:
+        db_table = 'Submission'
+
+    primary_accession = models.CharField(max_length=20, unique=True, null=True)
+    secondary_accession = models.CharField(max_length=20, unique=True, null=True)
+    uuid = models.CharField(max_length=100, blank=True, unique=True, null=True)
+    created = models.DateTimeField(default=timezone.now)
 
 
 class Biome(models.Model):
@@ -45,7 +56,7 @@ class Study(models.Model):
 
     primary_accession = models.CharField(max_length=20, unique=True)
     secondary_accession = models.CharField(max_length=20, unique=True)
-    title = models.CharField(max_length=255, null=True)
+    title = models.CharField(max_length=4000, null=True)
     public = models.NullBooleanField()
     hold_date = models.DateField(null=True)
     first_created = models.DateTimeField(auto_now_add=True, null=True)
@@ -123,6 +134,7 @@ class AssemblyJob(models.Model):
 
     assembler = models.ForeignKey(Assembler, on_delete=models.DO_NOTHING)
     status = models.ForeignKey(AssemblyJobStatus, on_delete=models.DO_NOTHING)
+    submission = models.ForeignKey(Submission, on_delete=models.DO_NOTHING, null=True)
 
     user = models.CharField(max_length=16, null=True)
 
@@ -133,8 +145,6 @@ class AssemblyJob(models.Model):
     result = models.ForeignKey(AssemblyJobResult, on_delete=models.CASCADE, null=True)
 
     uploaded_to_ena = models.NullBooleanField()
-    new_ena_study_prima_accession = models.CharField(max_length=20, null=True)
-    new_ena_study_secon_accession = models.CharField(max_length=20, null=True)
     new_ena_assembly = models.CharField(max_length=20, null=True)
 
 
