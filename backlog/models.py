@@ -146,12 +146,14 @@ class AssemblyJob(models.Model):
 
     uploaded_to_ena = models.NullBooleanField()
     new_ena_assembly = models.CharField(max_length=20, null=True)
+    runs = models.ManyToManyField(Run, through='RunAssemblyJob', related_name='assemblyjobs', blank=True)
 
 
 # Assembly instances for runs
 class RunAssemblyJob(models.Model):
     class Meta:
         db_table = 'RunAssemblyJob'
+        unique_together = (('run', 'assembly_job'),)
 
     run = models.ForeignKey(Run, on_delete=models.CASCADE)
     assembly_job = models.ForeignKey(AssemblyJob, on_delete=models.CASCADE)
