@@ -12,7 +12,7 @@ setup(
     name='emg_backlog_schema',
 
     url="",
-    version='0.2',
+    version='0.2.1',
     description="Django DB schema for EBI-Metagenomics",
 
     author="Miguel Boland",
