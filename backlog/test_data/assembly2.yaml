@@ -12,7 +12,7 @@ study:
 
 run:
   study_sec_accession: "ERP001736" # MUST MATCH STUDY secondary_accession
-  primary_accession: "ERR1701760"
+  primary_accession: "ERR1701761"
   biome_id: 1
   base_count: 37861886168
   read_count: 193956529
@@ -24,14 +24,14 @@ run:
 
 
 start_assembly:
-  primary_accession: "ERR1701760" # MUST BE SAME AS IN RUN OBJ
+  primary_accession: "ERR1701761" # MUST BE SAME AS IN RUN OBJ
   priority: 5
   assembler_name: "metaspades"
   assembler_version: "3.11.1"
   input_size: 5000
 
 finish_assembly:
-  primary_accession: "ERR1701760" # MUST BE SAME AS IN RUN OBJ
+  primary_accession: "ERR1701761" # MUST BE SAME AS IN RUN OBJ
   assembler_name: "metaspades"
   assembler_version: "3.11.1"
   execution_time: 1000
@@ -44,14 +44,14 @@ finish_assembly:
   assembly_length: 7500000
 
 ena_upload_denied:
-  primary_accession: "ERR1701760" # MUST BE SAME AS IN RUN OBJ
+  primary_accession: "ERR1701761" # MUST BE SAME AS IN RUN OBJ
   assembler_name: "metaspades"
   assembler_version: "3.11.1"
   uploaded_to_ena: 0
   reason: "Max contig length too low"
 
 ena_upload_accepted:
-  primary_accession: "ERR1701760" # MUST BE SAME AS IN RUN OBJ
+  primary_accession: "ERR1701761" # MUST BE SAME AS IN RUN OBJ
   assembler_name: "metaspades"
   assembler_version: "3.11.1"
   uploaded_to_ena: 1
