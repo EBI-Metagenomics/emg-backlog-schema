@@ -14,10 +14,10 @@ sys.path.append(os.path.abspath('../../'))
 sys.path.append(os.path.abspath('../assembly_script'))
 print(os.getcwd())
 try:
-    from ebi_metagenomics_assembly.lib import new_db
+    from assembly_pipeline.lib import db
 except ImportError:
     print('==== ERROR: MISSING PROJECT ====')
-    print('ebi_metagenomics_assembly must be cloned in a relative path')
+    print('assembly_pipeline must be cloned in a relative path')
     print('run mkdir ../../assembly_script && cd ../../assembly_script && git clone <assembly_script_url>')
     sys.exit(1)
 
@@ -25,7 +25,7 @@ except ImportError:
 class AssemblyScriptDBTest(TestCase):
     prim_accession = 'PRJ123123'
     sec_accession = 'ERP001736'
-    DAO = new_db.DAO('default')
+    DAO = db.DAO('default')
 
     with open(os.path.join("backlog", "test_data", "assembly.yaml"), "r") as f:
         data = yaml.load(f)
@@ -84,6 +84,8 @@ class AssemblyScriptDBTest(TestCase):
         self.assertEqual(len(self.DAO.get_undetermined_assemblies(self.data['study']['secondary_accession'])), 1)
 
         self.assertTrue(self.DAO.set_ena_upload(self.data['ena_upload_accepted']))
+        self.assertTrue(self.DAO.was_assembly_submitted(self.data['run']['primary_accession'],
+                                                        self.data['start_assembly']['assembler_name']))
 
         # Verify number of uploaded assemblies is 1
         self.assertEqual(len(self.DAO.get_uploaded_assemblies(self.data['study']['secondary_accession'])), 1)
@@ -117,6 +119,8 @@ class AssemblyScriptDBTest(TestCase):
 
         # Upload second assembly and add to project
         self.assertTrue(self.DAO.set_ena_upload(self.data2['ena_upload_accepted']))
+        self.assertTrue(self.DAO.was_assembly_submitted(self.data2['run']['primary_accession'],
+                                                        self.data2['start_assembly']['assembler_name']))
 
         # Verify both assemblies are uploaded
         self.assertEqual(len(self.DAO.get_uploaded_assemblies(self.data2['study']['secondary_accession'])), 2)
