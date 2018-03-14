@@ -104,11 +104,11 @@ DATABASES = {
     }
 }
 
-if os.environ['DJANGO_BACKLOG_PROD_CONFIG']:
+if os.environ.get('DJANGO_BACKLOG_PROD_CONFIG'):
     with open(os.path.join(os.environ['DJANGO_BACKLOG_PROD_CONFIG']), 'r') as f:
         DATABASES['prod'] = yaml.load(f)
 
-if os.environ['DJANGO_BACKLOG_DEV_CONFIG']:
+if os.environ.get('DJANGO_BACKLOG_DEV_CONFIG'):
     with open(os.path.join(os.environ['DJANGO_BACKLOG_DEV_CONFIG']), 'r') as f:
         DATABASES['dev'] = yaml.load(f)
 
