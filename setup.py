@@ -11,7 +11,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 setup(
     name='emg_backlog_schema',
 
-    version='0.3.4',
+    version='0.3.5',
     description="Django DB schema for EBI-Metagenomics",
 
     author="Miguel Boland",
