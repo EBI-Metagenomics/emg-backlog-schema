@@ -36,4 +36,9 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
+    entry_points={
+        'console_scripts': [
+            'emgbacklog=backlog.manage:main',
+        ],
+    },
 )
