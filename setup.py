@@ -7,6 +7,13 @@ from setuptools import find_packages, setup
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
+_base = os.path.dirname(os.path.abspath(__file__))
+_requirements = os.path.join(_base, 'requirements.txt')
+
+install_requirements = []
+with open(_requirements) as f:
+    install_requirements = f.read().splitlines()
+
 
 setup(
     name='emg_backlog_schema',
@@ -19,9 +26,7 @@ setup(
 
     packages=find_packages(),
     include_package_data=True,
-    install_requires=(
-        'Django>=1.11.7',
-    ),
+    install_requires=install_requirements,
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
