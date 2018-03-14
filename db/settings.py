@@ -93,26 +93,24 @@ WSGI_APPLICATION = 'db.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-with open(os.path.join(os.environ['DJANGO_BACKLOG_PROD_CONFIG']), 'r') as f:
-    prod = yaml.load(f)
-
-with open(os.path.join(os.environ['DJANGO_BACKLOG_DEV_CONFIG']), 'r') as f:
-    dev = yaml.load(f)
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'emg_backlog_2',
         'USER': 'emguser',
-        'PASSWORD': 'emguser',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': 3306
     }
 }
 
-if 'test' not in sys.argv:
-    DATABASES['prod'] = prod
-    DATABASES['dev'] = dev
+if os.environ['DJANGO_BACKLOG_PROD_CONFIG']:
+    with open(os.path.join(os.environ['DJANGO_BACKLOG_PROD_CONFIG']), 'r') as f:
+        DATABASES['prod'] = yaml.load(f)
+
+if os.environ['DJANGO_BACKLOG_DEV_CONFIG']:
+    with open(os.path.join(os.environ['DJANGO_BACKLOG_DEV_CONFIG']), 'r') as f:
+        DATABASES['dev'] = yaml.load(f)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
