@@ -25,8 +25,6 @@ SECRET_KEY = '$vn6y((bri*96mf_fq3$)vmllzdd=^m3)t=bj)ji@up#*@m^e8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-FIXTURE_DIRS = [os.path.join(BASE_DIR, 'backlog', 'fixtures')]
-
 ALLOWED_HOSTS = []
 
 LOGGING = {
