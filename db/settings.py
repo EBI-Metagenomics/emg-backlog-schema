@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import yaml
-import logging
-import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,6 +24,8 @@ SECRET_KEY = '$vn6y((bri*96mf_fq3$)vmllzdd=^m3)t=bj)ji@up#*@m^e8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+FIXTURE_DIRS = [os.path.join(BASE_DIR, 'backlog', 'fixtures')]
 
 ALLOWED_HOSTS = []
 
