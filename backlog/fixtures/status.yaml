@@ -1,12 +1,20 @@
 - model: backlog.AssemblyJobStatus
   pk: 1
   fields:
-    description: pending
+    description: "pending"
 - model: backlog.AssemblyJobStatus
   pk: 2
   fields:
-    description: running
+    description: "running"
 - model: backlog.AssemblyJobStatus
   pk: 3
   fields:
-    description: finished
+    description: "stats required"
+- model: backlog.AssemblyJobStatus
+  pk: 4
+  fields:
+    description: "compression required"
+- model: backlog.AssemblyJobStatus
+  pk: 5
+  fields:
+    description: "finished"
