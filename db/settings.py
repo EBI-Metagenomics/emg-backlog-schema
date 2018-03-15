@@ -97,7 +97,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'emg_backlog_2',
-        'USER': 'emguser',
+        'USER': 'emguser2',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': 3306
