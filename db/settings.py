@@ -94,15 +94,11 @@ WSGI_APPLICATION = 'db.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'emg_backlog_2',
-        'USER': 'emguser2',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': 3306
-    }
 }
+
+if os.environ.get('DJANGO_BACKLOG_DEFAULT_CONFIG'):
+    with open(os.environ['DJANGO_BACKLOG_DEFAULT_CONFIG'], 'r') as f:
+        DATABASES['default'] = yaml.load(f)
 
 if os.environ.get('DJANGO_BACKLOG_PROD_CONFIG'):
     with open(os.environ['DJANGO_BACKLOG_PROD_CONFIG'], 'r') as f:
