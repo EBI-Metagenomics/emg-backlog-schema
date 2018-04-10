@@ -10,6 +10,7 @@ class Submission(models.Model):
     secondary_accession = models.CharField(max_length=20, unique=True, null=True)
     uuid = models.CharField(max_length=100, blank=True, unique=True, null=True)
     created = models.DateTimeField(default=timezone.now)
+    submitter = models.ForeignKey('Submitter')
 
 
 class Biome(models.Model):
@@ -68,6 +69,7 @@ class Study(models.Model):
     pubmed = models.TextField(null=True)
     webin = models.CharField(max_length=100, null=True)
     blacklisted = models.ForeignKey(Blacklist, on_delete=models.CASCADE, null=True)
+    submitter = models.ForeignKey('Submitter')
 
 
 class Run(models.Model):
@@ -117,7 +119,7 @@ class AssemblyJobResult(models.Model):
         db_table = 'AssemblyJobResult'
 
     execution_time = models.BigIntegerField(
-        help_text='Total execution time (including restarts) of the assembler, in seconds.')
+            help_text='Total execution time (including restarts) of the assembler, in seconds.')
     peak_mem = models.BigIntegerField(help_text='Peak memory usage of the assembler, in megabytes.')
 
     n50 = models.IntegerField()
@@ -200,3 +202,20 @@ class AssemblyAnnotationJob(models.Model):
 
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
+
+
+class Submitter(models.Model):
+    class Meta:
+        db_table = 'Submitter'
+
+    webin_id = models.CharField("ENA's submission account id", max_length=15, unique=True, primary_key=True)
+    registered = models.BooleanField(
+            "A copy of ENA's ROLE_METAGENOME_SUBMITTER flag. Set to True if submitter is registered with EMG.",
+            default=False)
+    consent_given = models.BooleanField(
+            "A copy of ENA's ROLE_METAGENOME_ANALYSIS flag. Set to True if submitter gave permission to access and analyse their private data.",
+            default=False)
+    email_address = models.CharField("Submitters email address.", max_length=200)
+    first_name = models.CharField(max_length=30, null=True)
+    surname = models.CharField(max_length=50, null=True)
+    first_created = models.DateField("A copy of ENA's FIRST_CREATED flag.")
