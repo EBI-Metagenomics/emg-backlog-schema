@@ -10,7 +10,7 @@ class Submission(models.Model):
     secondary_accession = models.CharField(max_length=20, unique=True, null=True)
     uuid = models.CharField(max_length=100, blank=True, unique=True, null=True)
     created = models.DateTimeField(default=timezone.now)
-    submitter = models.ForeignKey('Submitter')
+    submitter = models.ForeignKey('Submitter', on_delete=models.DO_NOTHING, null=True)
 
 
 class Biome(models.Model):
@@ -69,7 +69,7 @@ class Study(models.Model):
     pubmed = models.TextField(null=True)
     webin = models.CharField(max_length=100, null=True)
     blacklisted = models.ForeignKey(Blacklist, on_delete=models.CASCADE, null=True)
-    submitter = models.ForeignKey('Submitter')
+    submitter = models.ForeignKey('Submitter', on_delete=models.DO_NOTHING, null=True)
 
 
 class Run(models.Model):
