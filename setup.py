@@ -42,7 +42,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'emgbacklog=manage:main',
+            'emgbacklog=backlog_cli.manage:main',
         ],
     },
 )
