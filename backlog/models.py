@@ -97,6 +97,7 @@ class Assembly(models.Model):
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20)
+    ena_last_update = models.DateField(null=True)
 
 
 class Assembler(models.Model):
