@@ -88,6 +88,7 @@ class Run(models.Model):
     library_layout = models.CharField(max_length=20)
     library_source = models.CharField(max_length=20, null=True)
     ena_last_update = models.DateField(null=True)
+    last_updated = models.DateTimeField(auto_now=True, null=True)
 
 
 # Assemblies received from ENA
@@ -120,7 +121,7 @@ class AssemblyJobResult(models.Model):
         db_table = 'AssemblyJobResult'
 
     execution_time = models.BigIntegerField(
-            help_text='Total execution time (including restarts) of the assembler, in seconds.')
+        help_text='Total execution time (including restarts) of the assembler, in seconds.')
     peak_mem = models.BigIntegerField(help_text='Peak memory usage of the assembler, in megabytes.')
 
     n50 = models.IntegerField()
@@ -211,11 +212,11 @@ class Submitter(models.Model):
 
     webin_id = models.CharField("ENA's submission account id", max_length=15, unique=True, primary_key=True)
     registered = models.BooleanField(
-            "A copy of ENA's ROLE_METAGENOME_SUBMITTER flag. Set to True if submitter is registered with EMG.",
-            default=False)
+        "A copy of ENA's ROLE_METAGENOME_SUBMITTER flag. Set to True if submitter is registered with EMG.",
+        default=False)
     consent_given = models.BooleanField(
-            "A copy of ENA's ROLE_METAGENOME_ANALYSIS flag. Set to True if submitter gave permission to access and analyse their private data.",
-            default=False)
+        "A copy of ENA's ROLE_METAGENOME_ANALYSIS flag. Set to True if submitter gave permission to access and analyse their private data.",
+        default=False)
     email_address = models.CharField("Submitters email address.", max_length=200)
     first_name = models.CharField(max_length=30, null=True)
     surname = models.CharField(max_length=50, null=True)
