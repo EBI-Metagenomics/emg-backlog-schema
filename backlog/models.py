@@ -63,8 +63,6 @@ class Study(models.Model):
     first_created = models.DateTimeField(auto_now_add=True, null=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
     ena_last_update = models.DateField(null=True)
-    tax_id = models.CharField(max_length=4000, null=True)
-    scientific_name = models.CharField(max_length=4000, null=True)
     mixs_compliant = models.NullBooleanField()
     pubmed = models.TextField(null=True)
     webin = models.CharField(max_length=100, null=True)
