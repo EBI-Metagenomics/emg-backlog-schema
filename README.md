@@ -23,5 +23,5 @@ PASSWORD: 'password'
 
 ### Create local database instance
 ```bash
-emgbacklog migrate --database
+emgbacklog migrate --database {default|dev|prod}
 ```
