@@ -54,8 +54,9 @@ class Blacklist(models.Model):
 class Study(models.Model):
     class Meta:
         db_table = 'Study'
-
-    primary_accession = models.CharField(max_length=20, unique=True)
+        unique_together = (('primary_accession', 'secondary_accession'))
+    
+    primary_accession = models.CharField(max_length=20)
     secondary_accession = models.CharField(max_length=20, unique=True)
     title = models.CharField(max_length=4000, null=True)
     public = models.NullBooleanField()
