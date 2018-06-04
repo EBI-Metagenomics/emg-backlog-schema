@@ -78,8 +78,9 @@ class Run(models.Model):
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20)
-    compressed_data_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)')
+    compressed_data_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)', null=True)
     biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True)
+    biome_validated = models.BooleanField(default=False)
     base_count = models.BigIntegerField()
     read_count = models.BigIntegerField()
     instrument_platform = models.CharField(max_length=4000)
