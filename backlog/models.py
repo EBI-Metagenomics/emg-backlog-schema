@@ -55,7 +55,7 @@ class Study(models.Model):
     class Meta:
         db_table = 'Study'
         unique_together = (('primary_accession', 'secondary_accession'))
-    
+
     primary_accession = models.CharField(max_length=20)
     secondary_accession = models.CharField(max_length=20, unique=True)
     title = models.CharField(max_length=4000, null=True)
@@ -77,8 +77,10 @@ class Run(models.Model):
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20)
-    compressed_data_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)', null=True)
-    biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True)
+    compressed_data_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)', null=True,
+                                                  blank=True)
+    biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True,
+                              blank=True)
     biome_validated = models.BooleanField(default=False)
     base_count = models.BigIntegerField()
     read_count = models.BigIntegerField()
