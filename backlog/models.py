@@ -143,6 +143,7 @@ class AssemblyJob(models.Model):
     submission = models.ForeignKey(Submission, on_delete=models.DO_NOTHING, null=True)
 
     user = models.CharField(max_length=16, null=True)
+    directory = models.CharField(max_length=255, null=True, blank=True)
 
     input_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)')
     reason = models.TextField(null=True,
