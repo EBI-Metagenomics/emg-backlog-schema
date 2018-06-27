@@ -114,8 +114,7 @@ class Assembler(models.Model):
 class AssemblyJobStatus(models.Model):
     class Meta:
         db_table = 'AssemblyJobStatus'
-
-    description = models.CharField(max_length=20)
+    description = models.CharField(max_length=100)
 
 
 class AssemblyJobResult(models.Model):
