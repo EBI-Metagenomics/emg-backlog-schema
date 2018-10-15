@@ -2,6 +2,23 @@ from django.db import models
 from django.utils import timezone
 
 
+class Submitter(models.Model):
+    class Meta:
+        db_table = 'Submitter'
+
+    webin_id = models.CharField("ENA's submission account id", max_length=15, unique=True, primary_key=True)
+    registered = models.BooleanField(
+        "A copy of ENA's ROLE_METAGENOME_SUBMITTER flag. Set to True if submitter is registered with EMG.",
+        default=False)
+    consent_given = models.BooleanField(
+        "A copy of ENA's ROLE_METAGENOME_ANALYSIS flag. Set to True if submitter gave permission to access and analyse their private data.",
+        default=False)
+    email_address = models.CharField("Submitters email address.", max_length=200)
+    first_name = models.CharField(max_length=30, null=True)
+    surname = models.CharField(max_length=50, null=True)
+    first_created = models.DateField("A copy of ENA's FIRST_CREATED flag.")
+
+
 class Submission(models.Model):
     class Meta:
         db_table = 'Submission'
@@ -10,7 +27,7 @@ class Submission(models.Model):
     secondary_accession = models.CharField(max_length=20, unique=True, null=True)
     uuid = models.CharField(max_length=100, blank=True, unique=True, null=True)
     created = models.DateTimeField(default=timezone.now)
-    submitter = models.ForeignKey('Submitter', on_delete=models.DO_NOTHING, null=True)
+    submitter = models.ForeignKey(Submitter, on_delete=models.DO_NOTHING, null=True)
 
 
 class Biome(models.Model):
@@ -68,7 +85,7 @@ class Study(models.Model):
     pubmed = models.TextField(null=True)
     webin = models.CharField(max_length=100, null=True)
     blacklisted = models.ForeignKey(Blacklist, on_delete=models.CASCADE, null=True)
-    submitter = models.ForeignKey('Submitter', on_delete=models.DO_NOTHING, null=True)
+    submitter = models.ForeignKey(Submitter, on_delete=models.DO_NOTHING, null=True)
 
 
 class Run(models.Model):
@@ -76,7 +93,9 @@ class Run(models.Model):
         db_table = 'Run'
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
+
     primary_accession = models.CharField(max_length=20)
+    sample_primary_accession = models.CharField(max_length=20, blank=True, null=True)
     compressed_data_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)', null=True,
                                                   blank=True)
     biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True,
@@ -147,8 +166,11 @@ class AssemblyJob(models.Model):
     input_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)')
     reason = models.TextField(null=True,
                               help_text='Filled iff assembly will not be submitted to ENA, specifies the reason why.')
+    requester = models.ForeignKey(Submitter, on_delete=models.DO_NOTHING, null=True)
+
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')], null=True)
     result = models.ForeignKey(AssemblyJobResult, on_delete=models.CASCADE, null=True)
+    estimated_peak_mem = models.BigIntegerField(help_text='Estimated peak memory usage of the assembler, in megabytes.', null=True)
 
     uploaded_to_ena = models.NullBooleanField()
     new_ena_assembly = models.CharField(max_length=20, null=True)
@@ -206,20 +228,3 @@ class AssemblyAnnotationJob(models.Model):
 
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
-
-
-class Submitter(models.Model):
-    class Meta:
-        db_table = 'Submitter'
-
-    webin_id = models.CharField("ENA's submission account id", max_length=15, unique=True, primary_key=True)
-    registered = models.BooleanField(
-        "A copy of ENA's ROLE_METAGENOME_SUBMITTER flag. Set to True if submitter is registered with EMG.",
-        default=False)
-    consent_given = models.BooleanField(
-        "A copy of ENA's ROLE_METAGENOME_ANALYSIS flag. Set to True if submitter gave permission to access and analyse their private data.",
-        default=False)
-    email_address = models.CharField("Submitters email address.", max_length=200)
-    first_name = models.CharField(max_length=30, null=True)
-    surname = models.CharField(max_length=50, null=True)
-    first_created = models.DateField("A copy of ENA's FIRST_CREATED flag.")
