@@ -2,9 +2,9 @@ from django.db import models
 from django.utils import timezone
 
 
-class Submitter(models.Model):
+class User(models.Model):
     class Meta:
-        db_table = 'Submitter'
+        db_table = 'User'
 
     webin_id = models.CharField("ENA's submission account id", max_length=15, unique=True, primary_key=True)
     registered = models.BooleanField(
@@ -27,7 +27,7 @@ class Submission(models.Model):
     secondary_accession = models.CharField(max_length=20, unique=True, null=True)
     uuid = models.CharField(max_length=100, blank=True, unique=True, null=True)
     created = models.DateTimeField(default=timezone.now)
-    submitter = models.ForeignKey(Submitter, on_delete=models.DO_NOTHING, null=True)
+    submitter = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
 
 
 class Biome(models.Model):
@@ -85,7 +85,7 @@ class Study(models.Model):
     pubmed = models.TextField(null=True)
     webin = models.CharField(max_length=100, null=True)
     blacklisted = models.ForeignKey(Blacklist, on_delete=models.CASCADE, null=True)
-    submitter = models.ForeignKey(Submitter, on_delete=models.DO_NOTHING, null=True)
+    submitter = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
 
 
 class Run(models.Model):
@@ -166,7 +166,7 @@ class AssemblyJob(models.Model):
     input_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)')
     reason = models.TextField(null=True,
                               help_text='Filled iff assembly will not be submitted to ENA, specifies the reason why.')
-    requester = models.ForeignKey(Submitter, on_delete=models.DO_NOTHING, null=True)
+    requester = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
 
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')], null=True)
     result = models.ForeignKey(AssemblyJobResult, on_delete=models.CASCADE, null=True)
