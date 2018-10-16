@@ -112,6 +112,16 @@ class Run(models.Model):
     last_updated = models.DateTimeField(auto_now=True, null=True)
 
 
+class UserRequest(models.Model):
+    class Meta:
+        db_table = 'UserRequest'
+
+    webin_id = models.ForeignKey(User, on_delete=models.DO_NOTHING, db_column='user_id')
+    first_created = models.DateTimeField(auto_now_add=True, null=True)
+    last_updated = models.DateTimeField(auto_now=True, null=True)
+    priority = models.IntegerField(default=0)
+
+
 # Assemblies received from ENA
 class Assembly(models.Model):
     class Meta:
@@ -133,6 +143,7 @@ class Assembler(models.Model):
 class AssemblyJobStatus(models.Model):
     class Meta:
         db_table = 'AssemblyJobStatus'
+
     description = models.CharField(max_length=100)
 
 
@@ -160,7 +171,7 @@ class AssemblyJob(models.Model):
     status = models.ForeignKey(AssemblyJobStatus, on_delete=models.DO_NOTHING)
     submission = models.ForeignKey(Submission, on_delete=models.DO_NOTHING, null=True)
 
-    user = models.CharField(max_length=16, null=True)
+    request_id = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id', )
     directory = models.CharField(max_length=255, null=True, blank=True)
 
     input_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)')
@@ -170,7 +181,8 @@ class AssemblyJob(models.Model):
 
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')], null=True)
     result = models.ForeignKey(AssemblyJobResult, on_delete=models.CASCADE, null=True)
-    estimated_peak_mem = models.BigIntegerField(help_text='Estimated peak memory usage of the assembler, in megabytes.', null=True)
+    estimated_peak_mem = models.BigIntegerField(help_text='Estimated peak memory usage of the assembler, in megabytes.',
+                                                null=True)
 
     uploaded_to_ena = models.NullBooleanField()
     new_ena_assembly = models.CharField(max_length=20, null=True)
@@ -210,7 +222,7 @@ class AnnotationJob(models.Model):
     pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
     exec_status = models.ForeignKey(AnnotationStatus, on_delete=models.DO_NOTHING)
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')])
-    user = models.CharField(max_length=16, null=True)
+    request_id = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id', )
 
 
 # Annotation instance for a run
