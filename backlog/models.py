@@ -71,7 +71,7 @@ class Blacklist(models.Model):
 class Study(models.Model):
     class Meta:
         db_table = 'Study'
-        unique_together = (('primary_accession', 'secondary_accession'))
+        unique_together = ('primary_accession', 'secondary_accession')
 
     primary_accession = models.CharField(max_length=20)
     secondary_accession = models.CharField(max_length=20, unique=True)
@@ -120,6 +120,7 @@ class UserRequest(models.Model):
     first_created = models.DateTimeField(auto_now_add=True, null=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
     priority = models.IntegerField(default=0)
+    rt_ticket = models.IntegerField()
 
 
 # Assemblies received from ENA
