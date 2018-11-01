@@ -209,9 +209,9 @@ class RunAssembly(models.Model):
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
 
 
-class AnnotationStatus(models.Model):
+class AnnotationJobStatus(models.Model):
     class Meta:
-        db_table = 'AnnotationStatus'
+        db_table = 'AnnotationJobStatus'
 
     description = models.CharField(max_length=20)
 
@@ -221,7 +221,7 @@ class AnnotationJob(models.Model):
         db_table = 'AnnotationJob'
 
     pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
-    exec_status = models.ForeignKey(AnnotationStatus, on_delete=models.DO_NOTHING)
+    exec_status = models.ForeignKey(AnnotationJobStatus, on_delete=models.DO_NOTHING)
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')])
     request_id = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id', )
 
