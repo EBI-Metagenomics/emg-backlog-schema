@@ -16,7 +16,7 @@ class User(models.Model):
     email_address = models.CharField("Submitters email address.", max_length=200)
     first_name = models.CharField(max_length=30, null=True)
     surname = models.CharField(max_length=50, null=True)
-    first_created = models.DateField("A copy of ENA's FIRST_CREATED flag.")
+    first_created = models.DateTimeField(auto_now_add=True, null=True)
 
 
 class Submission(models.Model):
