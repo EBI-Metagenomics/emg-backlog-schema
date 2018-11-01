@@ -120,7 +120,7 @@ class UserRequest(models.Model):
     first_created = models.DateTimeField(auto_now_add=True, null=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
     priority = models.IntegerField(default=0)
-    rt_ticket = models.IntegerField()
+    rt_ticket = models.IntegerField(unique=True)
 
 
 # Assemblies received from ENA
