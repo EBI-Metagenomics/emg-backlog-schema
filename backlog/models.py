@@ -223,7 +223,7 @@ class AnnotationJob(models.Model):
     pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
     exec_status = models.ForeignKey(AnnotationJobStatus, on_delete=models.DO_NOTHING)
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')])
-    request_id = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id', )
+    request = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id', )
 
 
 # Annotation instance for a run
