@@ -9,16 +9,23 @@ pip install -U git+git://github.com/EBI-Metagenomics/emg-backlog-schema.git
 ```
 
 ### DB config files
-An environment variable needs to be defined for each database config (DJANGO_BACKLOG_DEFAULT_CONFIG, DJANGO_BACKLOG_DEV_CONFIG, DJANGO_BACKLOG_PROD_CONFIG).
-These should contain paths to yaml config files, which must contain the following fields at root level:
+An environment variable named *BACKLOG_CONFIG* needs to be defined for the database config.
+These should contain paths to yaml config file, which must contain the following fields:
 ```yaml
-ENGINE: 'django.db.backends.mysql'
-HOST: 'host'
-PORT: 3306 (or other)
-DB: 'database_name'
-NAME: 'schema_name'
-USER: 'user'
-PASSWORD: 'password'
+backlog:
+  databases:
+    default:
+      ENGINE: 'django.db.backends.mysql'
+      HOST: 'host'
+      PORT: 3306 (or other)
+      DB: 'database_name'
+      NAME: 'schema_name'
+      USER: 'user'
+      PASSWORD: 'password'
+    dev:
+        ....
+    prod:
+        ....
 ```
 
 ### Create local database instance

@@ -4,7 +4,8 @@ import sys
 
 
 def main():
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "db.settings")
+    sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backlog_cli.settings")
     try:
         from django.core.management import execute_from_command_line
     except ImportError:

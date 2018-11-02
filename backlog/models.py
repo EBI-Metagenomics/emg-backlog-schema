@@ -230,6 +230,7 @@ class AnnotationJob(models.Model):
 class RunAnnotationJob(models.Model):
     class Meta:
         db_table = 'RunAnnotationJob'
+        unique_together = (('run', 'annotation_job'),)
 
     run = models.ForeignKey(Run, on_delete=models.DO_NOTHING)
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
