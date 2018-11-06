@@ -11,7 +11,19 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import yaml
+
+from os.path import expanduser
+
+try:
+    from YamJam import yamjam, YAMLError
+except ImportError:
+    raise ImportError("Install yamjam. Run `pip install -r requirements.txt`")
+
+BACKLOG_CONFIG = os.environ.get(
+    'BACKLOG_CONFIG', os.path.join(expanduser("~"), 'backlog', 'config.yaml')
+)
+BACKLOG_CONF = yamjam(BACKLOG_CONFIG)
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -55,7 +67,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -91,20 +103,11 @@ WSGI_APPLICATION = 'db.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-}
+try:
+    DATABASES = BACKLOG_CONF['backlog']['databases']
+except KeyError:
+    raise KeyError("Config must container default database.")
 
-if os.environ.get('DJANGO_BACKLOG_DEFAULT_CONFIG'):
-    with open(os.environ['DJANGO_BACKLOG_DEFAULT_CONFIG'], 'r') as f:
-        DATABASES['default'] = yaml.load(f)
-
-if os.environ.get('DJANGO_BACKLOG_PROD_CONFIG'):
-    with open(os.environ['DJANGO_BACKLOG_PROD_CONFIG'], 'r') as f:
-        DATABASES['prod'] = yaml.load(f)
-
-if os.environ.get('DJANGO_BACKLOG_DEV_CONFIG'):
-    with open(os.environ['DJANGO_BACKLOG_DEV_CONFIG'], 'r') as f:
-        DATABASES['dev'] = yaml.load(f)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

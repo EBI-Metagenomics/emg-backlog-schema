@@ -16,7 +16,7 @@ class User(models.Model):
     email_address = models.CharField("Submitters email address.", max_length=200)
     first_name = models.CharField(max_length=30, null=True)
     surname = models.CharField(max_length=50, null=True)
-    first_created = models.DateField("A copy of ENA's FIRST_CREATED flag.")
+    first_created = models.DateTimeField(auto_now_add=True, null=True)
 
 
 class Submission(models.Model):
@@ -71,7 +71,7 @@ class Blacklist(models.Model):
 class Study(models.Model):
     class Meta:
         db_table = 'Study'
-        unique_together = (('primary_accession', 'secondary_accession'))
+        unique_together = ('primary_accession', 'secondary_accession')
 
     primary_accession = models.CharField(max_length=20)
     secondary_accession = models.CharField(max_length=20, unique=True)
@@ -120,6 +120,7 @@ class UserRequest(models.Model):
     first_created = models.DateTimeField(auto_now_add=True, null=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
     priority = models.IntegerField(default=0)
+    rt_ticket = models.IntegerField(unique=True)
 
 
 # Assemblies received from ENA
@@ -208,9 +209,9 @@ class RunAssembly(models.Model):
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
 
 
-class AnnotationStatus(models.Model):
+class AnnotationJobStatus(models.Model):
     class Meta:
-        db_table = 'AnnotationStatus'
+        db_table = 'AnnotationJobStatus'
 
     description = models.CharField(max_length=20)
 
@@ -220,15 +221,16 @@ class AnnotationJob(models.Model):
         db_table = 'AnnotationJob'
 
     pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
-    exec_status = models.ForeignKey(AnnotationStatus, on_delete=models.DO_NOTHING)
+    exec_status = models.ForeignKey(AnnotationJobStatus, on_delete=models.DO_NOTHING)
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')])
-    request_id = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id', )
+    request = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id', )
 
 
 # Annotation instance for a run
 class RunAnnotationJob(models.Model):
     class Meta:
         db_table = 'RunAnnotationJob'
+        unique_together = (('run', 'annotation_job'),)
 
     run = models.ForeignKey(Run, on_delete=models.DO_NOTHING)
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)

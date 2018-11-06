@@ -57,7 +57,6 @@
 /src/third_party/*/*.tlog
 /src/third_party/*/*.lastbuildstate
 config.log
-settings.py
 log_config.py
 /tags
 TAGS
