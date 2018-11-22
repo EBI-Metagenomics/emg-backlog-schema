@@ -116,7 +116,7 @@ class UserRequest(models.Model):
     class Meta:
         db_table = 'UserRequest'
 
-    webin_id = models.ForeignKey(User, on_delete=models.DO_NOTHING, db_column='user_id')
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, db_column='user_id')
     first_created = models.DateTimeField(auto_now_add=True, null=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
     priority = models.IntegerField(default=0)
