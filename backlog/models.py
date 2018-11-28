@@ -74,7 +74,7 @@ class Study(models.Model):
         unique_together = ('primary_accession', 'secondary_accession')
 
     primary_accession = models.CharField(max_length=20)
-    secondary_accession = models.CharField(max_length=20, unique=True)
+    secondary_accession = models.CharField(max_length=20)
     title = models.CharField(max_length=4000, null=True)
     public = models.NullBooleanField()
     hold_date = models.DateField(null=True)
@@ -94,7 +94,7 @@ class Run(models.Model):
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
 
-    primary_accession = models.CharField(max_length=20)
+    primary_accession = models.CharField(max_length=20, unique=True)
     sample_primary_accession = models.CharField(max_length=20, blank=True, null=True)
     compressed_data_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)', null=True,
                                                   blank=True)
@@ -129,7 +129,7 @@ class Assembly(models.Model):
         db_table = 'Assembly'
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
-    primary_accession = models.CharField(max_length=20)
+    primary_accession = models.CharField(max_length=20, unique=True)
     ena_last_update = models.DateField(null=True)
 
 
