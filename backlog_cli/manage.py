@@ -4,7 +4,8 @@ import sys
 
 
 def main():
-    sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+    sys.path.append(
+        os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)))
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backlog_cli.settings")
     try:
         from django.core.management import execute_from_command_line
