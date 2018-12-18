@@ -76,7 +76,7 @@ class Study(models.Model):
     primary_accession = models.CharField(max_length=20)
     secondary_accession = models.CharField(max_length=20)
     title = models.CharField(max_length=4000, null=True)
-    public = models.NullBooleanField()
+    public = models.BooleanField(default=True)
     hold_date = models.DateField(null=True)
     first_created = models.DateTimeField(auto_now_add=True, null=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
@@ -110,6 +110,7 @@ class Run(models.Model):
     library_source = models.CharField(max_length=20, null=True)
     ena_last_update = models.DateField(null=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
+    public = models.BooleanField(default=True)
 
 
 class UserRequest(models.Model):
