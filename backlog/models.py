@@ -226,6 +226,7 @@ class AnnotationJob(models.Model):
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')])
     request = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id')
     directory = models.CharField(max_length=255, null=True, blank=True)
+    last_updated = models.DateTimeField(auto_now=True, null=True)
 
 
 # Annotation instance for a run
