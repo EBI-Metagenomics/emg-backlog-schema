@@ -187,6 +187,7 @@ class AssemblyJob(models.Model):
                                                 null=True)
 
     uploaded_to_ena = models.NullBooleanField()
+    cram_uploaded = models.NullBooleanField()
     new_ena_assembly = models.CharField(max_length=20, null=True)
     runs = models.ManyToManyField(Run, through='RunAssemblyJob', related_name='assemblyjobs', blank=True)
 
