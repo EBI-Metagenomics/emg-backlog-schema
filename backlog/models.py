@@ -228,6 +228,7 @@ class AnnotationJob(models.Model):
     request = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id')
     directory = models.CharField(max_length=255, null=True, blank=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
+    runs = models.ManyToManyField(Run, through='RunAnnotationJob', related_name='annotationjobs', blank=True)
 
 
 # Annotation instance for a run
