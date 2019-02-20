@@ -131,6 +131,8 @@ class Assembly(models.Model):
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20, unique=True)
+    public = models.BooleanField(default=True)
+
     ena_last_update = models.DateField(null=True)
 
 
