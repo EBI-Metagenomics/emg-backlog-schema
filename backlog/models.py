@@ -131,6 +131,8 @@ class Assembly(models.Model):
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20, unique=True)
+    public = models.BooleanField(default=True)
+
     ena_last_update = models.DateField(null=True)
 
 
@@ -187,6 +189,7 @@ class AssemblyJob(models.Model):
                                                 null=True)
 
     uploaded_to_ena = models.NullBooleanField()
+    bam_uploaded = models.NullBooleanField()
     new_ena_assembly = models.CharField(max_length=20, null=True)
     runs = models.ManyToManyField(Run, through='RunAssemblyJob', related_name='assemblyjobs', blank=True)
 
@@ -227,6 +230,7 @@ class AnnotationJob(models.Model):
     request = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id')
     directory = models.CharField(max_length=255, null=True, blank=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
+    runs = models.ManyToManyField(Run, through='RunAnnotationJob', related_name='annotationjobs', blank=True)
 
 
 # Annotation instance for a run
