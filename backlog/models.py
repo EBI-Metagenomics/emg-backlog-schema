@@ -105,7 +105,7 @@ class Run(models.Model):
     read_count = models.BigIntegerField()
     instrument_platform = models.CharField(max_length=4000)
     instrument_model = models.CharField(max_length=4000)
-    library_strategy = models.CharField(max_length=150, null=True)
+    library_strategy = models.CharField(max_length=150, null=True, db_index=True)
     library_layout = models.CharField(max_length=20)
     library_source = models.CharField(max_length=20, null=True)
     ena_last_update = models.DateField(null=True)
@@ -225,7 +225,7 @@ class AnnotationJob(models.Model):
         db_table = 'AnnotationJob'
 
     pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
-    status = models.ForeignKey(AnnotationJobStatus, on_delete=models.DO_NOTHING)
+    status = models.ForeignKey(AnnotationJobStatus, on_delete=models.DO_NOTHING, db_index=True)
     priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')])
     request = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id')
     directory = models.CharField(max_length=255, null=True, blank=True)
