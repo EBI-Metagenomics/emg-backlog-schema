@@ -34,7 +34,7 @@ class Biome(models.Model):
     class Meta:
         db_table = 'Biome'
 
-    biome_id = models.IntegerField(unique=True)
+    biome_id = models.IntegerField(primary_key=True, unique=True)
     biome_name = models.CharField(max_length=60)
     lft = models.IntegerField()
     rgt = models.IntegerField()
