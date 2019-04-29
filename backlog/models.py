@@ -133,6 +133,8 @@ class Assembly(models.Model):
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20, unique=True)
+    biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True,
+                              blank=True)
     public = models.BooleanField(default=True)
 
     ena_last_update = models.DateField(null=True)
