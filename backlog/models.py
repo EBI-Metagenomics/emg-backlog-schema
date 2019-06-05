@@ -102,7 +102,8 @@ class Run(models.Model):
                                                   blank=True)
     biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True,
                               blank=True)
-    biome_validated = models.BooleanField(default=False)
+    inferred_biome = models.ForeignKey(Biome, related_name='inferred_run_biome', on_delete=models.DO_NOTHING, null=True,
+                              blank=True)
     base_count = models.BigIntegerField(null=True, blank=True)
     read_count = models.BigIntegerField(null=True, blank=True)
     instrument_platform = models.CharField(max_length=4000)
@@ -134,6 +135,8 @@ class Assembly(models.Model):
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20, unique=True)
     biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True,
+                              blank=True)
+    inferred_biome = models.ForeignKey(Biome, db_column='inferred_biome_id', to_field='biome_id', related_name='inferred_assembly_biome', on_delete=models.DO_NOTHING, null=True,
                               blank=True)
     public = models.BooleanField(default=True)
 
