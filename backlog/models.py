@@ -238,7 +238,7 @@ class AnnotationJob(models.Model):
     directory = models.CharField(max_length=255, null=True, blank=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
     runs = models.ManyToManyField(Run, through='RunAnnotationJob', related_name='annotationjobs', blank=True)
-
+    attempt = models.IntegerField(default=0)
 
 # Annotation instance for a run
 class RunAnnotationJob(models.Model):
