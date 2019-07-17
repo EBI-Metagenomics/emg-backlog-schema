@@ -5,6 +5,7 @@ from django.utils import timezone
 class User(models.Model):
     class Meta:
         db_table = 'User'
+        app_label='backlog'
 
     webin_id = models.CharField("ENA's submission account id", max_length=15, unique=True, primary_key=True)
     registered = models.BooleanField(
@@ -22,6 +23,8 @@ class User(models.Model):
 class Submission(models.Model):
     class Meta:
         db_table = 'Submission'
+        app_label='backlog'
+
 
     primary_accession = models.CharField(max_length=20, unique=True, null=True)
     secondary_accession = models.CharField(max_length=20, unique=True, null=True)
@@ -33,6 +36,8 @@ class Submission(models.Model):
 class Biome(models.Model):
     class Meta:
         db_table = 'Biome'
+        app_label='backlog'
+
 
     biome_id = models.IntegerField(primary_key=True, unique=True)
     biome_name = models.CharField(max_length=60)
@@ -45,6 +50,8 @@ class Biome(models.Model):
 class StudyError(models.Model):
     class Meta:
         db_table = 'StudyErrorType'
+        app_label='backlog'
+
 
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
@@ -53,6 +60,8 @@ class StudyError(models.Model):
 class Pipeline(models.Model):
     class Meta:
         db_table = 'Pipeline'
+        app_label='backlog'
+
 
     version = models.FloatField(primary_key=True)
 
@@ -60,6 +69,8 @@ class Pipeline(models.Model):
 class Blacklist(models.Model):
     class Meta:
         db_table = 'Blacklist'
+        app_label='backlog'
+
 
     date_blacklisted = models.DateField(auto_now_add=True)
     pipeline_version = models.ForeignKey(Pipeline, on_delete=models.CASCADE)
@@ -71,6 +82,7 @@ class Blacklist(models.Model):
 class Study(models.Model):
     class Meta:
         db_table = 'Study'
+        app_label='backlog'
         unique_together = ('primary_accession', 'secondary_accession')
 
     primary_accession = models.CharField(max_length=20)
@@ -93,6 +105,7 @@ class Study(models.Model):
 class Run(models.Model):
     class Meta:
         db_table = 'Run'
+        app_label='backlog'
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
 
@@ -119,6 +132,7 @@ class Run(models.Model):
 class UserRequest(models.Model):
     class Meta:
         db_table = 'UserRequest'
+        app_label='backlog'
 
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING, db_column='user_id')
     first_created = models.DateTimeField(auto_now_add=True, null=True)
@@ -131,6 +145,7 @@ class UserRequest(models.Model):
 class Assembly(models.Model):
     class Meta:
         db_table = 'Assembly'
+        app_label='backlog'
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20, unique=True)
@@ -146,6 +161,7 @@ class Assembly(models.Model):
 class Assembler(models.Model):
     class Meta:
         db_table = 'Assembler'
+        app_label='backlog'
 
     name = models.CharField(max_length=20)
     version = models.CharField(max_length=20)
@@ -154,6 +170,7 @@ class Assembler(models.Model):
 class AssemblyJobStatus(models.Model):
     class Meta:
         db_table = 'AssemblyJobStatus'
+        app_label='backlog'
 
     description = models.CharField(max_length=100)
 
@@ -161,6 +178,7 @@ class AssemblyJobStatus(models.Model):
 class AssemblyJobResult(models.Model):
     class Meta:
         db_table = 'AssemblyJobResult'
+        app_label='backlog'
 
     execution_time = models.BigIntegerField(
         help_text='Total execution time (including restarts) of the assembler, in seconds.')
@@ -177,6 +195,7 @@ class AssemblyJobResult(models.Model):
 class AssemblyJob(models.Model):
     class Meta:
         db_table = 'AssemblyJob'
+        app_label='backlog'
 
     assembler = models.ForeignKey(Assembler, on_delete=models.DO_NOTHING)
     status = models.ForeignKey(AssemblyJobStatus, on_delete=models.DO_NOTHING)
@@ -205,6 +224,7 @@ class AssemblyJob(models.Model):
 class RunAssemblyJob(models.Model):
     class Meta:
         db_table = 'RunAssemblyJob'
+        app_label='backlog'
         unique_together = (('run', 'assembly_job'),)
 
     run = models.ForeignKey(Run, on_delete=models.CASCADE)
@@ -215,6 +235,7 @@ class RunAssemblyJob(models.Model):
 class RunAssembly(models.Model):
     class Meta:
         db_table = 'RunAssembly'
+        app_label='backlog'
 
     run = models.ForeignKey(Run, on_delete=models.DO_NOTHING)
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
@@ -223,6 +244,7 @@ class RunAssembly(models.Model):
 class AnnotationJobStatus(models.Model):
     class Meta:
         db_table = 'AnnotationJobStatus'
+        app_label='backlog'
 
     description = models.CharField(max_length=20)
 
@@ -230,6 +252,7 @@ class AnnotationJobStatus(models.Model):
 class AnnotationJob(models.Model):
     class Meta:
         db_table = 'AnnotationJob'
+        app_label='backlog'
 
     pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
     status = models.ForeignKey(AnnotationJobStatus, on_delete=models.DO_NOTHING, db_index=True)
@@ -244,6 +267,7 @@ class AnnotationJob(models.Model):
 class RunAnnotationJob(models.Model):
     class Meta:
         db_table = 'RunAnnotationJob'
+        app_label='backlog'
         unique_together = (('run', 'annotation_job'),)
 
     run = models.ForeignKey(Run, on_delete=models.DO_NOTHING)
@@ -253,6 +277,7 @@ class RunAnnotationJob(models.Model):
 class AssemblyAnnotationJob(models.Model):
     class Meta:
         db_table = 'AssemblyAnnotationJob'
+        app_label='backlog'
 
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
