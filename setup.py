@@ -18,7 +18,7 @@ with open(_requirements) as f:
 setup(
     name='emg_backlog_schema',
 
-    version='0.12.0',
+    version='0.12.1',
     description="Django DB schema for EBI-Metagenomics",
 
     author="Miguel Boland",
