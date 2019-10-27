@@ -15,12 +15,11 @@ install:
   - pip install 'pytest==3.7.4'
   # Project dependencies
   - pip install -U .
-
   # Setup database
   - mysql -e 'CREATE DATABASE emg_backlog_2;'
 
 script:
-  - emgbacklog migrate --database=default
+  - emgbacklog.py migrate --database=default
 
 after_success:
   - pip install codacy-coverage

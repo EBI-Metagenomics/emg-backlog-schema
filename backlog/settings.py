@@ -19,6 +19,7 @@ try:
 except ImportError:
     raise ImportError("Install yamjam. Run `pip install -r requirements.txt`")
 
+
 BACKLOG_CONFIG = os.environ.get(
     'BACKLOG_CONFIG', os.path.join(expanduser("~"), 'backlog', 'config.yaml')
 )
@@ -139,3 +140,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+ROOT_URLCONF = 'backlog.urls'
