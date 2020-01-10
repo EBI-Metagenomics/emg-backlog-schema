@@ -143,7 +143,15 @@ class AssemblyJobStatus(admin.ModelAdmin):
 
 @admin.register(models.AssemblyJobResult)
 class AssemblyJobResult(admin.ModelAdmin):
-    pass
+    list_display = (
+        'n50',
+        'num_contigs',
+        'assembly_length',
+        'largest_contig',
+        'coverage',
+        'execution_time',
+        'peak_mem'
+    )
 
 
 @admin.register(models.AssemblyJob)
@@ -254,3 +262,11 @@ class MonitorAnnotationJobs(admin.ModelAdmin):
         'secondary_accession',
         'email_address'
     ]
+
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        del actions['delete_selected']
+        return actions
+
+    def has_delete_permission(self, request, obj=None):
+        return False

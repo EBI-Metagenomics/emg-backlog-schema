@@ -19,6 +19,9 @@ class User(models.Model):
     surname = models.CharField(max_length=50, null=True)
     first_created = models.DateTimeField(auto_now_add=True, null=True)
 
+    def __str__(self):
+        return self.webin_id
+
 
 class Submission(models.Model):
     class Meta:
@@ -37,13 +40,15 @@ class Biome(models.Model):
         db_table = 'Biome'
         app_label = 'backlog'
 
-
     biome_id = models.IntegerField(primary_key=True, unique=True)
     biome_name = models.CharField(max_length=60)
     lft = models.IntegerField()
     rgt = models.IntegerField()
     depth = models.IntegerField()
     lineage = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.biome_name
 
 
 class StudyError(models.Model):
@@ -54,6 +59,9 @@ class StudyError(models.Model):
 
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
+
+    def __str__(self):
+        return self.name
 
 
 class Pipeline(models.Model):
@@ -149,7 +157,7 @@ class UserRequest(models.Model):
     rt_ticket = models.IntegerField(unique=True)
 
     def __str__(self):
-        return self.id
+        return str(self.pk)
 
 
 # Assemblies received from ENA
@@ -169,6 +177,9 @@ class Assembly(models.Model):
 
     ena_last_update = models.DateField(null=True)
 
+    def __str__(self):
+        return str(self.id)
+
 
 class Assembler(models.Model):
     class Meta:
@@ -177,6 +188,9 @@ class Assembler(models.Model):
 
     name = models.CharField(max_length=20)
     version = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name + ' - ' + self.version
 
 
 class AssemblyJobStatus(models.Model):
@@ -188,7 +202,7 @@ class AssemblyJobStatus(models.Model):
     description = models.CharField(max_length=100)
 
     def __str__(self):
-        return str(self.id)
+        return str(self.description)
 
 
 class AssemblyJobResult(models.Model):
@@ -208,7 +222,7 @@ class AssemblyJobResult(models.Model):
     coverage = models.FloatField()
 
     def __str__(self):
-        return str(self.id)
+        return str(self.pk)
 
 
 class AssemblyJob(models.Model):
@@ -252,6 +266,8 @@ class RunAssemblyJob(models.Model):
     run = models.ForeignKey(Run, on_delete=models.CASCADE)
     assembly_job = models.ForeignKey(AssemblyJob, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return str(self.pk)
 
 # Show all runs used to create an assembly
 class RunAssembly(models.Model):
@@ -263,6 +279,9 @@ class RunAssembly(models.Model):
     run = models.ForeignKey(Run, on_delete=models.DO_NOTHING)
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
 
+    def __str__(self):
+        return str(self.id) + ' run: ' + str(self.run) + '- assembly: ' + str(self.assembly)
+
 
 class AnnotationJobStatus(models.Model):
     class Meta:
@@ -270,6 +289,9 @@ class AnnotationJobStatus(models.Model):
         app_label = 'backlog'
 
     description = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.description
 
 
 class AnnotationJob(models.Model):
@@ -300,6 +322,9 @@ class RunAnnotationJob(models.Model):
     run = models.ForeignKey(Run, on_delete=models.DO_NOTHING)
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return str(self.id) +' run: ' + str(self.run) + ' - ann.job: ' + str(self.annotation_job)
+
 
 class AssemblyAnnotationJob(models.Model):
     class Meta:
@@ -308,6 +333,9 @@ class AssemblyAnnotationJob(models.Model):
 
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING, related_name='assemblyannotationjobs')
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.assembly) + ' - ' + str(self.annotation_job)
 
 
 class MonitorAnnotationJobs(models.Model):
@@ -323,20 +351,20 @@ class MonitorAnnotationJobs(models.Model):
     type = models.CharField(max_length=10) # => replace with choices
     email_address = models.EmailField(null=True, blank=True)
     rt_ticket = models.IntegerField(default=0)
-    created = models.DateTimeField()
+    created = models.DateTimeField(null=True, blank=True)
     priority = models.IntegerField()
-    public = models.BooleanField(default=False)
-    jobs_in_study = models.IntegerField()
-    scheduled_jobs = models.IntegerField()
-    running_jobs = models.IntegerField()
-    failed_jobs = models.IntegerField()
-    completed_jobs = models.DecimalField(max_digits=27, decimal_places=3)
-    syncing_jobs = models.IntegerField()
-    synced_jobs = models.IntegerField()
-    uploaded_jobs = models.IntegerField()
-    user_notified = models.BooleanField(default=False)
-    number_of_biomes = models.IntegerField()
-    biome_tagging_complete = models.CharField(max_length=100)
+    public = models.NullBooleanField(null=True, default=False)
+    jobs_in_study = models.IntegerField(db_column='jobs in study')
+    scheduled_jobs = models.IntegerField(db_column='Scheduled jobs')
+    running_jobs = models.IntegerField(db_column='Running jobs')
+    failed_jobs = models.IntegerField(db_column='Failed jobs')
+    completed_jobs = models.DecimalField(max_digits=27, decimal_places=3, db_column='Completed jobs (%%)')
+    syncing_jobs = models.IntegerField(db_column='Syncing jobs')
+    synced_jobs = models.IntegerField(db_column='Synced jobs')
+    uploaded_jobs = models.IntegerField(db_column='Uploaded jobs')
+    user_notified = models.IntegerField(db_column='User notified', default=False)
+    number_of_biomes = models.IntegerField(db_column='number of biomes')
+    biome_tagging_complete = models.CharField(db_column='biome tagging complete', max_length=100)
 
     def __str__(self):
         return self.secondary_accession
