@@ -1,8 +1,10 @@
+[![Build Status](https://travis-ci.org/EBI-Metagenomics/emg-backlog-schema.svg?branch=master)](https://travis-ci.org/EBI-Metagenomics/emg-backlog-schema)
+
 # emg-backlog-schema
 DjangoDB project and app for the backlog schema.
 ## Installation
 ### Python version support
-3.4, 3.5, 3.6
+3.5, 3.6, 3.7, 3.8
 
 ### Pip package
 ```bash
