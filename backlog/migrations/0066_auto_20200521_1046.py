@@ -15,11 +15,6 @@ def add_new_entry_to_hierarchical_biome_tree(apps, schema_editor):
     # Insert new entry
     Biome(biome_id=492, biome_name='Mixed', lft=984, rgt=985, depth=2, lineage='root:Mixed').save()
 
-    # Update all parent leaves, in this case you only have to update the root entry
-    obj = Biome.objects.get(biome_id=0)
-    obj.rgt = 985
-    obj.save()
-
     try:
         # Update all parent leaves, in this case you only have to update the root entry
         obj = Biome.objects.get(biome_id=0)
