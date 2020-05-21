@@ -20,6 +20,15 @@ def add_new_entry_to_hierarchical_biome_tree(apps, schema_editor):
     obj.rgt = 985
     obj.save()
 
+    try:
+        # Update all parent leaves, in this case you only have to update the root entry
+        obj = Biome.objects.get(biome_id=0)
+        obj.rgt = 985
+        obj.save()
+    except Biome.DoesNotExist:
+        # Look like there is no migration in place yet which populate all the biomes
+        pass # skip update in that case
+
 class Migration(migrations.Migration):
 
     dependencies = [
