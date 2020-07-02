@@ -141,6 +141,17 @@ class UserRequest(models.Model):
     rt_ticket = models.IntegerField(unique=True)
 
 
+class AssemblyType(models.Model):
+    class Meta:
+        db_table = 'AssemblyType'
+        app_label = 'backlog'
+
+    assembly_type = models.CharField(max_length=80, unique=True, null=False)
+
+    def __str__(self):
+        return self.assembly_type
+
+
 # Assemblies received from ENA
 class Assembly(models.Model):
     class Meta:
@@ -154,8 +165,8 @@ class Assembly(models.Model):
     inferred_biome = models.ForeignKey(Biome, db_column='inferred_biome_id', to_field='biome_id', related_name='inferred_assembly_biome', on_delete=models.DO_NOTHING, null=True,
                               blank=True)
     public = models.BooleanField(default=True)
-
     ena_last_update = models.DateField(null=True)
+    assembly_type = models.ForeignKey('AssemblyType', db_column='assembly_type_id', on_delete=models.DO_NOTHING, blank=True, null=True)
 
 
 class Assembler(models.Model):
