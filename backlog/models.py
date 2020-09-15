@@ -141,6 +141,17 @@ class UserRequest(models.Model):
     rt_ticket = models.IntegerField(unique=True)
 
 
+class AssemblyType(models.Model):
+    class Meta:
+        db_table = 'AssemblyType'
+        app_label = 'backlog'
+
+    assembly_type = models.CharField(max_length=80, unique=True, null=False)
+
+    def __str__(self):
+        return self.assembly_type
+
+
 # Assemblies received from ENA
 class Assembly(models.Model):
     class Meta:
@@ -154,8 +165,8 @@ class Assembly(models.Model):
     inferred_biome = models.ForeignKey(Biome, db_column='inferred_biome_id', to_field='biome_id', related_name='inferred_assembly_biome', on_delete=models.DO_NOTHING, null=True,
                               blank=True)
     public = models.BooleanField(default=True)
-
     ena_last_update = models.DateField(null=True)
+    assembly_type = models.ForeignKey('AssemblyType', db_column='assembly_type_id', on_delete=models.DO_NOTHING, blank=True, null=True)
 
 
 class Assembler(models.Model):
@@ -250,9 +261,6 @@ class AnnotationJobStatus(models.Model):
 
 
 class AnnotationJob(models.Model):
-    class Meta:
-        db_table = 'AnnotationJob'
-        app_label='backlog'
 
     pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
     status = models.ForeignKey(AnnotationJobStatus, on_delete=models.DO_NOTHING, db_index=True)
@@ -262,6 +270,31 @@ class AnnotationJob(models.Model):
     last_updated = models.DateTimeField(auto_now=True, null=True)
     runs = models.ManyToManyField(Run, through='RunAnnotationJob', related_name='annotationjobs', blank=True)
     attempt = models.IntegerField(default=0)
+
+    # Pipeline execution result status.
+    # For example the pipeline may find no CDS so most steps
+    # aren't going to be executed for this data set.
+    RESULT_NO_TAX = 'no_tax'
+    RESULT_NO_QC = 'no_qc'
+    RESULT_NO_CDS = 'no_cds'
+    # pipeline completed all the stages
+    RESULT_FULL = 'full'
+    RESULT_CHOICES = (
+        (RESULT_NO_TAX, 'No Taxonomy results'),
+        (RESULT_NO_QC, 'Failed QC'),
+        (RESULT_NO_CDS, 'No CDS found'),
+        (RESULT_FULL, 'No problems')
+    )
+
+    result_status = models.CharField(
+        max_length=10,
+        choices=RESULT_CHOICES,
+        blank=True, null=True)
+
+    class Meta:
+        db_table = 'AnnotationJob'
+        app_label = 'backlog'
+
 
 # Annotation instance for a run
 class RunAnnotationJob(models.Model):
