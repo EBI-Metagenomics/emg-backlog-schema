@@ -201,6 +201,8 @@ class AssemblyJobResult(models.Model):
     assembly_length = models.BigIntegerField()
     largest_contig = models.BigIntegerField()
     coverage = models.FloatField()
+    # average depth of coverage of the assembly
+    coverage_depth = models.FloatField()
 
 
 class AssemblyJob(models.Model):
