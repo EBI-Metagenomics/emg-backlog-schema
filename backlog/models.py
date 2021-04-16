@@ -333,6 +333,8 @@ class AnnotationJob(models.Model):
     RESULT_NO_TAX = "no_tax"
     RESULT_NO_QC = "no_qc"
     RESULT_NO_CDS = "no_cds"
+    RESULT_NO_CDS_TAX = "no_cds_tax"
+
     # pipeline completed all the stages
     RESULT_FULL = "full"
     RESULT_CHOICES = (
@@ -340,6 +342,7 @@ class AnnotationJob(models.Model):
         (RESULT_NO_QC, "Failed QC"),
         (RESULT_NO_CDS, "No CDS found"),
         (RESULT_FULL, "No problems"),
+        (RESULT_NO_CDS_TAX, "No CDS or taxonomy found")
     )
 
     result_status = models.CharField(
