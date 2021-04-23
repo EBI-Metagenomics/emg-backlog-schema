@@ -58,7 +58,7 @@ emgbacklog migrate --database {default|dev|prod}
 
 ### How to create a new data migration?
 
-    $ python backlog_cli/manage.py makemigrations --empty backlog --database {default|dev|prod}
+    $ python backlog_cli/manage.py makemigrations --empty backlog
     
 ### How to apply a (data) migration?
 
