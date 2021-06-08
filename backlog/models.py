@@ -316,5 +316,18 @@ class AssemblyAnnotationJob(models.Model):
 
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING, related_name='assemblyannotationjobs')
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
-    protein_db = models.BooleanField(
-        "True if the linked assembly was added to the protein DB", default=False)
+
+    # success
+    PROTEIN_DB_SUCCESS = 1
+    # fail
+    PROTEIN_DB_FAIL = 0
+    PROTEIN_DB_NO_PROTEIN_FASTA = 2
+    PROTEIN_DB_PATH_ERROR = 3
+
+    PROTEIN_DB_CHOICES = (
+        (PROTEIN_DB_SUCCESS, 'Retrofitting finished without errors'),
+        (PROTEIN_DB_FAIL, 'Retrofitting was not run OR failed by unknown reason' ),
+        (PROTEIN_DB_NO_PROTEIN_FASTA, 'There is no faa fasta file with predicted proteins'),
+        (PROTEIN_DB_PATH_ERROR, 'Strange path in EMG table, impossible to find results folder'))
+
+    protein_db = models.IntegerField(choices=PROTEIN_DB_CHOICES, default=0)
