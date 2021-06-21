@@ -323,11 +323,13 @@ class AssemblyAnnotationJob(models.Model):
     PROTEIN_DB_FAIL = 0
     PROTEIN_DB_NO_PROTEIN_FASTA = 2
     PROTEIN_DB_PATH_ERROR = 3
+    NO_DIRECTORY = 4
 
     PROTEIN_DB_CHOICES = (
         (PROTEIN_DB_SUCCESS, 'Retrofitting finished without errors'),
         (PROTEIN_DB_FAIL, 'Retrofitting was not run OR failed by unknown reason' ),
         (PROTEIN_DB_NO_PROTEIN_FASTA, 'There is no faa fasta file with predicted proteins'),
-        (PROTEIN_DB_PATH_ERROR, 'Strange path in EMG table, impossible to find results folder'))
+        (PROTEIN_DB_PATH_ERROR, 'Strange path in EMG table, impossible to find results folder'),
+        (NO_DIRECTORY, 'Can not detect directory in EMG table'))
 
     protein_db = models.IntegerField(choices=PROTEIN_DB_CHOICES, default=0)
