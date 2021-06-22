@@ -324,12 +324,15 @@ class AssemblyAnnotationJob(models.Model):
     PROTEIN_DB_NO_PROTEIN_FASTA = 2
     PROTEIN_DB_PATH_ERROR = 3
     NO_DIRECTORY = 4
+    SUPPRESSED = 5
 
     PROTEIN_DB_CHOICES = (
         (PROTEIN_DB_SUCCESS, 'Retrofitting finished without errors'),
         (PROTEIN_DB_FAIL, 'Retrofitting was not run OR failed by unknown reason' ),
         (PROTEIN_DB_NO_PROTEIN_FASTA, 'There is no faa fasta file with predicted proteins'),
         (PROTEIN_DB_PATH_ERROR, 'Invalid path, failed to find the results folder'),
-        (NO_DIRECTORY, 'Can not detect directory in EMG table'))
+        (NO_DIRECTORY, 'Can not detect directory in EMG table'),
+        (SUPPRESSED, 'Study was suppressed by ENA')
+    )
 
     protein_db = models.IntegerField(choices=PROTEIN_DB_CHOICES, default=PROTEIN_DB_FAIL)
