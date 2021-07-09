@@ -318,3 +318,33 @@ class AssemblyAnnotationJob(models.Model):
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
     protein_db = models.BooleanField(
         "True if the linked assembly was added to the protein DB", default=False)
+
+
+class AssemblyProteinDB(models.Model):
+
+    STATUS_COMPLETED = 1
+    STATUS_FAIL = 0
+    STATUS = ((STATUS_COMPLETED, "Completed"), (STATUS_FAIL, "Failed"))
+
+    FAIL_FASTA_MISSING = 1
+    FAIL_FASTA_PATH = 2
+    FAIL_FASTA_DIR = 3
+    FAIL_SUPRESSED = 4
+
+    FAIL_REASONS = (
+        (FAIL_FASTA_MISSING, "Missing protein fasta file"),
+        (FAIL_FASTA_PATH, "Invalid fasta file path"),
+        (FAIL_FASTA_DIR, "Assembly results directory is missing"),
+        (FAIL_SUPRESSED, "Suppressed assembly"),
+    )
+
+    assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
+    status = models.IntegerField("status", choices=STATUS)
+    fail_reason = models.IntegerField(
+        "fail_reason", choices=FAIL_REASONS, null=True, blank=True
+    )
+    pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
+    last_updated = models.DateTimeField("Last updated", auto_now=True)
+
+    class Meta:
+        app_label = "backlog"
