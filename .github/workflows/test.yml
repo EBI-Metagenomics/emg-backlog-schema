@@ -1,0 +1,35 @@
+name: Testing
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_USER: root
+          MYSQL_DATABASE: emg_backlog
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 33306:3306
+
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Dependencies
+        run: pip install -r requirements-test.txt
+
+      - name: Testing
+        run: pytest
