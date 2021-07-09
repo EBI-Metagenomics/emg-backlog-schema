@@ -3,8 +3,8 @@ backlog:
   databases:
     default:
       ENGINE: 'django.db.backends.mysql'
-      NAME: emg_backlog
-      HOST: 0.0.0.0
+      NAME: emg_backlog_2
+      HOST: 127.0.0.1
       USER: root
-      PASSWORD: ''
+      PASSWORD: root
       PORT: 3306

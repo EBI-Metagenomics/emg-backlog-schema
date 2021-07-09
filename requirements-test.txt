@@ -2,7 +2,4 @@
 
 pytest==6.2.3
 pytest-django==4.2.0
-
-# required by the assembly pipeline
-requests~=2.21.0
-# pip install -U git+git://github.com/EBI-Metagenomics/ena-api-handler.git
+model_bakery==1.1.0
