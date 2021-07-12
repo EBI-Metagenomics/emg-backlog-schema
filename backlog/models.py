@@ -312,11 +312,39 @@ class AnnotationJobStatus(models.Model):
 
 class AnnotationJob(models.Model):
 
+    PRIORITY_LOW = 1
+    PRIORITY_MEDIUM = 2
+    PRIORITY_HIGH = 3
+
+    PRIORITIES = [
+        (PRIORITY_LOW, "Low"),
+        (PRIORITY_MEDIUM, "Medium"),
+        (PRIORITY_HIGH, "High"),
+    ]
+
+    # Pipeline execution result status.
+    # For example the pipeline may find no CDS so most steps
+    # aren't going to be executed for this data set.
+    RESULT_NO_TAX = "no_tax"
+    RESULT_NO_QC = "no_qc"
+    RESULT_NO_CDS = "no_cds"
+    RESULT_NO_CDS_TAX = "no_cds_tax"
+    # pipeline completed all the stages
+    RESULT_FULL = "full"
+
+    RESULT_CHOICES = (
+        (RESULT_NO_TAX, "No Taxonomy results"),
+        (RESULT_NO_QC, "Failed QC"),
+        (RESULT_NO_CDS, "No CDS found"),
+        (RESULT_FULL, "No problems"),
+        (RESULT_NO_CDS_TAX, "No CDS or taxonomy found"),
+    )
+
     pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
     status = models.ForeignKey(
         AnnotationJobStatus, on_delete=models.DO_NOTHING, db_index=True
     )
-    priority = models.IntegerField(choices=[(1, "Low"), (2, "Medium"), (3, "High")])
+    priority = models.IntegerField(choices=PRIORITIES)
     request = models.ForeignKey(
         UserRequest, on_delete=models.DO_NOTHING, null=True, db_column="request_id"
     )
@@ -326,21 +354,6 @@ class AnnotationJob(models.Model):
         Run, through="RunAnnotationJob", related_name="annotationjobs", blank=True
     )
     attempt = models.IntegerField(default=0)
-
-    # Pipeline execution result status.
-    # For example the pipeline may find no CDS so most steps
-    # aren't going to be executed for this data set.
-    RESULT_NO_TAX = "no_tax"
-    RESULT_NO_QC = "no_qc"
-    RESULT_NO_CDS = "no_cds"
-    # pipeline completed all the stages
-    RESULT_FULL = "full"
-    RESULT_CHOICES = (
-        (RESULT_NO_TAX, "No Taxonomy results"),
-        (RESULT_NO_QC, "Failed QC"),
-        (RESULT_NO_CDS, "No CDS found"),
-        (RESULT_FULL, "No problems"),
-    )
 
     result_status = models.CharField(
         max_length=10, choices=RESULT_CHOICES, blank=True, null=True
