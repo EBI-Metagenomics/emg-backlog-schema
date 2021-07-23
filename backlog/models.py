@@ -386,12 +386,26 @@ class AssemblyProteinDB(models.Model):
     FAIL_FASTA_PATH = 2
     FAIL_FASTA_DIR = 3
     FAIL_SUPRESSED = 4
+    FAIL_MGYC = 5
+    FAIL_MGYP = 6
+    FAIL_METADATA = 7
+    FAIL_MGYC_MGYP = 8
+    FAIL_MGYC_METADATA = 9
+    FAIL_MGYP_METADATA = 10
+    FAIL_MGYC_MGYP_METADATA = 11
 
     FAIL_REASONS = (
         (FAIL_FASTA_MISSING, "Missing protein fasta file"),
         (FAIL_FASTA_PATH, "Invalid fasta file path"),
         (FAIL_FASTA_DIR, "Assembly results directory is missing"),
         (FAIL_SUPRESSED, "Suppressed assembly"),
+        (FAIL_MGYC, "Incorrect number of sequences for MGYC.fasta"),
+        (FAIL_MGYP, "Incorrect number of sequences for MGYP.fasta"),
+        (FAIL_METADATA, "Incorrect number of records for metadata"),
+        (FAIL_MGYC_MGYP, "Incorrect MGYC and MGYP but metadata is OK"),
+        (FAIL_MGYC_METADATA, "Incorrect number of sequences for MGYC.fasta and metadata table/file"),
+        (FAIL_MGYP_METADATA, "Incorrect number of sequences for MGYP.fasta and metadata table/file"),
+        (FAIL_MGYC_MGYP_METADATA, "Incorrect number of sequences for MGYC, MGYP and metadata"),
     )
 
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
@@ -399,7 +413,7 @@ class AssemblyProteinDB(models.Model):
     fail_reason = models.IntegerField(
         "fail_reason", choices=FAIL_REASONS, null=True, blank=True
     )
-    pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
+    pipeline = models.ForeignKey(Pipeline, null=True, on_delete=models.DO_NOTHING)
     last_updated = models.DateTimeField("Last updated", auto_now=True)
     assembly_id_pdb = models.IntegerField("id_pdb", null=True)
 
