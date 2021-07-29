@@ -384,9 +384,6 @@ class AssemblyAnnotationJob(models.Model):
         Assembly, on_delete=models.DO_NOTHING, related_name="assemblyannotationjobs"
     )
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
-    protein_db = models.BooleanField(
-        "True if the linked assembly was added to the protein DB", default=False
-    )
 
 
 class AssemblyProteinDB(models.Model):
