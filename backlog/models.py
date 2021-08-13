@@ -384,9 +384,6 @@ class AssemblyAnnotationJob(models.Model):
         Assembly, on_delete=models.DO_NOTHING, related_name="assemblyannotationjobs"
     )
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
-    protein_db = models.BooleanField(
-        "True if the linked assembly was added to the protein DB", default=False
-    )
 
 
 class AssemblyProteinDB(models.Model):
@@ -396,7 +393,7 @@ class AssemblyProteinDB(models.Model):
     STATUS = ((STATUS_COMPLETED, "Completed"), (STATUS_FAIL, "Failed"))
 
     FAIL_FASTA_MISSING = 1
-    FAIL_FASTA_PATH = 2
+    FAIL_PIPELINE_VERSION = 2
     FAIL_FASTA_DIR = 3
     FAIL_SUPRESSED = 4
     FAIL_MGYC = 5
@@ -409,7 +406,7 @@ class AssemblyProteinDB(models.Model):
 
     FAIL_REASONS = (
         (FAIL_FASTA_MISSING, "Missing protein fasta file"),
-        (FAIL_FASTA_PATH, "Invalid fasta file path"),
+        (FAIL_PIPELINE_VERSION, "Assembly was added with higher version of pipeline"),
         (FAIL_FASTA_DIR, "Assembly results directory is missing"),
         (FAIL_SUPRESSED, "Suppressed assembly"),
         (FAIL_MGYC, "Incorrect number of sequences for MGYC.fasta"),
