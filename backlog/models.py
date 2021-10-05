@@ -426,6 +426,7 @@ class AssemblyProteinDB(models.Model):
     pipeline = models.ForeignKey(Pipeline, null=True, on_delete=models.DO_NOTHING)
     last_updated = models.DateTimeField("Last updated", auto_now=True)
     assembly_id_pdb = models.IntegerField("id_pdb", null=True)
+    legacy = models.CharField("New accession for legacy assembly", max_length=20, null=True, blank=True)
 
     class Meta:
         app_label = "backlog"
