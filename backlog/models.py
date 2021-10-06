@@ -4,16 +4,20 @@ from django.utils import timezone
 
 class User(models.Model):
     class Meta:
-        db_table = 'User'
-        app_label='backlog'
+        db_table = "User"
+        app_label = "backlog"
 
-    webin_id = models.CharField("ENA's submission account id", max_length=15, unique=True, primary_key=True)
+    webin_id = models.CharField(
+        "ENA's submission account id", max_length=15, unique=True, primary_key=True
+    )
     registered = models.BooleanField(
         "A copy of ENA's ROLE_METAGENOME_SUBMITTER flag. Set to True if submitter is registered with EMG.",
-        default=False)
+        default=False,
+    )
     consent_given = models.BooleanField(
         "A copy of ENA's ROLE_METAGENOME_ANALYSIS flag. Set to True if submitter gave permission to access and analyse their private data.",
-        default=False)
+        default=False,
+    )
     email_address = models.CharField("Submitters email address.", max_length=200)
     first_name = models.CharField(max_length=30, null=True)
     surname = models.CharField(max_length=50, null=True)
@@ -22,9 +26,8 @@ class User(models.Model):
 
 class Submission(models.Model):
     class Meta:
-        db_table = 'Submission'
-        app_label='backlog'
-
+        db_table = "Submission"
+        app_label = "backlog"
 
     primary_accession = models.CharField(max_length=20, unique=True, null=True)
     secondary_accession = models.CharField(max_length=20, unique=True, null=True)
@@ -35,9 +38,8 @@ class Submission(models.Model):
 
 class Biome(models.Model):
     class Meta:
-        db_table = 'Biome'
-        app_label='backlog'
-
+        db_table = "Biome"
+        app_label = "backlog"
 
     biome_id = models.IntegerField(primary_key=True, unique=True)
     biome_name = models.CharField(max_length=60)
@@ -49,9 +51,8 @@ class Biome(models.Model):
 
 class StudyError(models.Model):
     class Meta:
-        db_table = 'StudyErrorType'
-        app_label='backlog'
-
+        db_table = "StudyErrorType"
+        app_label = "backlog"
 
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
@@ -59,18 +60,16 @@ class StudyError(models.Model):
 
 class Pipeline(models.Model):
     class Meta:
-        db_table = 'Pipeline'
-        app_label='backlog'
-
+        db_table = "Pipeline"
+        app_label = "backlog"
 
     version = models.FloatField(primary_key=True)
 
 
 class Blacklist(models.Model):
     class Meta:
-        db_table = 'Blacklist'
-        app_label='backlog'
-
+        db_table = "Blacklist"
+        app_label = "backlog"
 
     date_blacklisted = models.DateField(auto_now_add=True)
     pipeline_version = models.ForeignKey(Pipeline, on_delete=models.CASCADE)
@@ -81,9 +80,9 @@ class Blacklist(models.Model):
 
 class Study(models.Model):
     class Meta:
-        db_table = 'Study'
-        app_label='backlog'
-        unique_together = ('primary_accession', 'secondary_accession')
+        db_table = "Study"
+        app_label = "backlog"
+        unique_together = ("primary_accession", "secondary_accession")
 
     primary_accession = models.CharField(max_length=20)
     secondary_accession = models.CharField(max_length=20)
@@ -104,19 +103,31 @@ class Study(models.Model):
 
 class Run(models.Model):
     class Meta:
-        db_table = 'Run'
-        app_label='backlog'
+        db_table = "Run"
+        app_label = "backlog"
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
 
     primary_accession = models.CharField(max_length=20, unique=True)
     sample_primary_accession = models.CharField(max_length=20, blank=True, null=True)
-    compressed_data_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)', null=True,
-                                                  blank=True)
-    biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True,
-                              blank=True)
-    inferred_biome = models.ForeignKey(Biome, related_name='inferred_run_biome', on_delete=models.DO_NOTHING, null=True,
-                              blank=True)
+    compressed_data_size = models.BigIntegerField(
+        help_text="Sum of filesizes of compressed input. (bytes)", null=True, blank=True
+    )
+    biome = models.ForeignKey(
+        Biome,
+        to_field="biome_id",
+        db_column="biome_id",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        blank=True,
+    )
+    inferred_biome = models.ForeignKey(
+        Biome,
+        related_name="inferred_run_biome",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        blank=True,
+    )
     base_count = models.BigIntegerField(null=True, blank=True)
     read_count = models.BigIntegerField(null=True, blank=True)
     instrument_platform = models.CharField(max_length=4000)
@@ -131,10 +142,10 @@ class Run(models.Model):
 
 class UserRequest(models.Model):
     class Meta:
-        db_table = 'UserRequest'
-        app_label='backlog'
+        db_table = "UserRequest"
+        app_label = "backlog"
 
-    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, db_column='user_id')
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, db_column="user_id")
     first_created = models.DateTimeField(auto_now_add=True, null=True)
     last_updated = models.DateTimeField(auto_now=True, null=True)
     priority = models.IntegerField(default=0)
@@ -143,8 +154,8 @@ class UserRequest(models.Model):
 
 class AssemblyType(models.Model):
     class Meta:
-        db_table = 'AssemblyType'
-        app_label = 'backlog'
+        db_table = "AssemblyType"
+        app_label = "backlog"
 
     assembly_type = models.CharField(max_length=80, unique=True, null=False)
 
@@ -155,24 +166,43 @@ class AssemblyType(models.Model):
 # Assemblies received from ENA
 class Assembly(models.Model):
     class Meta:
-        db_table = 'Assembly'
-        app_label='backlog'
+        db_table = "Assembly"
+        app_label = "backlog"
 
     study = models.ForeignKey(Study, on_delete=models.CASCADE)
     primary_accession = models.CharField(max_length=20, unique=True)
-    biome = models.ForeignKey(Biome, to_field='biome_id', db_column='biome_id', on_delete=models.DO_NOTHING, null=True,
-                              blank=True)
-    inferred_biome = models.ForeignKey(Biome, db_column='inferred_biome_id', to_field='biome_id', related_name='inferred_assembly_biome', on_delete=models.DO_NOTHING, null=True,
-                              blank=True)
+    biome = models.ForeignKey(
+        Biome,
+        to_field="biome_id",
+        db_column="biome_id",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        blank=True,
+    )
+    inferred_biome = models.ForeignKey(
+        Biome,
+        db_column="inferred_biome_id",
+        to_field="biome_id",
+        related_name="inferred_assembly_biome",
+        on_delete=models.DO_NOTHING,
+        null=True,
+        blank=True,
+    )
     public = models.BooleanField(default=True)
     ena_last_update = models.DateField(null=True)
-    assembly_type = models.ForeignKey('AssemblyType', db_column='assembly_type_id', on_delete=models.DO_NOTHING, blank=True, null=True)
+    assembly_type = models.ForeignKey(
+        "AssemblyType",
+        db_column="assembly_type_id",
+        on_delete=models.DO_NOTHING,
+        blank=True,
+        null=True,
+    )
 
 
 class Assembler(models.Model):
     class Meta:
-        db_table = 'Assembler'
-        app_label='backlog'
+        db_table = "Assembler"
+        app_label = "backlog"
 
     name = models.CharField(max_length=20)
     version = models.CharField(max_length=20)
@@ -180,20 +210,23 @@ class Assembler(models.Model):
 
 class AssemblyJobStatus(models.Model):
     class Meta:
-        db_table = 'AssemblyJobStatus'
-        app_label='backlog'
+        db_table = "AssemblyJobStatus"
+        app_label = "backlog"
 
     description = models.CharField(max_length=100)
 
 
 class AssemblyJobResult(models.Model):
     class Meta:
-        db_table = 'AssemblyJobResult'
-        app_label='backlog'
+        db_table = "AssemblyJobResult"
+        app_label = "backlog"
 
     execution_time = models.BigIntegerField(
-        help_text='Total execution time (including restarts) of the assembler, in seconds.')
-    peak_mem = models.BigIntegerField(help_text='Peak memory usage of the assembler, in megabytes.')
+        help_text="Total execution time (including restarts) of the assembler, in seconds."
+    )
+    peak_mem = models.BigIntegerField(
+        help_text="Peak memory usage of the assembler, in megabytes."
+    )
 
     n50 = models.IntegerField()
     l50 = models.IntegerField()
@@ -207,38 +240,53 @@ class AssemblyJobResult(models.Model):
 
 class AssemblyJob(models.Model):
     class Meta:
-        db_table = 'AssemblyJob'
-        app_label='backlog'
+        db_table = "AssemblyJob"
+        app_label = "backlog"
 
     assembler = models.ForeignKey(Assembler, on_delete=models.DO_NOTHING)
     status = models.ForeignKey(AssemblyJobStatus, on_delete=models.DO_NOTHING)
     submission = models.ForeignKey(Submission, on_delete=models.DO_NOTHING, null=True)
 
-    request_id = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id', )
+    request_id = models.ForeignKey(
+        UserRequest,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        db_column="request_id",
+    )
     directory = models.CharField(max_length=255, null=True, blank=True)
 
-    input_size = models.BigIntegerField(help_text='Sum of filesizes of compressed input. (bytes)')
-    reason = models.TextField(null=True,
-                              help_text='Filled iff assembly will not be submitted to ENA, specifies the reason why.')
+    input_size = models.BigIntegerField(
+        help_text="Sum of filesizes of compressed input. (bytes)"
+    )
+    reason = models.TextField(
+        null=True,
+        help_text="Filled iff assembly will not be submitted to ENA, specifies the reason why.",
+    )
     requester = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True)
 
-    priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')], null=True)
+    priority = models.IntegerField(
+        choices=[(1, "Low"), (2, "Medium"), (3, "High")], null=True
+    )
     result = models.ForeignKey(AssemblyJobResult, on_delete=models.CASCADE, null=True)
-    estimated_peak_mem = models.BigIntegerField(help_text='Estimated peak memory usage of the assembler, in megabytes.',
-                                                null=True)
+    estimated_peak_mem = models.BigIntegerField(
+        help_text="Estimated peak memory usage of the assembler, in megabytes.",
+        null=True,
+    )
 
     uploaded_to_ena = models.NullBooleanField()
     bam_uploaded = models.NullBooleanField()
     new_ena_assembly = models.CharField(max_length=20, null=True)
-    runs = models.ManyToManyField(Run, through='RunAssemblyJob', related_name='assemblyjobs', blank=True)
+    runs = models.ManyToManyField(
+        Run, through="RunAssemblyJob", related_name="assemblyjobs", blank=True
+    )
 
 
 # Assembly instances for runs
 class RunAssemblyJob(models.Model):
     class Meta:
-        db_table = 'RunAssemblyJob'
-        app_label='backlog'
-        unique_together = (('run', 'assembly_job'),)
+        db_table = "RunAssemblyJob"
+        app_label = "backlog"
+        unique_together = (("run", "assembly_job"),)
 
     run = models.ForeignKey(Run, on_delete=models.CASCADE)
     assembly_job = models.ForeignKey(AssemblyJob, on_delete=models.CASCADE)
@@ -247,8 +295,8 @@ class RunAssemblyJob(models.Model):
 # Show all runs used to create an assembly
 class RunAssembly(models.Model):
     class Meta:
-        db_table = 'RunAssembly'
-        app_label='backlog'
+        db_table = "RunAssembly"
+        app_label = "backlog"
 
     run = models.ForeignKey(Run, on_delete=models.DO_NOTHING)
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
@@ -256,54 +304,72 @@ class RunAssembly(models.Model):
 
 class AnnotationJobStatus(models.Model):
     class Meta:
-        db_table = 'AnnotationJobStatus'
-        app_label='backlog'
+        db_table = "AnnotationJobStatus"
+        app_label = "backlog"
 
     description = models.CharField(max_length=20)
 
 
 class AnnotationJob(models.Model):
 
-    pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
-    status = models.ForeignKey(AnnotationJobStatus, on_delete=models.DO_NOTHING, db_index=True)
-    priority = models.IntegerField(choices=[(1, 'Low'), (2, 'Medium'), (3, 'High')])
-    request = models.ForeignKey(UserRequest, on_delete=models.DO_NOTHING, null=True, db_column='request_id')
-    directory = models.CharField(max_length=255, null=True, blank=True)
-    last_updated = models.DateTimeField(auto_now=True, null=True)
-    runs = models.ManyToManyField(Run, through='RunAnnotationJob', related_name='annotationjobs', blank=True)
-    attempt = models.IntegerField(default=0)
+    PRIORITY_LOW = 1
+    PRIORITY_MEDIUM = 2
+    PRIORITY_HIGH = 3
+
+    PRIORITIES = [
+        (PRIORITY_LOW, "Low"),
+        (PRIORITY_MEDIUM, "Medium"),
+        (PRIORITY_HIGH, "High"),
+    ]
 
     # Pipeline execution result status.
     # For example the pipeline may find no CDS so most steps
     # aren't going to be executed for this data set.
-    RESULT_NO_TAX = 'no_tax'
-    RESULT_NO_QC = 'no_qc'
-    RESULT_NO_CDS = 'no_cds'
+    RESULT_NO_TAX = "no_tax"
+    RESULT_NO_QC = "no_qc"
+    RESULT_NO_CDS = "no_cds"
+    RESULT_NO_CDS_TAX = "no_cds_tax"
     # pipeline completed all the stages
-    RESULT_FULL = 'full'
+    RESULT_FULL = "full"
+
     RESULT_CHOICES = (
-        (RESULT_NO_TAX, 'No Taxonomy results'),
-        (RESULT_NO_QC, 'Failed QC'),
-        (RESULT_NO_CDS, 'No CDS found'),
-        (RESULT_FULL, 'No problems')
+        (RESULT_NO_TAX, "No Taxonomy results"),
+        (RESULT_NO_QC, "Failed QC"),
+        (RESULT_NO_CDS, "No CDS found"),
+        (RESULT_FULL, "No problems"),
+        (RESULT_NO_CDS_TAX, "No CDS or taxonomy found"),
     )
 
+    pipeline = models.ForeignKey(Pipeline, on_delete=models.DO_NOTHING)
+    status = models.ForeignKey(
+        AnnotationJobStatus, on_delete=models.DO_NOTHING, db_index=True
+    )
+    priority = models.IntegerField(choices=PRIORITIES)
+    request = models.ForeignKey(
+        UserRequest, on_delete=models.DO_NOTHING, null=True, db_column="request_id"
+    )
+    directory = models.CharField(max_length=255, null=True, blank=True)
+    last_updated = models.DateTimeField(auto_now=True, null=True)
+    runs = models.ManyToManyField(
+        Run, through="RunAnnotationJob", related_name="annotationjobs", blank=True
+    )
+    attempt = models.IntegerField(default=0)
+
     result_status = models.CharField(
-        max_length=10,
-        choices=RESULT_CHOICES,
-        blank=True, null=True)
+        max_length=10, choices=RESULT_CHOICES, blank=True, null=True
+    )
 
     class Meta:
-        db_table = 'AnnotationJob'
-        app_label = 'backlog'
+        db_table = "AnnotationJob"
+        app_label = "backlog"
 
 
 # Annotation instance for a run
 class RunAnnotationJob(models.Model):
     class Meta:
-        db_table = 'RunAnnotationJob'
-        app_label='backlog'
-        unique_together = (('run', 'annotation_job'),)
+        db_table = "RunAnnotationJob"
+        app_label = "backlog"
+        unique_together = (("run", "annotation_job"),)
 
     run = models.ForeignKey(Run, on_delete=models.DO_NOTHING)
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
@@ -311,10 +377,56 @@ class RunAnnotationJob(models.Model):
 
 class AssemblyAnnotationJob(models.Model):
     class Meta:
-        db_table = 'AssemblyAnnotationJob'
-        app_label = 'backlog'
+        db_table = "AssemblyAnnotationJob"
+        app_label = "backlog"
 
-    assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING, related_name='assemblyannotationjobs')
+    assembly = models.ForeignKey(
+        Assembly, on_delete=models.DO_NOTHING, related_name="assemblyannotationjobs"
+    )
     annotation_job = models.ForeignKey(AnnotationJob, on_delete=models.CASCADE)
-    protein_db = models.BooleanField(
-        "True if the linked assembly was added to the protein DB", default=False)
+
+
+class AssemblyProteinDB(models.Model):
+
+    STATUS_COMPLETED = 1
+    STATUS_FAIL = 0
+    STATUS = ((STATUS_COMPLETED, "Completed"), (STATUS_FAIL, "Failed"))
+
+    FAIL_FASTA_MISSING = 1
+    FAIL_PIPELINE_VERSION = 2
+    FAIL_FASTA_DIR = 3
+    FAIL_SUPRESSED = 4
+    FAIL_MGYC = 5
+    FAIL_MGYP = 6
+    FAIL_METADATA = 7
+    FAIL_MGYC_MGYP = 8
+    FAIL_MGYC_METADATA = 9
+    FAIL_MGYP_METADATA = 10
+    FAIL_MGYC_MGYP_METADATA = 11
+
+    FAIL_REASONS = (
+        (FAIL_FASTA_MISSING, "Missing protein fasta file"),
+        (FAIL_PIPELINE_VERSION, "Assembly was added with higher version of pipeline"),
+        (FAIL_FASTA_DIR, "Assembly results directory is missing"),
+        (FAIL_SUPRESSED, "Suppressed assembly"),
+        (FAIL_MGYC, "Incorrect number of sequences for MGYC.fasta"),
+        (FAIL_MGYP, "Incorrect number of sequences for MGYP.fasta"),
+        (FAIL_METADATA, "Incorrect number of records for metadata"),
+        (FAIL_MGYC_MGYP, "Incorrect MGYC and MGYP but metadata is OK"),
+        (FAIL_MGYC_METADATA, "Incorrect number of sequences for MGYC.fasta and metadata table/file"),
+        (FAIL_MGYP_METADATA, "Incorrect number of sequences for MGYP.fasta and metadata table/file"),
+        (FAIL_MGYC_MGYP_METADATA, "Incorrect number of sequences for MGYC, MGYP and metadata"),
+    )
+
+    assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
+    status = models.IntegerField("status", choices=STATUS)
+    fail_reason = models.IntegerField(
+        "fail_reason", choices=FAIL_REASONS, null=True, blank=True
+    )
+    pipeline = models.ForeignKey(Pipeline, null=True, on_delete=models.DO_NOTHING)
+    last_updated = models.DateTimeField("Last updated", auto_now=True)
+    assembly_id_pdb = models.IntegerField("id_pdb", null=True)
+
+    class Meta:
+        app_label = "backlog"
+        db_table = "AssemblyProteinDB"

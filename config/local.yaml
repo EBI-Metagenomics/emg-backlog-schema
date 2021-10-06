@@ -1,0 +1,10 @@
+# this assumes a local mysql instance running
+backlog:
+  databases:
+    default:
+      ENGINE: 'django.db.backends.mysql'
+      NAME: emg_backlog_2
+      HOST: 127.0.0.1
+      USER: root
+      PASSWORD: root
+      PORT: 3306
