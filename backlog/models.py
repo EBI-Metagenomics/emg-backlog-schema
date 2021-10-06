@@ -403,6 +403,7 @@ class AssemblyProteinDB(models.Model):
     FAIL_MGYC_METADATA = 9
     FAIL_MGYP_METADATA = 10
     FAIL_MGYC_MGYP_METADATA = 11
+    FAIL_LEGACY = 12
 
     FAIL_REASONS = (
         (FAIL_FASTA_MISSING, "Missing protein fasta file"),
@@ -416,6 +417,7 @@ class AssemblyProteinDB(models.Model):
         (FAIL_MGYC_METADATA, "Incorrect number of sequences for MGYC.fasta and metadata table/file"),
         (FAIL_MGYP_METADATA, "Incorrect number of sequences for MGYP.fasta and metadata table/file"),
         (FAIL_MGYC_MGYP_METADATA, "Incorrect number of sequences for MGYC, MGYP and metadata"),
+        (FAIL_LEGACY, "Assembly marked as legacy"),
     )
 
     assembly = models.ForeignKey(Assembly, on_delete=models.DO_NOTHING)
@@ -426,7 +428,7 @@ class AssemblyProteinDB(models.Model):
     pipeline = models.ForeignKey(Pipeline, null=True, on_delete=models.DO_NOTHING)
     last_updated = models.DateTimeField("Last updated", auto_now=True)
     assembly_id_pdb = models.IntegerField("id_pdb", null=True)
-    legacy = models.CharField("New accession for legacy assembly", max_length=20, null=True, blank=True)
+    legacy = models.IntegerField("assembly_id for new accession for legacy assembly", null=True, blank=True)
 
     class Meta:
         app_label = "backlog"
